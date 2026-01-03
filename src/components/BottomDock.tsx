@@ -163,7 +163,7 @@ export function BottomDock() {
                   onClick={toggleDarkMode}
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12 rounded-full"
+                    "size-12 rounded-full cursor-pointer"
                   )}
                 >
                   {isDarkMode ? <Sun /> : <Moon />}
