@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Instrument_Serif, Kablammo } from "next/font/google";
 import "./globals.css";
-import BottomDock from "@/components/BottomDock";
-
+import {BottomDock} from "@/components/BottomDock";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { ThemeProvider } from "next-themes";
+import Navbar from "@/components/Navbar";
 
-config.autoAddCss = false; // IMPORTANT
+config.autoAddCss = false;
 
-const geistSans = Geist({
+const instrumentSerif = Instrument_Serif({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const kablammo = Kablammo({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-kablammo",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,13 +35,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${instrumentSerif.variable} ${kablammo.variable}`}>
         <ThemeProvider
         attribute="class"
         defaultTheme="system"
         enableSystem>
+
+          <Navbar/>
           {children}
           <BottomDock />
+
+
         </ThemeProvider>
       </body>
     </html>
