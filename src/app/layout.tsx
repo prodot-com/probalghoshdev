@@ -6,6 +6,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { Toaster } from "sonner";
 
 config.autoAddCss = false;
 
@@ -41,7 +43,9 @@ export default function RootLayout({
         defaultTheme="system"
         enableSystem>
 
+          <Toaster/>
           <Navbar/>
+          <ScrollProgress className="fixed left-0 w-full h-[5px] transition-all duration-300" />
           {children}
           <BottomDock />
 

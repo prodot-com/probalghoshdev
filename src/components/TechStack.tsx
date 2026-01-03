@@ -1,25 +1,28 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "./ui/marquee";
 
-// const TechStack2 = [
-//   { name: "JavaScript", category: "language", icon: "/tech-icons/javascript2.svg" },
-//   { name: "TypeScript", category: "language", icon: "/tech-icons/typescript2.svg" },
-//   { name: "Java", category: "language", icon: "/tech-icons/java2.svg" },
-//   { name: "Python", category: "language", icon: "/tech-icons/python2.svg" },
-//   { name: "React.js", category: "framework", icon: "/tech-icons/react2.svg" },
-//   { name: "Express.js", category: "framework", icon: "/tech-icons/express.svg" },
-//   { name: "Node.js", category: "framework", icon: "/tech-icons/node2.svg" },
-//   { name: "Tailwind CSS", category: "framework", icon: "/tech-icons/tailwind2.svg" },
-//   { name: "Motion", category: "framework", icon: "/tech-icons/motion2.svg" },
-//   { name: "MongoDB", category: "database", icon: "/tech-icons/mongodb2.svg" },
-//   { name: "PostgreSQL", category: "database", icon: "/tech-icons/postgresql2.svg" },
-//   { name: "Git", category: "tool", icon: "/tech-icons/git2.svg" },
-//   { name: "Google Cloud", category: "tool", icon: "/tech-icons/google-cloud2.svg" },
-//   { name: "Postman", category: "tool", icon: "/tech-icons/postman2.svg" },
-//   { name: "Github", category: "tool", icon: "/tech-icons/github.svg" },
-//   { name: "Vercel", category: "tool", icon: "/tech-icons/vercel.svg" },
-//   { name: "Firebase", category: "tool", icon: "/tech-icons/firebase2.svg" },
-// ];
+const TechStackColorfull = [
+  { name: "JavaScript", category: "language", icon: "/tech-icons/javascript2.svg" },
+  { name: "TypeScript", category: "language", icon: "/tech-icons/typescript2.svg" },
+  { name: "Java", category: "language", icon: "/tech-icons/java2.svg" },
+  { name: "Python", category: "language", icon: "/tech-icons/python2.svg" },
+  { name: "React.js", category: "framework", icon: "/tech-icons/react2.svg" },
+  { name: "Express.js", category: "framework", icon: "/tech-icons/express.svg" },
+  { name: "Node.js", category: "framework", icon: "/tech-icons/node2.svg" },
+  { name: "Tailwind CSS", category: "framework", icon: "/tech-icons/tailwind2.svg" },
+  { name: "Motion", category: "framework", icon: "/tech-icons/motion2.svg" },
+  { name: "MongoDB", category: "database", icon: "/tech-icons/mongodb2.svg" },
+  { name: "PostgreSQL", category: "database", icon: "/tech-icons/postgresql2.svg" },
+  { name: "Git", category: "tool", icon: "/tech-icons/git2.svg" },
+  { name: "Google Cloud", category: "tool", icon: "/tech-icons/google-cloud2.svg" },
+  { name: "Postman", category: "tool", icon: "/tech-icons/postman2.svg" },
+  { name: "Github", category: "tool", icon: "/tech-icons/github.svg" },
+  { name: "Vercel", category: "tool", icon: "/tech-icons/vercel.svg" },
+  { name: "Firebase", category: "tool", icon: "/tech-icons/firebase2.svg" },
+];
+
+
+
 const TechStack = [
   {
     name: "JavaScript",

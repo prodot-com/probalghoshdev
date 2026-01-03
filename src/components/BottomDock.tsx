@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/tooltip"
 import { Dock, DockIcon } from "./ui/dock"
 import { useTheme } from "next-themes"
+import { AnimatePresence, motion } from "motion/react"
 
 export type IconProps = React.HTMLAttributes<SVGElement>
 
@@ -111,7 +112,7 @@ export function BottomDock() {
   return (
     <div className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2">
       <TooltipProvider>
-        <Dock direction="middle" className="bg-white/60 dark:bg-neutral-900 backdrop-blur-md rounded-[5px]">
+        <Dock direction="middle" className="bg-white/40 dark:bg-neutral-900/40 backdrop-blur-[6px] rounded-[5px]">
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>
@@ -156,24 +157,50 @@ export function BottomDock() {
             </DockIcon>
           ))}
           <Separator orientation="vertical" className="h-full" />
-          <DockIcon>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button
-                  onClick={toggleDarkMode}
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12 rounded-full cursor-pointer"
-                  )}
-                >
-                  {isDarkMode ? <Sun /> : <Moon />}
-                </button>
-              </TooltipTrigger>
-              <TooltipContent>
-                {isDarkMode ? "Light mode" : "Dark mode"}
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
+            <DockIcon>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={toggleDarkMode}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-full cursor-pointer relative overflow-hidden flex items-center justify-center"
+                    )}
+                  >
+                    <AnimatePresence mode="wait" initial={false}>
+                      {isDarkMode ? (
+                        <motion.span
+                          key="sun"
+                          initial={{ opacity: 0, scale: 0.6, rotate: -90 }}
+                          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                          exit={{ opacity: 0, scale: 0.6, rotate: 90 }}
+                          transition={{ duration: 0.25, ease: "easeOut" }}
+                          className="absolute"
+                        >
+                          <Sun />
+                        </motion.span>
+                      ) : (
+                        <motion.span
+                          key="moon"
+                          initial={{ opacity: 0, scale: 0.6, rotate: 90 }}
+                          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                          exit={{ opacity: 0, scale: 0.6, rotate: -90 }}
+                          transition={{ duration: 0.25, ease: "easeOut" }}
+                          className="absolute"
+                        >
+                          <Moon />
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                  </button>
+                </TooltipTrigger>
+
+                <TooltipContent>
+                  {isDarkMode ? "Light" : "Dark"}
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+
         </Dock>
       </TooltipProvider>
     </div>
