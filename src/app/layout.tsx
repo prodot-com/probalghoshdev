@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Kablammo } from "next/font/google";
 import "./globals.css";
-import {BottomDock} from "@/components/BottomDock";
+import { BottomDock } from "@/components/BottomDock";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { Toaster } from "sonner";
+import ScrollToTopOnLoad from "@/components/ScrollToponLoad";
 
 config.autoAddCss = false;
 
@@ -38,18 +39,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${instrumentSerif.variable} ${kablammo.variable}`}>
-        <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem>
-
-          <Toaster/>
-          <Navbar/>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ScrollToTopOnLoad/>
+          <Toaster />
+          <Navbar />
           <ScrollProgress className="fixed left-0 w-full h-[5px] transition-all duration-300" />
           {children}
           <BottomDock />
-
-
         </ThemeProvider>
       </body>
     </html>

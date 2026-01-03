@@ -32,7 +32,9 @@ export default function Home() {
             <About />
           </Reveal>
 
-          <TechStackMarquee />
+          <Reveal delay={0.15}>
+            <TechStackMarquee/>
+          </Reveal>
 
           <Reveal delay={0.15}>
             <GithubCalendar />
