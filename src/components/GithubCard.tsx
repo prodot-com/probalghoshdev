@@ -26,7 +26,7 @@ export function GithubCard() {
     <div className="selection:bg-neutral-700 mt-10 px-3 md:px-4 md:pl-9 flex flex-col gap-3 w-full max-w-5xl">
       <Card
         className="relative w-full overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border 
-            border-white/20 rounded-[5px] shadow-lg hover:shadow-xl transition-all duration-300 min-h-[210px]"
+            border-white/20 rounded-[5px] shadow-lg hover:shadow-xl transition-all duration-300 min-h-52.5"
       >
         <CardHeader className="px-1 md:px-2 md:pt-1">
           <div className="md:px-0">

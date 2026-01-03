@@ -90,7 +90,7 @@ export function Experience() {
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-[16px] md:text-[16px] instrument-serif text-neutral-700 dark:text-neutral-300 leading-relaxed pl-[3.5rem] sm:pl-[4.5rem] md:pr-4"
+                  className="text-[16px] md:text-[16px] instrument-serif text-neutral-700 dark:text-neutral-300 leading-relaxed pl-14 sm:pl-18 md:pr-4"
                 >
                   {exp.description}
                 </motion.p>

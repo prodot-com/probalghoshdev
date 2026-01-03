@@ -81,7 +81,7 @@ const Navbar = () => {
 //     }
 
     return (
-            <div className="fixed top-0 left-0 w-full h-[70px] bg-white dark:bg-black shadow z-30 flex items-center justify-center">
+            <div className="fixed top-0 left-0 w-full h-17.5 bg-white dark:bg-black shadow z-30 flex items-center justify-center">
             <div className="w-full max-w-3xl h-full px-2 flex justify-between items-center">
                 <div className="h-full flex justify-between items-center">
                 <h1

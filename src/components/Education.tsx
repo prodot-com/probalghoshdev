@@ -71,7 +71,7 @@ export function EducationCard() {
               
               <div className="flex flex-col sm:flex-row items-end text-right text-neutral-600 dark:text-neutral-400 text-sm">
                 <p className="instrument-serif-bold text-[15px]">{edu.startDate}</p>
-                <p className="px-1 mb-[3px] md:inline hidden">-</p>
+                <p className="px-1 mb-0.75 md:inline hidden">-</p>
                 <p className="instrument-serif-bold text-[15px]">{edu.endDate ? edu.endDate: "Present"}</p>
               </div>
             </div>

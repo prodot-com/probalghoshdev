@@ -91,7 +91,7 @@ export function Projectcard() {
                   {project.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="text-[13px] md:text-[12px] font-normal bg-neutral-200 dark:bg-neutral-800 text-gray-800 dark:text-white px-2 py-1 rounded-[4px] border
+                      className="text-[13px] md:text-[12px] font-normal bg-neutral-200 dark:bg-neutral-800 text-gray-800 dark:text-white px-2 py-1 rounded-[5px] border
                   instrument-serif
                   "
                     >
@@ -109,7 +109,7 @@ export function Projectcard() {
                         href={project.link.livelink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-[13px] bg-black dark:bg-white text-white dark:text-black px-2 py-1 rounded-[4px] border hover:bg-neutral-700 dark:hover:bg-neutral-400 transition
+                        className="flex items-center gap-1 text-[13px] bg-black dark:bg-white text-white dark:text-black px-2 py-1 rounded-[5px] border hover:bg-neutral-700 dark:hover:bg-neutral-400 transition
                     instrument-serif-bold tracking-widest
                     "
                       >
@@ -122,7 +122,7 @@ export function Projectcard() {
                         href={project.link.gitlink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-[13px] bg-black dark:bg-white text-white dark:text-black px-2 py-1 rounded-[4px] border hover:bg-neutral-700 dark:hover:bg-neutral-400 transition
+                        className="flex items-center gap-1 text-[13px] bg-black dark:bg-white text-white dark:text-black px-2 py-1 rounded-[5px] border hover:bg-neutral-700 dark:hover:bg-neutral-400 transition
                     instrument-serif-bold tracking-widest
                     "
                       >
@@ -133,7 +133,7 @@ export function Projectcard() {
                     <div
                       className="flex items-center gap-1 text-[13px] 
                   bg-green-600 text-white dark:text-black px-2 py-1 
-                  rounded-[4px] border
+                  rounded-[5px] border
                     instrument-serif-bold tracking-widest"
                     >
                       <span>
@@ -166,7 +166,7 @@ export function Projectcard() {
       bg-black text-white rounded-[4px] md:text-[17px]
       ">More coming soon</p> */}
           <ShinyButton
-            className="ml-4 md:ml-8 rounded-[4px] bg-black text-white
+            className="ml-4 md:ml-8 rounded-[5px] bg-black text-white
       instrument-serif-bold text-[17px] px-4 cursor-default border dark:border-neutral-600
       "
           >

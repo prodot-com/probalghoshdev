@@ -36,7 +36,7 @@ export function Contact() {
 
           <button
             onClick={handleCopy}
-            className="group cursor-pointer flex items-center justify-center gap-2 px-4 py-2 text-[15px] md:text-sm font-semibold rounded-[4px] border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors"
+            className="group cursor-pointer flex items-center justify-center gap-2 px-4 py-2 text-[15px] md:text-sm font-semibold rounded-[5px] border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors"
           >
             <Copy className="w-5 h-5" />
             <span className="instrument-serif-bold tracking-wider text-[16px]">

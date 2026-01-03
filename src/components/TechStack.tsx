@@ -72,9 +72,9 @@ const TechIcon = ({ icon, name }: { icon: string; name: string }) => {
       className={cn(
         "relative h-full w-35 md:w-40 cursor-pointer overflow-hidden rounded-[7px] py-3 md:p-4",
         // light styles
-        "border-gray-950/[.1] bg-gray-200 hover:bg-gray-950/[.05]",
+        "border-gray-950/10 bg-gray-200 hover:bg-gray-950/5",
         // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+        "dark:border-gray-50/10 dark:bg-gray-50/10 dark:hover:bg-gray-50/15"
       )}
     >
       <div className="flex flex-row items-center justify-center gap-3">
@@ -105,8 +105,8 @@ export function TechStackMarquee() {
           <TechIcon key={tech.name} {...tech} />
         ))}
       </Marquee>
-      <div className="absolute left-3 top-8 md:left-10 md:top-8 w-20 h-full bg-gradient-to-r from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
-      <div className="absolute right-3 md:right-10 md:top-8 top-8 w-20 h-full bg-gradient-to-l from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
+      <div className="absolute left-3 top-8 md:left-10 md:top-8 w-20 h-full bg-linear-to-r from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
+      <div className="absolute right-3 md:right-10 md:top-8 top-8 w-20 h-full bg-linear-to-l from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
     </div>
   );
 }
