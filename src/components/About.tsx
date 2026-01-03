@@ -2,7 +2,7 @@ import { Tooltip } from "./ui/tooltip-card";
 
 export default function About(){
   return (
-    <div className="w-full md:pr-17 max-w-5xl px-4 lg:ml-12 mt-9 z-0">
+    <div className="w-full md:pr-17 max-w-5xl px-4 md:pl-10 mt-9 z-0">
       <div className="flex">
         <p className=" text-[27px] md:text-[28px] text-black dark:text-white instrument-serif-bold">
           About.

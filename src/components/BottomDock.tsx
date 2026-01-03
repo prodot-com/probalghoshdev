@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
-import { CalendarIcon, HomeIcon, MailIcon, Moon, PencilIcon, Sun } from "lucide-react"
+import { CalendarIcon, HomeIcon, MailIcon, Moon, File, Sun } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
@@ -15,6 +15,7 @@ import {
 import { Dock, DockIcon } from "./ui/dock"
 import { useTheme } from "next-themes"
 import { AnimatePresence, motion } from "motion/react"
+import { GithUbLink, LinkedInLink, MailLink, ResumeLink, XLink } from "@/lib/Links"
 
 export type IconProps = React.HTMLAttributes<SVGElement>
 
@@ -39,19 +40,6 @@ const Icons = {
       />
     </svg>
   ),
-  youtube: (props: IconProps) => (
-    <svg
-      width="32px"
-      height="32px"
-      viewBox="0 0 32 32"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <title>youtube</title>
-      <path d="M29.41,9.26a3.5,3.5,0,0,0-2.47-2.47C24.76,6.2,16,6.2,16,6.2s-8.76,0-10.94.59A3.5,3.5,0,0,0,2.59,9.26,36.13,36.13,0,0,0,2,16a36.13,36.13,0,0,0,.59,6.74,3.5,3.5,0,0,0,2.47,2.47C7.24,25.8,16,25.8,16,25.8s8.76,0,10.94-.59a3.5,3.5,0,0,0,2.47-2.47A36.13,36.13,0,0,0,30,16,36.13,36.13,0,0,0,29.41,9.26ZM13.2,20.2V11.8L20.47,16Z" />
-    </svg>
-  ),
   github: (props: IconProps) => (
     <svg viewBox="0 0 438.549 438.549" {...props}>
       <path
@@ -64,29 +52,29 @@ const Icons = {
 
 const DATA = {
   navbar: [
-    { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
+    { href: "/", icon: HomeIcon, label: "Home", target: "_self"},
+    { href: ResumeLink, icon: File, label: "Resume", target: "_blank"},
   ],
   contact: {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "#",
+        url: GithUbLink,
         icon: Icons.github,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "#",
+        url: LinkedInLink,
         icon: Icons.linkedin,
       },
       X: {
         name: "X",
-        url: "#",
+        url: XLink,
         icon: Icons.x,
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: MailLink,
         icon: Icons.email,
       },
     },
@@ -120,6 +108,7 @@ export function BottomDock() {
                   <Link
                     href={item.href}
                     aria-label={item.label}
+                    target={item.target}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12 rounded-full"
@@ -142,6 +131,7 @@ export function BottomDock() {
                   <Link
                     href={social.url}
                     aria-label={social.name}
+                    target="_blank"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12 rounded-full"

@@ -14,7 +14,7 @@ export function Contact() {
   };
 
   return (
-    <div className="heading-font sm:pr-17 px-4 sm:pl-11 mt-2 sm:mt-1 z-0 w-full max-w-5xl border-neutral-500 dark:border-neutral-600 pt-4">
+    <div className="heading-font sm:pr-17 px-4 sm:pl-10 mt-2 sm:mt-1 z-0 w-full max-w-5xl border-neutral-500 dark:border-neutral-600 pt-4">
       <section className="w-full pt-0 md:pl-0 md:pt-0 rounded-lg flex flex-col gap-4">
         <h2 className="font-bold text-[27px] md:text-[27px] instrument-serif-bold text-neutral-900 dark:text-neutral-100">
           Contact.

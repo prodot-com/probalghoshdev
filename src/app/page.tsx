@@ -24,7 +24,7 @@ export default function Home() {
 
           <Hero />
 
-          <Reveal delay={0.5}>
+          <Reveal delay={0.1}>
             <Profile />
           </Reveal>
 

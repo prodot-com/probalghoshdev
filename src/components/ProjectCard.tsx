@@ -61,7 +61,7 @@ export function Projectcard() {
           {projects.map((project, index) => (
             <Card
               key={`${project.name}-${index}`}
-              className="relative w-full max-w-sm overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="relative w-full  max-w-sm overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border border-indigo-800/20 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {/* Project Image */}
               {project.image && (
@@ -70,7 +70,7 @@ export function Projectcard() {
                   alt={project.name}
                   width={400}
                   height={192}
-                  className="w-full h-48 object-cover rounded-t-[7px] border-b dark:border-white/10 border-white/20"
+                  className="object-cover rounded-t-[7px] border-b dark:border-white/10 border-white/20"
                 />
               )}
 
@@ -145,7 +145,6 @@ export function Projectcard() {
                 )}
               </CardFooter>
 
-              {/* Animated Borders */}
               <BorderBeam
                 duration={6}
                 size={200}

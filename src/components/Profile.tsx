@@ -1,8 +1,7 @@
-import profile from "../../assets/DP4.jpg"
 
 export default function Profile(){
   return (
-          <div className=" w-full max-w-5xl mt-[-56px] md:mt-[-72px] px-4 lg:ml-12 z-20">
+          <div className="w-full max-w-5xl mt-[-56px] md:mt-[-72px] px-4 sm:pl-10 z-20">
             <img
               src="/profile.jpg"
               alt="Profile Image"
