@@ -30,7 +30,7 @@ const projects: Project[] = [
     tools: ["Next.js", "Tailwind", "GraphQL APi", "Groq API"],
     image: "/githubwrapx.png",
     link: {
-      gitlink: "https://github.com/prodotcom/GithubWrap",
+      gitlink: "https://github.com/prodot-com/GithubWrap",
       livelink: "https://githubwrapx.vercel.app",
     },
     status: true
