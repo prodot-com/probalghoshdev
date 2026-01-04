@@ -25,6 +25,18 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name:"GithubWrapX",
+    description: "visualize coding activity throughout 2025 with animations, personas, and a final shareable card. Get AI quote.",
+    tools: ["Next.js", "Tailwind", "GraphQL APi", "Groq API"],
+    image: "/githubwrapx.png",
+    link: {
+      gitlink: "https://github.com/prodotcom/GithubWrap",
+      livelink: "https://githubwrapx.vercel.app",
+    },
+    status: true
+
+  },
+  {
     name: "Cric-Scoreboard",
     description:
       "CricScoreBoard is a full-stack MERN application that provides live ball-by-ball scoring for local cricket matches. It includes an admin panel for scoring and a shareable spectator link, with updates powered by Socket.IO.",
@@ -61,9 +73,8 @@ export function Projectcard() {
           {projects.map((project, index) => (
             <Card
               key={`${project.name}-${index}`}
-              className="relative w-full  max-w-sm overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border border-indigo-800/20 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="relative w-full md:min-h-109 max-w-sm overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border border-indigo-800/20 shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              {/* Project Image */}
               {project.image && (
                 <Image
                   src={project.image}
@@ -74,7 +85,6 @@ export function Projectcard() {
                 />
               )}
 
-              {/* Header */}
               <CardHeader className="px-3 md:pt-1">
                 <CardTitle className="instrument-serif-bold text-[24px] md:text-[20px]">
                   {project.name}
@@ -85,7 +95,6 @@ export function Projectcard() {
                 </div>
               </CardHeader>
 
-              {/* Content */}
               <CardContent className="px-3 pt-1 md:pt-2 mr-4">
                 <div className="flex flex-wrap gap-2">
                   {project.tools.map((tool) => (
