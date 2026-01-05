@@ -28,7 +28,7 @@ const projects: Project[] = [
     name:"GithubWrapX",
     description: "visualize coding activity throughout the year with animations, persona, and final shareable card. Get AI quote.",
     tools: ["Next.js", "Tailwind", "GraphQL APi", "Groq API"],
-    image: "/githubwrapx.png",
+    image: "/githubwrapx2.png",
     link: {
       gitlink: "https://github.com/prodot-com/GithubWrap",
       livelink: "https://githubwrapx.vercel.app",
@@ -39,9 +39,9 @@ const projects: Project[] = [
   {
     name: "Cric-Scoreboard",
     description:
-      "CricScoreBoard is a full-stack MERN application that provides live ball-by-ball scoring for local cricket matches. It includes an admin panel for scoring and a shareable spectator link, with updates powered by Socket.IO.",
-    tools: ["React", "Node.js", "MongoDB", "Socket.IO", "Tailwind CSS"],
-    image: "/cricScoreboard.png",
+      "Provides live ball-by-ball scoring for cricket matches. It includes an admin panel for scoring and a shareable spectator link, with updates powered by Socket.IO.",
+    tools: ["React", "Node.js", "MongoDB", "Socket.IO", "Tailwind"],
+    image: "/cricScoreboard2.png",
     link: {
       gitlink: "https://github.com/prodot-com/Cric-Scoreboard",
       livelink: "https://cric-scoreboard.vercel.app/",
@@ -51,9 +51,9 @@ const projects: Project[] = [
   {
     name: "SyncSpace",
     description:
-      "A robust application built for streamlined team collaboration and administrative control. SyncSpace features secure user authentication, role-based access, comprehensive team and task management, and real-time notifications.",
-    tools: ["React", "Node.js", "MongoDB", "Git", "Tailwind CSS", "Socket.IO"],
-    image: "/syncSpace.png",
+      "Built for streamlined team collaboration. Features secure user authentication, role-based access, comprehensive team and task management, realtime notifications.",
+    tools: ["React", "Node.js", "MongoDB", "Git", "Tailwind", "Socket.IO"],
+    image: "/syncSpace2.png",
     link: {
       gitlink: "https://github.com/prodot-com/SyncSpace",
       livelink: "https://sync-space-dun.vercel.app/",
@@ -73,7 +73,7 @@ export function Projectcard() {
           {projects.map((project, index) => (
             <Card
               key={`${project.name}-${index}`}
-              className="relative w-full md:min-h-109 max-w-sm overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border border-indigo-800/20 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="relative w-full md:min-h-101 max-w-sm overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border border-indigo-800/20 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {project.image && (
                 <Image
@@ -100,7 +100,7 @@ export function Projectcard() {
                   {project.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="text-[13px] md:text-[12px] font-normal bg-neutral-200 dark:bg-neutral-800 text-gray-800 dark:text-white px-2 py-1 rounded-[5px] border
+                      className="text-[12px] md:text-[11px] font-normal bg-neutral-200 dark:bg-neutral-800 text-gray-800 dark:text-white px-1.25 py-1 rounded-[5px] border
                   instrument-serif
                   "
                     >

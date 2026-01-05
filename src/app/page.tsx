@@ -16,7 +16,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 bg-white dark:bg-neutral-900 min-h-screen">
+    <div className="grid grid-cols-1 md:grid-cols-4 bg-white dark:bg-neutral-900 min-h-screen">
       <SidePattern />
 
       <div className="col-span-1 lg:col-span-2 selection:bg-orange-300 dark:selection:bg-indigo-500">
