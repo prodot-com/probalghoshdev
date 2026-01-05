@@ -72,7 +72,7 @@ const DATA = {
         url: XLink,
         icon: Icons.x,
       },
-      email: {
+      Mail: {
         name: "Send Email",
         url: MailLink,
         icon: Icons.email,

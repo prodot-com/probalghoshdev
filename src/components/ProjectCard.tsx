@@ -26,7 +26,7 @@ type Project = {
 const projects: Project[] = [
   {
     name:"GithubWrapX",
-    description: "visualize coding activity throughout 2025 with animations, personas, and a final shareable card. Get AI quote.",
+    description: "visualize coding activity throughout the year with animations, persona, and final shareable card. Get AI quote.",
     tools: ["Next.js", "Tailwind", "GraphQL APi", "Groq API"],
     image: "/githubwrapx.png",
     link: {
