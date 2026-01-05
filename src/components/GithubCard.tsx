@@ -8,6 +8,20 @@ import { Tooltip } from "./ui/tooltip-card";
 
 export function GithubCard() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(
+          "ontouchstart" in window || navigator.maxTouchPoints > 0
+        );
+      };
+
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+      return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
   useEffect(() => {
     const currentTheme = document.documentElement.classList.contains("dark");
@@ -23,14 +37,14 @@ export function GithubCard() {
   }, []);
 
   return (
-    <div className="selection:bg-neutral-700 mt-10 px-3 md:px-4 md:pl-9 flex flex-col gap-3 w-full max-w-5xl">
+    <div className=" selection:bg-neutral-700 mt-10 px-3 md:px-4 md:pl-9 flex flex-col gap-3 w-full max-w-5xl">
       <Card
         className="relative w-full overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border 
-            border-white/20 rounded-[5px] shadow-lg hover:shadow-xl transition-all duration-300 min-h-52.5"
+            border-white/20  rounded-[5px] shadow-lg hover:shadow-xl transition-all duration-300 min-h-52.5"
       >
         <CardHeader className="px-1 md:px-2 md:pt-1">
           <div className="md:px-0">
-            <div className="font-bold text-black  dark:text-white text-[26px] instrument-serif-bold md:text-[27px] selection:bg-neutral-600">
+            <div className="font-bold text-black pt-1 md:pt-0 pl-2 md:pl-0 dark:text-white text-[26px] instrument-serif-bold md:text-[27px] selection:bg-neutral-600">
               GitHub Contributions •{" "}
               <Tooltip
                 containerClassName="instrument-serif-italic-bold"
@@ -54,12 +68,11 @@ export function GithubCard() {
           </div>
         </CardHeader>
 
-        {/* Content */}
         <CardContent className="px-3 md:px-2 pt-1">
           <div className="">
             <GitHubCalendar
               username="prodot-com"
-              blockSize={8.2}
+              blockSize={isMobile? 12 : 8.2}
               fontSize={12}
               errorMessage="Error while fetching data"
               showWeekdayLabels
