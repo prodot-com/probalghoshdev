@@ -24,7 +24,7 @@ export function Projectcard() {
           {projects.map((project, index) => (
             <Card
               key={`${project.name}-${index}`}
-              className="relative w-full md:min-h-101 max-w-sm overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border border-indigo-800/20 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="relative w-full md:min-h-101 md:max-h-101 max-w-sm overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border border-indigo-800/20 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {project.image && (
                 <Image
@@ -89,18 +89,6 @@ export function Projectcard() {
                         <Github className="w-4 h-4" /> Source
                       </a>
                     )}
-
-                    <div
-                      className="flex items-center gap-1 text-[13px] 
-                  bg-green-600 text-white dark:text-black px-2 py-1 
-                  rounded-[5px] border
-                    instrument-serif-bold tracking-widest"
-                    >
-                      <span>
-                        <div className="w-2 h-2 animate-pulse bg-white dark:bg-black rounded-full"></div>
-                      </span>
-                      {project.status ? "Working" : "In Developement"}
-                    </div>
                   </div>
                 )}
               </CardFooter>
