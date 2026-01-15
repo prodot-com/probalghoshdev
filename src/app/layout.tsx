@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Instrument_Serif, Kablammo } from "next/font/google";
 import "./globals.css";
 import { BottomDock } from "@/components/BottomDock";
@@ -45,11 +46,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+  const res = await fetch('http://localhost:3000/api/v1/tracking',{
+    cache: "force-cache",
+  });
+
+  const analytics = await res.json();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${instrumentSerif.variable} ${kablammo.variable}`}>
@@ -63,7 +71,7 @@ export default function RootLayout({
           <SpeedInsights/>
           <BottomDock />
         </ThemeProvider>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="652051f2-24d5-4acb-b79c-82930a61d307"></script>
+        <Script strategy="afterInteractive" src={analytics.src} data-website-id= {analytics.websiteId}></Script>
       </body>
     </html>
   );
