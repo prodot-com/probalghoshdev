@@ -59,11 +59,11 @@ export default function RootLayout({
           <Navbar />
           <ScrollProgress className="fixed left-0 w-full h-1.25 transition-all duration-300" />
           {children}
-          <Analytics/>
+          {/* <Analytics/> */}
           <SpeedInsights/>
           <BottomDock />
         </ThemeProvider>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="652051f2-24d5-4acb-b79c-82930a61d307"></script>
+        {/* <script defer src="https://cloud.umami.is/script.js" data-website-id="652051f2-24d5-4acb-b79c-82930a61d307"></script> */}
       </body>
     </html>
   );
