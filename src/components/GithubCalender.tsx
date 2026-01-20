@@ -8,8 +8,8 @@ type Day = {
 };
 
 export default function GithubCalendar({
-  isDarkMode = true,
-  blockSize = 12,
+  isDarkMode,
+  blockSize = 9,
 }: {
   isDarkMode?: boolean;
   blockSize?: number;
@@ -52,7 +52,7 @@ export default function GithubCalendar({
   if (error) return <p className="text-red-500">Failed to load GitHub data</p>;
 
   return (
-    <div className={`p-6 rounded-lg ${isDarkMode ? "bg-black text-gray-400" : "bg-white text-gray-600"} font-sans text-xs`}>
+    <div className={`p- rounded-lg ${isDarkMode ? "bg-black text-gray-400" : "bg-white text-gray-600"} font-sans text-xs`}>
       
       {/* Month Labels (Simplified) */}
       <div className="flex mb-2 ml-2 gap-[26px]">
