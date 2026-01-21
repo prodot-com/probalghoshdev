@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { BorderBeam } from "./ui/border-beam";
 import { Tooltip } from "./ui/tooltip-card";
-import GithubCalendar from "./GithubCalender";
-// import GithubCalendar from "./GithubCalender";
+import { GitHubCalendar } from 'react-github-calendar';
 
 export function GithubCard() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -38,10 +37,10 @@ export function GithubCard() {
   }, []);
 
   return (
-    <div className=" selection:bg-neutral-700 mt-10 px-3 md:px-4 md:pl-9 flex flex-col gap-3 w-full max-w-5xl">
+    <div className="selection:bg-neutral-700 mt-10 px-3 md:px-4 md:pl-9 flex flex-col gap-3 w-full max-w-5xl">
       <Card
-        className="relative w-full overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md
-            border-0 rounded-[5px] transition-all duration-300 min-h-52.5"
+        className="relative w-full overflow-hidden bg-white/10 dark:bg-black 
+            rounded-[5px] transition-all duration-300 min-h-52.5 border-none"
       >
         <CardHeader className="px-1 md:px-2 md:pt-1">
           <div className="md:px-0">
@@ -69,24 +68,22 @@ export function GithubCard() {
           </div>
         </CardHeader>
 
-        {/* <CardContent className="px-3 md:px-2 pt-1">
+        <CardContent className="px-3 md:px-2 pt-1">
           <div className="">
             <GitHubCalendar
               username="prodot-com"
-              blockSize={isMobile? 12 : 8.2}
+              blockSize={isMobile? 12 : 9}
               fontSize={12}
               errorMessage="Error while fetching data"
-              showWeekdayLabels
+              // showWeekdayLabels
               colorScheme={isDarkMode ? "dark" : "light"}
               style={{
                 color: isDarkMode ? "white" : "black",
                 fontFamily: "instrument-serif",
+                // border: "2px solid black"
               }}
             />
           </div>
-        </CardContent> */}
-        <CardContent className="px-3 md:px- pt-1">
-          <GithubCalendar isDarkMode = {isDarkMode}/>
         </CardContent>
 
         <BorderBeam

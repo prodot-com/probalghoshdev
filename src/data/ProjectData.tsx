@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     name:"GithubWrapX",
     description: "Visualize coding activity throughout the year with animations, persona, and final shareable card. Get AI quote.",
-    tools: ["Next.js", "Tailwind", "GraphQL APi", "OpenAI"],
+    tools: ["Next.js", "Tailwind", "GraphQL", "OpenAI"],
     image: "/githubwrapx.png",
     link: {
       gitlink: "https://github.com/prodot-com/GithubWrap",
