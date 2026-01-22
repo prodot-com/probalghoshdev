@@ -9,11 +9,19 @@ export default function Profile(){
               shadow-2xl shadow-black/75 dark:shadow-white/15 mb-4 object-cover md:ml-2"
             />
             <div className="">
-              <div className="w-full md:max-h-13 md:w-auto flex justify-between mr-12">
+              <div className="flex items-end gap-4">
+              <div className="w-full md:max-h-13 md:w-auto flex justify-between items-start">
                   <h2 className="instrument-serif-bold text-black dark:text-white text-[45px] md:text-[45px] ">
-                Probal Ghosh
-              </h2>
-            </div>
+                  Probal Ghosh
+                </h2>
+              </div>
+              <div className="border border-neutral-600 bg-neutral-100 dark:bg-zinc-800 rounded-2xl px-2 py-1 flex items-center gap-1.5 text-neutral-600 dark:text-neutral-400">
+                <div className="w-2.5 h-2.5 rounded-full bg-green-600"></div>
+                <p className="text-[18px] instrument-serif tracking-wide">
+                  Available for work
+                </p>
+              </div>
+              </div>
               
               <p className="instrument-serif-italic dark:text-neutral-500 text-neutral-800 text-[22px] md:text-[22px]">
                 21 • engineer • fullstack developer

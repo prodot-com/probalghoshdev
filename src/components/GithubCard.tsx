@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from "./ui/card";
 import { BorderBeam } from "./ui/border-beam";
 import { Tooltip } from "./ui/tooltip-card";
 import { GitHubCalendar } from 'react-github-calendar';
+import GithubCalendar2 from "./GithubCalender";
 
 export function GithubCard() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -68,7 +69,7 @@ export function GithubCard() {
           </div>
         </CardHeader>
 
-        <CardContent className="px-3 md:px-2 pt-1">
+        {/* <CardContent className="px-3 md:px-2 pt-1">
           <div className="">
             <GitHubCalendar
               username="prodot-com"
@@ -84,6 +85,9 @@ export function GithubCard() {
               }}
             />
           </div>
+        </CardContent> */}
+        <CardContent className="px-3 md:px-2 pt-1">
+          <GithubCalendar2/>
         </CardContent>
 
         <BorderBeam
