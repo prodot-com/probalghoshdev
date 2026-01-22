@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 type Day = {
   date: string;
   count: number;
+  formattedDate: string
 };
 
 interface CalendarProps {
@@ -14,25 +20,19 @@ interface CalendarProps {
 }
 
 export default function GithubCalendar({
-  isDarkMode = false, // Set false to match your initial image
+  isDarkMode,
   blockSize = 10,
   dataUrl = "/api/v1/calendar"
 }: CalendarProps) {
   const [days, setDays] = useState<Day[]>([]);
   const [error, setError] = useState(false);
-  const [hovered, setHovered] = useState<{ day: Day; x: number; y: number } | null>(null);
 
   useEffect(() => {
-    // Replace this with your actual fetch or local mock data
     fetch("/api/v1/calender")
       .then((res) => res.json())
       .then(setDays)
       .catch(() => setError(true));
   }, [dataUrl]);
-
-  // useEffect(()=>{
-  //   console.log(days)
-  // })
 
   const getColor = (count: number) => {
     if (isDarkMode) {
@@ -42,7 +42,6 @@ export default function GithubCalendar({
       if (count < 10) return "#26a641";
       return "#39d353";
     }
-    // Light Mode (matches your original image)
     if (count === 0) return "#ebedf0";
     if (count < 3) return "#9be9a8";
     if (count < 6) return "#40c463";
@@ -50,21 +49,30 @@ export default function GithubCalendar({
     return "#216e39";
   };
 
-  // Grouping logic memoized for performance
   const { weeks, monthLabels, totalContributions } = useMemo(() => {
     const weeksArr: Day[][] = [];
-    const labels: {number: number, label: string; index: number }[] = [];
+    const labels: {formatedDate: string, number: number, label: string; index: number }[] = [];
     let total = 0;
 
     const now = new Date();
-    const currentMonth = now.getMonth(); // Jan = 0
-    console.log(currentMonth)
+    const currentMonth = now.getMonth();
 
     for (let i = 0; i < days.length; i += 7) {
-      const week = days.slice(i, i + 7);
+      const week = days.slice(i, i + 7).map((d) => {
+        const dateObj = new Date(d.date);
+
+        return {
+          ...d,
+          formattedDate: dateObj.toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          }),
+        };
+      });
+
       weeksArr.push(week);
 
-      // count total
       week.forEach(d => (total += d.count));
 
       const firstDay = week[0];
@@ -72,12 +80,6 @@ export default function GithubCalendar({
 
       const date = new Date(firstDay.date);
       const month = date.getMonth();
-      // console.log(month)
-
-      // Normalize month so year "starts" after current month
-      // Example: currentMonth = Jan (0)
-      // Feb (1) -> 1
-      // Jan (0) -> 12
       const normalizedMonth =
         month <= currentMonth ? month + 12 : month;
 
@@ -87,6 +89,7 @@ export default function GithubCalendar({
           number: i,
           label: date.toLocaleString("en-US", { month: "short" }),
           index: weeksArr.length - 1,
+          formatedDate: date.toLocaleString("en-US", { month: "short" , day: "numeric",  year: "numeric"}),
         });
       } else {
         const prevDate = new Date(prevWeek[0].date);
@@ -99,9 +102,9 @@ export default function GithubCalendar({
             number: i,
             label: date.toLocaleString("en-US", { month: "short" }),
             index: weeksArr.length - 1,
+            formatedDate: date.toLocaleString("en-US", { month: "short" , day: "numeric",  year: "numeric"}),
           });
         }
-        console.log(labels)
       }
     }
 
@@ -124,10 +127,7 @@ export default function GithubCalendar({
         color: isDarkMode ? "#8b949e" : "#24292f"
       }}
     >
-      {/* Container for Labels + Grid */}
       <div className="relative">
-        
-        {/* Month Labels row */}
         <div className="flex mb-2 ml- text-[11px] h-4 relative">
           {monthLabels
           .filter((m)=> m.number !== 0)
@@ -149,21 +149,23 @@ export default function GithubCalendar({
             {weeks.map((week, wi) => (
               <div key={wi} className="flex flex-col gap-[3px]">
                 {week.map((day) => (
-                  <div
-                    key={day.date}
-                    onMouseEnter={(e) => {
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      setHovered({ day, x: rect.left + rect.width / 2, y: rect.top });
-                    }}
-                    onMouseLeave={() => setHovered(null)}
-                    className="transition-colors duration-200"
-                    style={{
-                      width: blockSize,
-                      height: blockSize,
-                      backgroundColor: getColor(day.count),
-                      borderRadius: "2px",
-                    }}
-                  />
+                  <Tooltip key={day.date}>
+                    <TooltipTrigger>
+                      <div
+                        key={day.date}
+                        className="transition-colors duration-200"
+                        style={{
+                          width: blockSize,
+                          height: blockSize,
+                          backgroundColor: getColor(day.count),
+                          borderRadius: "2px",
+                        }}
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{`${day.count} contribution on ${day.formattedDate}`}</p>
+                    </TooltipContent>
+                  </Tooltip>
                 ))}
               </div>
             ))}
@@ -171,17 +173,6 @@ export default function GithubCalendar({
         </div>
       </div>
 
-      {/* Tooltip implementation */}
-      {hovered && (
-        <div 
-          className="fixed pointer-events-none z-50 px-2 py-1 text-[11px] text-white bg-gray-800 rounded shadow-lg -translate-x-1/2 -translate-y-full mb-2"
-          style={{ left: hovered.x, top: hovered.y - 5 }}
-        >
-          <strong>{hovered.day.count} contributions</strong> on {new Date(hovered.day.date).toDateString()}
-        </div>
-      )}
-
-      {/* Footer Info */}
       <div className="flex justify-between items-center mt-4 text-[12px]">
         <span>{totalContributions} contributions in the last year</span>
         <div className="flex items-center gap-1 text-[11px]">

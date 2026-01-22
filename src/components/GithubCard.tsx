@@ -87,7 +87,8 @@ export function GithubCard() {
           </div>
         </CardContent> */}
         <CardContent className="px-3 md:px-2 pt-1">
-          <GithubCalendar2/>
+          <GithubCalendar2
+          isDarkMode = {isDarkMode}/>
         </CardContent>
 
         <BorderBeam
