@@ -22,13 +22,13 @@ interface CalendarProps {
 export default function GithubCalendar({
   isDarkMode,
   blockSize = 10,
-  dataUrl = "/api/v1/calendar"
+  dataUrl = "/api/v1/githubData"
 }: CalendarProps) {
   const [days, setDays] = useState<Day[]>([]);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch("/api/v1/calender")
+    fetch(dataUrl)
       .then((res) => res.json())
       .then(setDays)
       .catch(() => setError(true));
