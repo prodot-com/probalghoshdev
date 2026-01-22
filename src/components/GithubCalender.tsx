@@ -5,6 +5,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
+  TooltipProvider
 } from "@/components/ui/tooltipCustom"
 
 type Day = {
@@ -60,7 +61,6 @@ export default function GithubCalendar({
     for (let i = 0; i < days.length; i += 7) {
       const week = days.slice(i, i + 7).map((d) => {
         const dateObj = new Date(d.date);
-
         return {
           ...d,
           formattedDate: dateObj.toLocaleDateString("en-US", {
@@ -72,7 +72,6 @@ export default function GithubCalendar({
       });
 
       weeksArr.push(week);
-
       week.forEach(d => (total += d.count));
 
       const firstDay = week[0];
@@ -80,8 +79,7 @@ export default function GithubCalendar({
 
       const date = new Date(firstDay.date);
       const month = date.getMonth();
-      const normalizedMonth =
-        month <= currentMonth ? month + 12 : month;
+      const normalizedMonth = month <= currentMonth ? month + 12 : month;
 
       const prevWeek = weeksArr[weeksArr.length - 2];
       if (!prevWeek) {
@@ -94,8 +92,7 @@ export default function GithubCalendar({
       } else {
         const prevDate = new Date(prevWeek[0].date);
         const prevMonth = prevDate.getMonth();
-        const prevNormalized =
-          prevMonth <= currentMonth ? prevMonth + 12 : prevMonth;
+        const prevNormalized = prevMonth <= currentMonth ? prevMonth + 12 : prevMonth;
 
         if (prevNormalized !== normalizedMonth) {
           labels.push({
@@ -108,80 +105,77 @@ export default function GithubCalendar({
       }
     }
 
-    return {
-      weeks: weeksArr,
-      monthLabels: labels,
-      totalContributions: total,
-    };
+    return { weeks: weeksArr, monthLabels: labels, totalContributions: total };
   }, [days]);
 
+  const gridWidth = useMemo(() => {
+    const gap = 3;
+    return weeks.length * (blockSize + gap);
+  }, [weeks, blockSize]);
 
   if (error) return <div className="p-4 text-red-500">Failed to load data.</div>;
 
   return (
-    <div 
-      className="inline-block p-2 bg-white/10 dark:bg-black"
-    >
-      <div className="relative">
-        <div className="flex mb-2 ml- text-[11px] h-4 relative">
-          {monthLabels
-          .filter((m)=> m.number !== 0)
-          .map((m, i) => (
-            <span 
-              key={i} 
-              className="absolute instrument-serif tracking-wide text-[12px]" 
-              style={{ left: `${m.index * (blockSize + 3)}px` }}
-            >
-              {m.label}
-            </span>
-          ))}
+    <TooltipProvider>
+      <div className="w-full max-w-full bg-white/10 dark:bg-black rounded-sm overflow-hidden border border-white/5">
+        <div className="overflow-x-auto pb-2 scrollbar-hide">
+          <div style={{ width: gridWidth }} className="relative min-w-max">
+            
+            <div className="flex mb-2 text-[11px] h-4 relative">
+              {monthLabels
+                .filter((m) => m.number !== 0)
+                .map((m, i) => (
+                  <span
+                    key={i}
+                    className="absolute instrument-serif tracking-wide text-[12px] whitespace-nowrap"
+                    style={{ left: `${m.index * (blockSize + 3)}px` }}
+                  >
+                    {m.label}
+                  </span>
+                ))}
+            </div>
+
+            <div className="flex gap-0.75">
+              {weeks.map((week, wi) => (
+                <div key={wi} className="flex flex-col gap-0.75">
+                  {week.map((day) => (
+                    <Tooltip key={day.date}>
+                      <TooltipTrigger asChild>
+                        <div
+                          className="transition-colors duration-200 cursor-pointer"
+                          style={{
+                            width: blockSize,
+                            height: blockSize,
+                            backgroundColor: getColor(day.count),
+                            borderRadius: "2px",
+                          }}
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent className="instrument-serif tracking-wide text-[13px]">
+                        <p>{`${day.count} Contribution on ${day.formattedDate}`}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="flex gap-2">
-
-          <div className="flex gap-0.75">
-            {weeks.map((week, wi) => (
-              <div key={wi} className="flex flex-col gap-0.75">
-                {week.map((day) => (
-                  <Tooltip key={day.date}>
-                    <TooltipTrigger>
-                      <div
-                        key={day.date}
-                        className="transition-colors duration-200"
-                        style={{
-                          width: blockSize,
-                          height: blockSize,
-                          backgroundColor: getColor(day.count),
-                          borderRadius: "2px",
-                        }}
-                      />
-                    </TooltipTrigger>
-                    <TooltipContent
-                    className="instrument-serif tracking-wide text-[13px]"
-                    >
-                      <p>{`${day.count} Contribution on ${day.formattedDate}`}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                ))}
-              </div>
+        <div className="flex justify-between items-center mt-4 text-[12px] instrument-serif tracking-wide opacity-80">
+          <span>{totalContributions} contributions in the last year</span>
+          <div className="flex items-center gap-1 text-[11px]">
+            <span className="mr-1">Less</span>
+            {[0, 2, 5, 8, 12].map(v => (
+              <div 
+                key={v} 
+                style={{ width: blockSize, height: blockSize, backgroundColor: getColor(v), borderRadius: '2px' }} 
+              />
             ))}
+            <span className="ml-1">More</span>
           </div>
         </div>
       </div>
-
-      <div className="flex justify-between items-center mt-4 text-[12px] instrument-serif tracking-wide">
-        <span>{totalContributions} contributions in the last year</span>
-        <div className="flex items-center gap-1 text-[11px]">
-          <span className="mr-1">Less</span>
-          {[0, 2, 5, 8, 12].map(v => (
-            <div 
-              key={v} 
-              style={{ width: blockSize, height: blockSize, backgroundColor: getColor(v), borderRadius: '2px' }} 
-            />
-          ))}
-          <span className="ml-1">More</span>
-        </div>
-      </div>
-    </div>
+    </TooltipProvider>
   );
 }
