@@ -4,6 +4,7 @@ import * as React from "react"
 import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 
 import { cn } from "@/lib/utils"
+import { Square } from "lucide-react"
 
 function TooltipProvider({
   delayDuration = 0,
@@ -36,7 +37,7 @@ function TooltipTrigger({
 
 function TooltipContent({
   className,
-  sideOffset = 0,
+  sideOffset = 9,
   children,
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Content>) {
@@ -46,13 +47,21 @@ function TooltipContent({
         data-slot="tooltip-content"
         sideOffset={sideOffset}
         className={cn(
-          "bg-foreground text-background animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-fit origin-(--radix-tooltip-content-transform-origin) rounded-md px-3 py-1.5 text-xs text-balance",
+          "bg-neutral-300 dark:bg-neutral-700 animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-fit origin-(--radix-tooltip-content-transform-origin) rounded-[5px] px-2 py-1 text-balance",
           className
         )}
         {...props}
       >
         {children}
-        <TooltipPrimitive.Arrow className="bg-foreground fill-foreground z-50 size-2.5 translate-y-[calc(-50%-2px)] rotate-45 rounded-[2px]" />
+        {/* <TooltipPrimitive.Arrow className="bg-indigo-700 z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px]" /> */}
+        <div className="flex justify-center">
+          <Square className="bg-neutral-300 dark:bg-neutral-700 fill-neutral-300 dark:fill-neutral-700 stroke-0 absolute w-3 h-3 rotate-45 top-5
+        data-[side=top]:-bottom-1.5 data-[side=top]:left-1/2 data-[side=top]:-translate-x-1/2
+        data-[side=bottom]:-top-1.5 data-[side=bottom]:left-1/2 data-[side=bottom]:-translate-x-1/2
+        data-[side=left]:-right-1.5 data-[side=left]:top-1/2 data-[side=left]:-translate-y-1/2
+        data-[side=right]:-left-1.5 data-[side=right]:top-1/2 data-[side=right]:-translate-y-1/2
+      "/>
+        </div>
       </TooltipPrimitive.Content>
     </TooltipPrimitive.Portal>
   )

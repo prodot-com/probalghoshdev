@@ -5,7 +5,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltipCustom"
 
 type Day = {
   date: string;
@@ -120,12 +120,7 @@ export default function GithubCalendar({
 
   return (
     <div 
-      className="inline-block p-2"
-      style={{ 
-        backgroundColor: isDarkMode ? "#0d1117" : "#ffffff",
-        borderColor: isDarkMode ? "#30363d" : "#e1e4e8",
-        color: isDarkMode ? "#8b949e" : "#24292f"
-      }}
+      className="inline-block p-2 bg-white/10 dark:bg-black"
     >
       <div className="relative">
         <div className="flex mb-2 ml- text-[11px] h-4 relative">
@@ -134,7 +129,7 @@ export default function GithubCalendar({
           .map((m, i) => (
             <span 
               key={i} 
-              className="absolute" 
+              className="absolute instrument-serif tracking-wide text-[12px]" 
               style={{ left: `${m.index * (blockSize + 3)}px` }}
             >
               {m.label}
@@ -144,10 +139,9 @@ export default function GithubCalendar({
 
         <div className="flex gap-2">
 
-          {/* Main Grid */}
-          <div className="flex gap-[3px]">
+          <div className="flex gap-0.75">
             {weeks.map((week, wi) => (
-              <div key={wi} className="flex flex-col gap-[3px]">
+              <div key={wi} className="flex flex-col gap-0.75">
                 {week.map((day) => (
                   <Tooltip key={day.date}>
                     <TooltipTrigger>
@@ -162,8 +156,10 @@ export default function GithubCalendar({
                         }}
                       />
                     </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{`${day.count} contribution on ${day.formattedDate}`}</p>
+                    <TooltipContent
+                    className="instrument-serif tracking-wide text-[13px]"
+                    >
+                      <p>{`${day.count} Contribution on ${day.formattedDate}`}</p>
                     </TooltipContent>
                   </Tooltip>
                 ))}
@@ -173,17 +169,17 @@ export default function GithubCalendar({
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-4 text-[12px]">
+      <div className="flex justify-between items-center mt-4 text-[12px] instrument-serif tracking-wide">
         <span>{totalContributions} contributions in the last year</span>
         <div className="flex items-center gap-1 text-[11px]">
-          <span className="mr-1 text-gray-500">Less</span>
+          <span className="mr-1">Less</span>
           {[0, 2, 5, 8, 12].map(v => (
             <div 
               key={v} 
               style={{ width: blockSize, height: blockSize, backgroundColor: getColor(v), borderRadius: '2px' }} 
             />
           ))}
-          <span className="ml-1 text-gray-500">More</span>
+          <span className="ml-1">More</span>
         </div>
       </div>
     </div>
