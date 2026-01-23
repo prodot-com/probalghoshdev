@@ -1,7 +1,7 @@
 
 export default function Profile(){
   return (
-          <div className="w-full max-w-5xl -mt-14 md:-mt-18 px-4 sm:pl-10 z-20">
+          <div className="w-full max-w-5x -mt-14 md:-mt-18 px-4 sm:pl-10 z-20">
             <img
               src="/profile.jpg"
               alt="Profile Image"

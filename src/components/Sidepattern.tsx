@@ -1,6 +1,6 @@
 export default function SidePattern() {
   return (
-    <div className="hidden lg:block">
+    <div className="hidden xl:block">
         <div className="h-full w-full bg-white dark:bg-neutral-950 relative">
         <div
             className="absolute inset-0 z-0 block dark:hidden"
