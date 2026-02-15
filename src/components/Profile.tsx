@@ -15,12 +15,12 @@ export default function Profile(){
                   Probal Ghosh
                 </h2>
               </div>
-              <div className="border my-4 md:my-0 border-neutral-600 bg-neutral-100 dark:bg-zinc-800 rounded-2xl px-2 py-1 flex items-center gap-1.5 text-neutral-600 dark:text-neutral-400">
+              {/* <div className="border my-4 md:my-0 border-neutral-600 bg-neutral-100 dark:bg-zinc-800 rounded-2xl px-2 py-1 flex items-center gap-1.5 text-neutral-600 dark:text-neutral-400">
                 <div className="w-2.5 h-2.5 rounded-full bg-green-600"></div>
                 <p className="text-[14px] md:text-[18px] instrument-serif tracking-wide">
                   Available for work
                 </p>
-              </div>
+              </div> */}
               </div>
               
               <p className="instrument-serif-italic dark:text-neutral-500 text-neutral-800 text-[22px] md:text-[22px]">
