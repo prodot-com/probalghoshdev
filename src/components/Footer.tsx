@@ -12,9 +12,9 @@ export function Footer () {
                     <span className="instrument-serif text-[19px] sm:text-[19px]">{date.getFullYear()} Designed & Developed by <span className="text-[21px] instrument-serif-bold underline ">Probal.</span></span>
                 </p>
             </div>
-            {/* <p className="instrument-serif text-[19px] sm:text-[19px] flex items-start pr-10">
+            <p className="instrument-serif text-[19px] sm:text-[19px] flex items-start pr-10">
                 Asia/Kolkata
-            </p> */}
+            </p>
         </div>
     )
 }
