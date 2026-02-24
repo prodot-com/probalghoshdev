@@ -24,29 +24,10 @@ export function Projectcard() {
           {projects.map((project, index) => (
             <Card
               key={`${project.name}-${index}`}
-              className="
-                relative 
-                w-full 
-                max-w-sm 
-                h-[480px] 
-                flex 
-                flex-col
-                overflow-hidden 
-                bg-white/10 
-                dark:bg-black 
-                dark:border-neutral-800 
-                backdrop-blur-md 
-                border 
-                border-indigo-800/20 
-                shadow-lg 
-                hover:shadow-xl 
-                transition-all 
-                duration-300
-              "
+              className= "relative  w-full  max-w-sm  h-110  flex  flex-co  overflow-hidden  bg-white/10  dark:bg-black  dark:border-neutral-800  backdrop-blur-md  border  border-indigo-800/20  shadow-lg  hover:shadow-xl  transition-all  duration-300"
             >
-              {/* Project Image */}
               {project.image && (
-                <div className="relative w-full h-[180px]">
+                <div className="relative w-full h-45">
                   <Image
                     src={project.image}
                     alt={project.name}
@@ -56,46 +37,24 @@ export function Projectcard() {
                 </div>
               )}
 
-              {/* Header Section */}
               <CardHeader className="px-3 pt-3 flex flex-col gap-2">
                 <CardTitle className="instrument-serif-bold text-[22px] md:text-[20px]">
                   {project.name}
                 </CardTitle>
 
                 <div
-                  className="
-                  instrument-serif 
-                  text-[14px] 
-                  prose 
-                  prose-sm 
-                  dark:prose-invert 
-                  max-w-none 
-                  line-clamp-4
-                "
+                  className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4"
                 >
                   <ReactMarkdown>{project.description}</ReactMarkdown>
                 </div>
               </CardHeader>
 
-              {/* Tools Section */}
               <CardContent className="px-3 pt-2">
                 <div className="flex flex-wrap gap-2">
                   {project.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="
-                        text-[12px] 
-                        font-normal 
-                        bg-neutral-200 
-                        dark:bg-neutral-800 
-                        text-gray-800 
-                        dark:text-white 
-                        px-2 
-                        py-1 
-                        rounded-[5px] 
-                        border 
-                        instrument-serif
-                      "
+                      className="text-[12px] font-normal bg-neutral-200 dark:bg-neutral-800 text-gray-800 dark:text-white px-2 py-1 rounded-[5px] border instrument-serif"
                     >
                       {tool}
                     </span>
@@ -103,8 +62,7 @@ export function Projectcard() {
                 </div>
               </CardContent>
 
-              {/* Footer Section */}
-              <CardFooter className="px-3 pt-3 mt-auto">
+              <CardFooter className="px-3 mt-auto">
                 {project.link && (
                   <div className="flex items-center gap-3">
                     {project.link.livelink && (
@@ -112,25 +70,7 @@ export function Projectcard() {
                         href={project.link.livelink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="
-                          flex 
-                          items-center 
-                          gap-1 
-                          text-[13px] 
-                          bg-black 
-                          dark:bg-white 
-                          text-white 
-                          dark:text-black 
-                          px-3 
-                          py-1 
-                          rounded-[5px] 
-                          border 
-                          hover:bg-neutral-700 
-                          dark:hover:bg-neutral-400 
-                          transition
-                          instrument-serif-bold 
-                          tracking-widest
-                        "
+                        className="instrument-serif-bold tracking-widest flex items-center gap-1 text-[13px] bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-[5px] border hover:bg-neutral-700 dark:hover:bg-neutral-400 transitioninstrument-serif-bold"
                       >
                         <Globe className="w-4 h-4" /> Live
                       </a>
@@ -141,25 +81,7 @@ export function Projectcard() {
                         href={project.link.gitlink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="
-                          flex 
-                          items-center 
-                          gap-1 
-                          text-[13px] 
-                          bg-black 
-                          dark:bg-white 
-                          text-white 
-                          dark:text-black 
-                          px-3 
-                          py-1 
-                          rounded-[5px] 
-                          border 
-                          hover:bg-neutral-700 
-                          dark:hover:bg-neutral-400 
-                          transition
-                          instrument-serif-bold 
-                          tracking-widest
-                        "
+                        className="instrument-serif-bold tracking-widest flex items-center gap-1 text-[13px] bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-[5px] border hover:bg-neutral-700 dark:hover:bg-neutral-400 transitioninstrument-serif-bold"
                       >
                         <Github className="w-4 h-4" /> Source
                       </a>
@@ -168,7 +90,6 @@ export function Projectcard() {
                 )}
               </CardFooter>
 
-              {/* Border Animations */}
               <BorderBeam
                 duration={6}
                 size={200}
