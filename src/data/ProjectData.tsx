@@ -12,6 +12,26 @@ type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Paperless",
+    description:
+      "A secure digital workspace for structured note-taking and cloud file management. Features Google authentication, real-time storage tracking, file sharing, and encrypted uploads.",
+    tools: [
+      "Next.js",
+      "TypeScript",
+      "NextAuth",
+      "Prisma",
+      "PostgreSQL",
+      "Cloudflare R2",
+      "Tailwind"
+    ],
+    image: "/paperless.png",
+    link: {
+      gitlink: "https://github.com/prodot-com/paperless", // replace if different
+      livelink: "https://paperless-yourdomain.vercel.app", // replace with actual link
+    },
+    status: true,
+  },
+  {
     name:"GithubWrapX",
     description: "Visualize coding activity throughout the year with animations, persona, and final shareable card. Get AI quote.",
     tools: ["Next.js", "Tailwind", "GraphQL", "OpenAI"],
