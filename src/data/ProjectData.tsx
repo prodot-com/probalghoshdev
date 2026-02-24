@@ -26,8 +26,8 @@ export const projects: Project[] = [
     ],
     image: "/paperless.png",
     link: {
-      gitlink: "https://github.com/prodot-com/paperless", // replace if different
-      livelink: "https://paperless-yourdomain.vercel.app", // replace with actual link
+      gitlink: "https://github.com/prodot-com/paperless",
+      livelink: "https://paperless.probalghosh.dev",
     },
     status: true,
   },
