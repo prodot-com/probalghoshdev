@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "NextAuth",
       "Prisma",
       "PostgreSQL",
-      "Cloudflare R2",
+      "Cloudflare",
       "Tailwind"
     ],
     image: "/paperless.png",
