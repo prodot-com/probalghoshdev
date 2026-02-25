@@ -59,7 +59,6 @@ export default function Home() {
           <Footer />
 
           <TopArrow />
-          <OnekoCat />
 
         </div>
       </div>

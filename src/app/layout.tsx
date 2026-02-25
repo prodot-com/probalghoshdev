@@ -10,6 +10,7 @@ import { Toaster } from "sonner";
 import ScrollToTopOnLoad from "@/components/ScrollToponLoad";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import OnekoCat from "@/components/OnekoCat";
 
 config.autoAddCss = false;
 
@@ -59,6 +60,7 @@ export default function RootLayout({
           <Navbar />
           <ScrollProgress className="fixed left-0 w-full h-1.25 transition-all duration-300" />
           {children}
+          <OnekoCat/>
           <Analytics/>
           <SpeedInsights/>
           <BottomDock />
