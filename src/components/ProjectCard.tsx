@@ -24,7 +24,7 @@ export function Projectcard() {
           {projects.map((project, index) => (
             <Card
               key={`${project.name}-${index}`}
-              className= "relative  w-full  max-w-sm  h-110  flex  flex-co  overflow-hidden  bg-white/10  dark:bg-black  dark:border-neutral-800  backdrop-blur-md  border  border-indigo-800/20  shadow-lg  hover:shadow-xl  transition-all  duration-300"
+              className= "relative  w-full  max-w-sm  h-110 flex flex-col  overflow-hidden  bg-white/10  dark:bg-black  dark:border-neutral-800  backdrop-blur-md  border  border-indigo-800/20  shadow-lg  hover:shadow-xl  transition-all  duration-300"
             >
               {project.image && (
                 <div className="relative w-full h-45">

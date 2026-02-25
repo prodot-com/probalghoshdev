@@ -1,24 +1,35 @@
+"use client";
+
 import { BorderBeam } from "@/components/ui/border-beam";
 import ReactMarkdown from "react-markdown";
-import { Github, Globe } from "lucide-react";
+import { Github, Globe, Undo2 } from "lucide-react";
 import Image from "next/image";
 import { projects } from "@/data/ProjectData";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+
+  const router = useRouter();
+
   return (
-    <div className="px-0 md:px-2 mt-9 font-bold w-full max-w-5xl">
+    <div className="px-0 mt-17.5 md:px-2 font-bold w-full max-w-5xl">
       <div>
-        <p className="ml-4 md:ml-8 text-[27px] md:text-[29px] font-bold instrument-serif-bold text-neutral-900 dark:text-white">
-          Featured Projects.
-        </p>
+        <div className="flex-col p-4 md:px-8">
+          <Undo2 className="w-8 h-8 p-1 rounded-full hover:bg-neutral-300"
+          onClick={()=>router.back()}
+          />
+          <p className="pt-4 text-[27px] md:text-[29px] font-bold instrument-serif-italic-bold text-neutral-900 dark:text-white">
+            Proof of work
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 md:px-8 place-items-center">
           {projects.map((project, index) => (
             <Card
               key={`${project.name}-${index}`}
-              className= "relative  w-full  max-w-sm  h-110  flex  flex-co  overflow-hidden  bg-white/10  dark:bg-black  dark:border-neutral-800  backdrop-blur-md  border  border-indigo-800/20  shadow-lg  hover:shadow-xl  transition-all  duration-300"
+              className= "relative  w-full  max-w-sm  h-110  flex  flex-col  overflow-hidden  bg-white/10  dark:bg-black  dark:border-neutral-800  backdrop-blur-md  border  border-indigo-800/20  shadow-lg  hover:shadow-xl  transition-all  duration-300"
             >
               {project.image && (
                 <div className="relative w-full h-45">
