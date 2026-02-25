@@ -214,7 +214,6 @@
     mix-blend-mode: normal;
 }
 
-
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
