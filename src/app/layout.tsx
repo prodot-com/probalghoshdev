@@ -11,6 +11,7 @@ import ScrollToTopOnLoad from "@/components/ScrollToponLoad";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import OnekoCat from "@/components/OnekoCat";
+import SidePattern from "@/components/Sidepattern";
 
 config.autoAddCss = false;
 
@@ -59,7 +60,13 @@ export default function RootLayout({
           <Toaster />
           <Navbar />
           <ScrollProgress className="fixed left-0 w-full h-1.25 transition-all duration-300" />
-          {children}
+          <div className="grid grid-cols-1 xl:grid-cols-4 min-h-screen bg-white dark:bg-neutral-900">
+            <SidePattern />
+              <div className="col-span-1 xl:col-span-2">
+                {children}
+              </div>
+            <SidePattern />
+          </div>
           <OnekoCat/>
           <Analytics/>
           <SpeedInsights/>
