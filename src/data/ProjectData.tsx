@@ -1,5 +1,6 @@
 type Project = {
   name: string;
+  slug:string;
   description: string;
   tools: string[];
   image?: string;
@@ -13,6 +14,7 @@ type Project = {
 export const projects: Project[] = [
   {
     name: "Paperless",
+    slug: "paerless",
     description:
       "A secure digital workspace for structured note-taking and cloud file management. Features Google authentication, real-time storage tracking, file sharing, and encrypted uploads.",
     tools: [
@@ -33,6 +35,7 @@ export const projects: Project[] = [
   },
   {
     name:"GithubWrapX",
+    slug: "githubwrapx",
     description: "Visualize coding activity throughout the year with animations, persona, and final shareable card. Get AI quote.",
     tools: ["Next.js", "Tailwind", "GraphQL", "OpenAI"],
     image: "/githubwrapx.png",
@@ -45,6 +48,7 @@ export const projects: Project[] = [
   },
   {
     name: "Cric-Scoreboard",
+    slug: 'cricscoreboard',
     description:
       "Provides live ball-by-ball scoring for cricket matches. It includes an admin panel for scoring and a shareable spectator link, with updates powered by Socket.IO.",
     tools: ["React", "Node.js", "MongoDB", "Socket.IO", "Tailwind"],
@@ -57,6 +61,7 @@ export const projects: Project[] = [
   },
   {
     name: "SyncSpace",
+    slug: "syncspace",
     description:
       "Built for streamlined team collaboration. Features secure user authentication, role-based access, comprehensive team and task management, realtime notifications.",
     tools: ["React", "Node.js", "MongoDB", "Zod", "Tailwind", "Socket.IO"],

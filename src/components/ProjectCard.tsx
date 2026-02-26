@@ -14,6 +14,7 @@ import { ShinyButton } from "./ui/shiny-button";
 import Image from "next/image";
 import { projects } from "@/data/ProjectData";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function Projectcard() {
 
@@ -43,17 +44,19 @@ export function Projectcard() {
                 </div>
               )}
 
-              <CardHeader className="px-3 pt-3 flex flex-col gap-2">
-                <CardTitle className="instrument-serif-bold text-[22px] md:text-[20px]">
-                  {project.name}
-                </CardTitle>
+              <Link href={`/projects/${project.slug}`}>
+                <CardHeader className="px-3 pt-3 flex flex-col gap-2">
+                  <CardTitle className="instrument-serif-bold text-[22px] md:text-[20px]">
+                    {project.name}
+                  </CardTitle>
 
-                <div
-                  className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4"
-                >
-                  <ReactMarkdown>{project.description}</ReactMarkdown>
-                </div>
-              </CardHeader>
+                  <div
+                    className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4"
+                  >
+                    <ReactMarkdown>{project.description}</ReactMarkdown>
+                  </div>
+                </CardHeader>
+              </Link>
 
               <CardContent className="px-3 pt-2">
                 <div className="flex flex-wrap gap-2">

@@ -2,12 +2,13 @@
 
 import { BorderBeam } from "@/components/ui/border-beam";
 import ReactMarkdown from "react-markdown";
-import { Github, Globe, Undo2 } from "lucide-react";
+import { Github, Globe} from "lucide-react";
 import Image from "next/image";
 import { projects } from "@/data/ProjectData";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { useRouter } from "next/navigation";
+import BackArrow from "@/components/icons/Arrow";
 
 export default function Home() {
 
@@ -17,7 +18,7 @@ export default function Home() {
     <div className="px-0 mt-17.5 md:px-2 font-bold w-full max-w-5xl">
       <div>
         <div className="flex-col p-4 md:px-8">
-          <Undo2 className="w-8 h-8 p-1 rounded-full hover:bg-neutral-300"
+          <BackArrow className="cursor-pointer w-8 h-8 p-1 rounded-full hover:bg-neutral-300"
           onClick={()=>router.back()}
           />
           <p className="pt-4 text-[27px] md:text-[29px] font-bold instrument-serif-italic-bold text-neutral-900 dark:text-white">
@@ -42,9 +43,7 @@ export default function Home() {
                 </div>
               )}
 
-              <CardHeader className="px-3 pt-3 flex flex-col gap-2"
-              // onClick={}
-              >
+              <CardHeader className="px-3 pt-3 flex flex-col gap-2">
                 <CardTitle className="instrument-serif-bold text-[22px] md:text-[20px]">
                   {project.name}
                 </CardTitle>
