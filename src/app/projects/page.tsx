@@ -42,7 +42,9 @@ export default function Home() {
                 </div>
               )}
 
-              <CardHeader className="px-3 pt-3 flex flex-col gap-2">
+              <CardHeader className="px-3 pt-3 flex flex-col gap-2"
+              // onClick={}
+              >
                 <CardTitle className="instrument-serif-bold text-[22px] md:text-[20px]">
                   {project.name}
                 </CardTitle>

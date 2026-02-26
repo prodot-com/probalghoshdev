@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -11,8 +13,12 @@ import { Github, Globe } from "lucide-react";
 import { ShinyButton } from "./ui/shiny-button";
 import Image from "next/image";
 import { projects } from "@/data/ProjectData";
+import { useRouter } from "next/navigation";
 
 export function Projectcard() {
+
+  const router = useRouter()
+
   return (
     <div className="px-0 md:px-2 mt-9 font-bold w-full max-w-5xl">
       <div>
@@ -109,21 +115,10 @@ export function Projectcard() {
 
         <div className="flex justify-start">
           <ShinyButton
-            className="
-              ml-4 
-              md:ml-8 
-              rounded-[5px] 
-              bg-black 
-              text-white
-              instrument-serif-bold 
-              text-[17px] 
-              px-4 
-              cursor-default 
-              border 
-              dark:border-neutral-600
-            "
+            className="cursor-pointer ml-4 md:ml-8 rounded-[5px] bg-black text-white instrument-serif-bold text-[17px] px-4 border dark:border-neutral-600"
+            onClick={()=>router.push('/projects')}
           >
-            More coming soon
+            View All
           </ShinyButton>
         </div>
       </div>
