@@ -2,13 +2,15 @@ import { projects } from "@/data/ProjectData";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-type Props = {
-  params: { slug: string };
-};
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
 
-export default function ProjectPage({ params }: Props) {
   const project = projects.find(
-    (p) => p.slug === params.slug
+    (p) => p.slug.toLowerCase() === slug.toLowerCase()
   );
 
   if (!project) return notFound();
@@ -30,38 +32,6 @@ export default function ProjectPage({ params }: Props) {
       <p className="mt-8 text-neutral-400 max-w-3xl">
         {project.description}
       </p>
-
-      <div className="mt-6 flex flex-wrap gap-2">
-        {project.tools.map((tool) => (
-          <span
-            key={tool}
-            className="px-3 py-1 bg-neutral-800 rounded-full text-sm"
-          >
-            {tool}
-          </span>
-        ))}
-      </div>
-
-      <div className="mt-10 flex gap-6">
-        {project.link?.gitlink && (
-          <a
-            href={project.link.gitlink}
-            target="_blank"
-            className="underline"
-          >
-            GitHub
-          </a>
-        )}
-        {project.link?.livelink && (
-          <a
-            href={project.link.livelink}
-            target="_blank"
-            className="underline"
-          >
-            Live Site
-          </a>
-        )}
-      </div>
     </div>
   );
 }

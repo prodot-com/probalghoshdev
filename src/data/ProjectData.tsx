@@ -14,7 +14,7 @@ type Project = {
 export const projects: Project[] = [
   {
     name: "Paperless",
-    slug: "paerless",
+    slug: "paperless",
     description:
       "A secure digital workspace for structured note-taking and cloud file management. Features Google authentication, real-time storage tracking, file sharing, and encrypted uploads.",
     tools: [
