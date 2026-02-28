@@ -45,7 +45,7 @@ export default async function ProjectPage({
   if (!project) return notFound();
 
 return (
-  <div className="min-h-screen bg-white dark:bg-neutral-900 
+  <div className="bg-white dark:bg-neutral-900 
                   text-neutral-900 dark:text-white 
                   flex justify-center py-20 px-6 sm:px-8 transition-colors selection:bg-orange-300 dark:selection:bg-indigo-500">
 
@@ -121,7 +121,7 @@ return (
       )}
 
       <div className="text-neutral-600 dark:text-neutral-400 
-                      leading-relaxed text-lg space-y-2 instrument-serif">
+                      leading-relaxed text-lg instrument-serif">
         <p>{project.description}</p>
       </div>
 
