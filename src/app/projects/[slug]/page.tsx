@@ -3,8 +3,9 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { Globe, Github } from "lucide-react";
+import { Globe, Github, ArrowUpLeft } from "lucide-react";
 import BackButton from "@/components/BackButton";
+import { CardContent } from "@/components/ui/card";
 
 export async function generateMetadata({
   params,
@@ -43,70 +44,88 @@ export default async function ProjectPage({
 
   if (!project) return notFound();
 
-  return (
-    <div className="min-h-screen bg-white text-neutral-900 flex justify-center py-16 px-6 sm:px-8">
-      <div className="max-w-3xl w-full">
-        
-        <BackButton/>
+return (
+  <div className="min-h-screen bg-white dark:bg-neutral-900 
+                  text-neutral-900 dark:text-white 
+                  flex justify-center py-20 px-6 sm:px-8 transition-colors">
 
-        <h1 className="text-4xl sm:text-5xl font-bold font-serif mb-6 tracking-tight">
+    <div className="max-w-3xl w-full">
+
+      <div className="mb-8">
+        <BackButton />
+      </div>
+
+      <div className="flex items-center justify-between">
+        <h1 className="text-4xl sm:text-5xl font-bold instrument-serif-bold tracking-tight mb-6">
           {project.name}
         </h1>
 
-        {project.tools && (
-          <div className="flex flex-wrap gap-2 mb-8">
-            {project.tools.map((tech) => (
-              <span 
-                key={tech} 
-                className="bg-neutral-100 text-neutral-600 px-3 py-1.5 rounded-md text-xs font-medium border border-neutral-200/60"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        )}
-
-        <div className="flex flex-wrap gap-4 mb-10">
+        <div className="flex flex-wrap gap-4 mb-6">
           {project.link?.livelink && (
-            <a 
-              href={project.link.livelink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-black text-white px-4 py-2 rounded-md flex items-center gap-2 text-sm font-medium hover:bg-neutral-800 transition-colors"
+            <a
+              href={project.link.livelink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-neutral-900 dark:bg-white 
+                        text-white dark:text-neutral-900
+                        p-2 rounded-full flex items-center gap-2 
+                        text-sm font-medium hover:opacity-80 transition"
             >
-              <Globe size={16} /> Live
+              <ArrowUpLeft size={22} />
             </a>
           )}
           {project.link?.gitlink && (
-            <a 
-              href={project.link.gitlink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-black text-white px-4 py-2 rounded-md flex items-center gap-2 text-sm font-medium hover:bg-neutral-800 transition-colors"
+            <a
+              href={project.link.gitlink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-neutral-900 dark:bg-white 
+                        text-white dark:text-neutral-900
+                        p-2 rounded-full flex items-center gap-2 
+                        text-sm font-medium hover:opacity-80 transition"
             >
-              <Github size={16} /> Source
+              <Github size={22} />
             </a>
           )}
         </div>
-
-        {project.image && (
-          <div className="rounded-xl overflow-hidden border border-neutral-200 shadow-sm mb-12">
-            <Image
-              src={project.image}
-              alt={project.name}
-              width={1000}
-              height={600}
-              className="w-full h-auto object-cover"
-              priority
-            />
-          </div>
-        )}
-
-        <div className="prose prose-neutral max-w-none text-neutral-600 leading-relaxed text-lg">
-          <p>{project.description}</p>
-        </div>
-        
       </div>
+
+      <div className="flex flex-wrap gap-2 mb-8">
+        {project.tools.map((tool) => (
+          <span
+            key={tool}
+            className="text-xs bg-neutral-200 dark:bg-neutral-800 
+                      text-neutral-800 dark:text-neutral-200 
+                      px-3 py-1 rounded-[5px] border 
+                      border-neutral-300 dark:border-neutral-700 
+                      transition instrument-serif"
+          >
+            {tool}
+          </span>
+        ))}
+      </div>
+
+      {project.image && (
+        <div className="rounded-2xl overflow-hidden 
+                        border border-neutral-200 dark:border-neutral-800 
+                        shadow-sm mb-12">
+          <Image
+            src={project.image}
+            alt={project.name}
+            width={1000}
+            height={600}
+            className="w-full h-auto object-cover"
+            priority
+          />
+        </div>
+      )}
+
+      <div className="text-neutral-600 dark:text-neutral-400 
+                      leading-relaxed text-lg space-y-4">
+        <p>{project.description}</p>
+      </div>
+
     </div>
-  );
+  </div>
+);
 }
