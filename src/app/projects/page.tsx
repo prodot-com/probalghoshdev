@@ -16,7 +16,7 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <div className="px-0 mt-17.5 md:px-2 font-bold w-full max-w-5xl">
+    <div className="px-0 mt-17.5 md:px-2 font-bold w-full max-w-5xl selection:bg-orange-300 dark:selection:bg-indigo-500">
       <div className="">
         <div className="flex-col p-4 md:px-8">
           <BackArrow className="cursor-pointer w-8 h-8 p-1 rounded-full hover:bg-neutral-300"

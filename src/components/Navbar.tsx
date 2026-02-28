@@ -31,7 +31,8 @@ const Navbar = () => {
             <div className={`grid grid-cols-1 xl:grid-cols-4 fixed top-0 left-0 w-full h-17.5  z-10 transition-all delay-75 justify-center`}>
 
                 <div></div>
-                <div className={`col-span-1 xl:col-span-2 h-17.5 ${scrolled ? "bg-white/15 dark:bg-black/15 backdrop-blur-xs" : " bg-white dark:bg-neutral-950"} `}>
+                {/* <div className={`col-span-1 xl:col-span-2 h-17.5 ${scrolled ? "bg-white/15 dark:bg-black/15 backdrop-blur-xs" : " bg-white dark:bg-neutral-950"} `}> */}
+                <div className="col-span-1 xl:col-span-2 h-17.5 bg-white/15 dark:bg-black/15 backdrop-blur-xs">
                     <div className="w-full h-full px-2 flex justify-between items-center">
                         <div className="h-full flex justify-between items-center">
                         <h1

@@ -47,7 +47,7 @@ export default async function ProjectPage({
 return (
   <div className="min-h-screen bg-white dark:bg-neutral-900 
                   text-neutral-900 dark:text-white 
-                  flex justify-center py-20 px-6 sm:px-8 transition-colors">
+                  flex justify-center py-20 px-6 sm:px-8 transition-colors selection:bg-orange-300 dark:selection:bg-indigo-500">
 
     <div className="max-w-3xl w-full">
 
@@ -106,9 +106,9 @@ return (
       </div>
 
       {project.image && (
-        <div className="rounded-2xl overflow-hidden 
+        <div className="rounded-[9px] overflow-hidden 
                         border border-neutral-200 dark:border-neutral-800 
-                        shadow-sm mb-12">
+                        shadow-sm mb-8">
           <Image
             src={project.image}
             alt={project.name}
@@ -121,7 +121,7 @@ return (
       )}
 
       <div className="text-neutral-600 dark:text-neutral-400 
-                      leading-relaxed text-lg space-y-4">
+                      leading-relaxed text-lg space-y-2 instrument-serif">
         <p>{project.description}</p>
       </div>
 
