@@ -9,6 +9,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { useRouter } from "next/navigation";
 import BackArrow from "@/components/icons/Arrow";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -33,7 +34,7 @@ export default function Home() {
               className= "relative  w-full  max-w-sm  h-110  flex  flex-col  overflow-hidden  bg-white/10  dark:bg-black  dark:border-neutral-800  backdrop-blur-md  border  border-indigo-800/20  shadow-lg  hover:shadow-xl  transition-all  duration-300"
             >
               {project.image && (
-                <div className="relative w-full h-45">
+                <div className="relative w-full h-45 border border-transparent">
                   <Image
                     src={project.image}
                     alt={project.name}
@@ -43,17 +44,19 @@ export default function Home() {
                 </div>
               )}
 
-              <CardHeader className="px-3 pt-3 flex flex-col gap-2">
-                <CardTitle className="instrument-serif-bold text-[22px] md:text-[20px]">
-                  {project.name}
-                </CardTitle>
+              <Link href={`/projects/${project.slug}`}>
+                <CardHeader className="px-3 pt-3 flex flex-col gap-2">
+                  <CardTitle className="instrument-serif-bold text-[22px] md:text-[20px]">
+                    {project.name}
+                  </CardTitle>
 
-                <div
-                  className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4"
-                >
-                  <ReactMarkdown>{project.description}</ReactMarkdown>
-                </div>
-              </CardHeader>
+                  <div
+                    className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4"
+                  >
+                    <ReactMarkdown>{project.description}</ReactMarkdown>
+                  </div>
+                </CardHeader>
+              </Link>
 
               <CardContent className="px-3 pt-2">
                 <div className="flex flex-wrap gap-2">
