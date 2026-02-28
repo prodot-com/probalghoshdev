@@ -16,8 +16,8 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: "Project Not Found | Probal Ghosh",
-      description: "This project does not exist.",
+      title: 'Probal Ghosh',
+      description: 'Full-stack developer crafting clean and modern web experiences.',
     };
   }
 
