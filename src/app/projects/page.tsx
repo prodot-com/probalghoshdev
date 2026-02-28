@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className="px-0 mt-17.5 md:px-2 font-bold w-full max-w-5xl">
-      <div className="border border-amber-500">
+      <div className="">
         <div className="flex-col p-4 md:px-8">
           <BackArrow className="cursor-pointer w-8 h-8 p-1 rounded-full hover:bg-neutral-300"
           onClick={()=>router.back()}
