@@ -12,6 +12,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import OnekoCat from "@/components/OnekoCat";
 import SidePattern from "@/components/Sidepattern";
+import Footer from "@/components/Footer";
 
 config.autoAddCss = false;
 
@@ -64,6 +65,7 @@ export default function RootLayout({
             <SidePattern />
               <div className="col-span-1 xl:col-span-2">
                 {children}
+                <Footer/>
               </div>
             <SidePattern />
           </div>

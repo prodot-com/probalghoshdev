@@ -53,7 +53,7 @@ export default function Home() {
             <Contact />
           </Reveal>
 
-          <Footer />
+          {/* <Footer /> */}
 
           <TopArrow />
 
