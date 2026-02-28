@@ -1,6 +1,32 @@
 import { projects } from "@/data/ProjectData";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  const project = projects.find(
+    (p) => p.slug.toLowerCase() === slug.toLowerCase()
+  );
+
+  if (!project) {
+    return {
+      title: "Project Not Found | Probal Ghosh",
+      description: "This project does not exist.",
+    };
+  }
+
+  return {
+    title: `${project.name} | Probal Ghosh`,
+    description: project.description,
+  };
+}
+
 
 export default async function ProjectPage({
   params,
