@@ -11,6 +11,15 @@ type Project = {
   status: boolean;
 };
 
+type AchievementItem = {
+  icon: string;
+  title: string;
+  subname?: string;
+  year: string;
+  link?: string;
+};
+
+
 export const projects: Project[] = [
   {
     name: "Paperless",
@@ -71,5 +80,17 @@ export const projects: Project[] = [
       livelink: "https://sync-space-dun.vercel.app/",
     },
     status: true,
+  },
+];
+
+
+export const achievements: AchievementItem[] = [
+  {
+    icon: "/ieee.png",
+    title: "IEEE Conference Publication - ICRCICN 2025",
+    subname:
+      "Multimodal Sensor Fusion for Heart Disease Prediction",
+    year: "2025",
+    link: "https://ieeexplore.ieee.org/document/11364968",
   },
 ];
