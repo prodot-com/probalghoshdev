@@ -11,12 +11,25 @@ type Project = {
   status: boolean;
 };
 
-type AchievementItem = {
+export type AchievementItem = {
   icon: string;
   title: string;
-  subname?: string;
+  title2: string;
+  subname: string;
+  conference: string;
+  location?: string;
+  authors: string[];
+  abstract: string;
+  tags: string[];
+  metrics: {
+    accuracy?: string;
+    f1Score?: string;
+    improvement?: string;
+  };
   year: string;
-  link?: string;
+  doi?: string;
+  link: string;
+  image?: string;
 };
 
 
@@ -87,10 +100,72 @@ export const projects: Project[] = [
 export const achievements: AchievementItem[] = [
   {
     icon: "/ieee.png",
-    title: "IEEE Conference Publication - ICRCICN 2025",
     subname:
       "Multimodal Sensor Fusion for Heart Disease Prediction",
+
+    title: "IEEE Conference Publication - ICRCICN 2025",
+
+    title2:
+      "Towards Smarter Healthcare: A Multimodal Sensor Fusion Approach for Heart Disease Prediction with Artificial Intelligence",
+
+    conference:
+      "2025 International Conference on Research in Computational Intelligence and Communication Networks (ICRCICN)",
+
+    location: "India",
+
+    authors: [
+      "Probal Ghosh",
+      "Ritu Kundu",
+      "Sima Ghosh",
+      "Sudakshina Dasgupta",
+    ],
+
+    abstract:
+      "This research presents a multimodal deep learning framework integrating ECG image analysis using CNN and clinical tabular data using MLP through a late-fusion architecture. The system predicts cardiovascular disease risk across three categories — Normal, Mild Risk, and High Risk. The proposed approach improves diagnostic performance by combining heterogeneous physiological and behavioral data sources.",
+
+    tags: [
+      "IEEE 2025",
+      "Artificial Intelligence",
+      "Multimodal Fusion",
+      "CNN + MLP",
+      "Healthcare AI",
+      "IoT Healthcare",
+      "Deep Learning",
+      "90.67% Accuracy",
+    ],
+
+    metrics: {
+      accuracy: "90.67%",
+      f1Score: "0.91",
+      improvement: "14.7%",
+    },
+
     year: "2025",
+
+    doi: "10.1109/ICRCICN68210.2025.11364968",
+
     link: "https://ieeexplore.ieee.org/document/11364968",
+
+    image: "/ieee.png",
   },
 ];
+
+
+// export const achievements: AchievementItem[] = [
+//   {
+//     icon: "/ieee.png",
+//     title: "IEEE Conference Publication - ICRCICN 2025",
+//     tags: [
+//                 "IEEE 2025",
+//                 "Artificial Intelligence",
+//                 "Multimodal Fusion",
+//                 "CNN + MLP",
+//                 "Healthcare AI",
+//                 "90.67% Accuracy",
+//             ],
+//     subname:
+//       "Multimodal Sensor Fusion for Heart Disease Prediction",
+//     year: "2025",
+//     link: "https://ieeexplore.ieee.org/document/11364968",
+//   },
+// ];
