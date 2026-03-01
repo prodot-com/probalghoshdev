@@ -17,7 +17,7 @@ import { ChevronRight } from "lucide-react";
 
                     <div className="flex items-center gap-4">
                     <img
-                        src={item.icon}
+                        src={item.image}
                         alt={item.title}
                         className="w-11 h-11 md:w-12 md:h-12 p-1 rounded-full object-cover border border-neutral-300 dark:border-neutral-700"
                         // className="h-10 md:h-12 w-auto object-contain"
