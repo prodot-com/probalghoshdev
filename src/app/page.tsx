@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Achievements from "@/components/Achievements";
 import { Contact } from "@/components/Contact";
 import { EducationCard } from "@/components/Education";
 import { Experience } from "@/components/Experience";
@@ -39,6 +40,10 @@ export default function Home() {
 
           <Reveal delay={0.15}>
             <Projectcard />
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <Achievements/>
           </Reveal>
 
           <Reveal delay={0.15}>
