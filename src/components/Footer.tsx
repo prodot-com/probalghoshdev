@@ -6,7 +6,7 @@ export function Footer () {
     const date = new Date();
 
     return (
-        <div className="min-h-42.5 mb-10">
+        <div className="min-h-42.5 mb-15 md:mb-10">
             <div className="mt-7 mb-7 pt-5 pl-4 md:pl-8 border-t dark:border-neutral-700 flex justify-between gap-1 w-full max-w-5xl ">
                 <div className="pl-2 flex items-start">
                     <p className="flex items-center gap-1">
