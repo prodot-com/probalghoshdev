@@ -99,7 +99,7 @@ export const achievements: AchievementItem[] = [
     title: "IEEE Conference Publication - ICRCICN 2025",
     title2: "Towards Smarter Healthcare: A Multimodal Sensor Fusion Approach for Heart Disease Prediction with Artificial Intelligence",
     conference: "2025 International Conference on Research in Computational Intelligence and Communication Networks (ICRCICN)",
-    abstract: "This research presents a multimodal deep learning framework integrating ECG image analysis using CNN and clinical tabular data using MLP through a late-fusion architecture. The system predicts cardiovascular disease risk across three categories — Normal, Mild Risk, and High Risk. The proposed approach improves diagnostic performance by combining heterogeneous physiological and behavioral data sources.",
+    abstract: "This research presents a multimodal deep learning framework integrating ECG image analysis using CNN and structured clinical data processed through an MLP via a late-fusion architecture. The system predicts cardiovascular disease risk across three categories — Normal, Mild Risk, and High Risk. The proposed approach enhances diagnostic accuracy by combining heterogeneous physiological data sources and demonstrates strong performance with 90.67% accuracy and a 0.91 F1-score. The model was rigorously evaluated using standard classification metrics and deployed through an interactive application to support real-time clinical risk assessment.",
 
     tags: [
       "IEEE 2025",

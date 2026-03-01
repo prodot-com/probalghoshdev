@@ -83,7 +83,7 @@ export default function ResearchPage() {
                             leading-relaxed text-lg instrument-serif space-y-6"
                 >
 
-                <p>{paper.abstract}</p>
+                <p className="text-justify">{paper.abstract}</p>
 
                 <p className="instrument-serif-bold">
                     DOI:{" "} 

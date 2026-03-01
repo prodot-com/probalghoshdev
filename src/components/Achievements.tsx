@@ -1,8 +1,14 @@
+"use client"
+
 import { achievements } from "@/data/ProjectData";
 import { ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 
     export default function AchievementCard() {
+
+        const router = useRouter();
+
     return (
         <div className="px-2 pl-3 md:pl-10 mt-10 font-bold w-full max-w-5xl">
         <section className="px-2 md:px-8 md:pl-0 md:pt-3 md:pb-4">
@@ -20,19 +26,16 @@ import { ChevronRight } from "lucide-react";
                         src={item.image}
                         alt={item.title}
                         className="w-11 h-11 md:w-12 md:h-12 p-1 rounded-full object-cover border border-neutral-300 dark:border-neutral-700"
-                        // className="h-10 md:h-12 w-auto object-contain"
                     />
 
-                    <div>
+                    <div
+                    className="cursor-pointer" 
+                    onClick={()=>{router.push("/achievements")}}
+                    >
                         <div className="inline-flex items-center gap-1 group">
-                        <a
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="instrument-serif-bold text-[19px] md:text-[19px] text-neutral-800 dark:text-neutral-200"
-                        >
+                        <p className="instrument-serif-bold text-[19px] md:text-[19px] text-neutral-800 dark:text-neutral-200">
                             {item.title}
-                        </a>
+                        </p>
 
                         <ChevronRight className="w-4 text-neutral-800 dark:text-neutral-200 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-transform duration-200" />
                         </div>
