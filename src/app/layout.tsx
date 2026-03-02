@@ -13,6 +13,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import OnekoCat from "@/components/OnekoCat";
 import SidePattern from "@/components/Sidepattern";
 import Footer from "@/components/Footer";
+import LenisProvider from "@/components/LenisProvider";
 
 config.autoAddCss = false;
 
@@ -57,22 +58,24 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${instrumentSerif.variable} ${kablammo.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ScrollToTopOnLoad/>
-          <Toaster />
-          <Navbar />
-          <ScrollProgress className="fixed left-0 w-full h-1.25 transition-all duration-300" />
-          <div className="grid grid-cols-1 xl:grid-cols-4 min-h-screen bg-white dark:bg-neutral-900">
-            <SidePattern />
-              <div className="col-span-1 xl:col-span-2">
-                {children}
-                <Footer/>
-              </div>
-            <SidePattern />
-          </div>
-          <OnekoCat/>
-          <Analytics/>
-          <SpeedInsights/>
-          <BottomDock />
+          <LenisProvider>
+            <ScrollToTopOnLoad/>
+            <Toaster />
+            <Navbar />
+            <ScrollProgress className="fixed left-0 w-full h-1.25 transition-all duration-300" />
+            <div className="grid grid-cols-1 xl:grid-cols-4 min-h-screen bg-white dark:bg-neutral-900">
+              <SidePattern />
+                <div className="col-span-1 xl:col-span-2">
+                  {children}
+                  <Footer/>
+                </div>
+              <SidePattern />
+            </div>
+            <OnekoCat/>
+            <Analytics/>
+            <SpeedInsights/>
+            <BottomDock />
+          </LenisProvider>
         </ThemeProvider>
         <script defer src="https://cloud.umami.is/script.js" data-website-id="652051f2-24d5-4acb-b79c-82930a61d307"></script>
       </body>
