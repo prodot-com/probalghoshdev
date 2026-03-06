@@ -148,7 +148,6 @@ export default function OnekoCat() {
       animationFrameId.current = requestAnimationFrame(animate);
     };
 
-    // Check for reduced motion preference
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!isReducedMotion) {
       document.addEventListener('mousemove', handleMouseMove);
@@ -161,7 +160,6 @@ export default function OnekoCat() {
         cancelAnimationFrame(animationFrameId.current);
       }
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nekoPos, mousePos, frameCount, idleTime, idleAnimation, idleAnimationFrame]);
 
   return (
