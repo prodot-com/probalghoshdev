@@ -121,19 +121,19 @@ export default function GithubCalendar({
         <div className="overflow-x-auto pb-2 scrollbar-hide scroll-smooth">
           <div style={{ width: gridWidth }} className="relative min-w-max">
             
-            <div className="flex mb-2 text-[11px] h-4 relative">
-              {monthLabels
-                .filter((m) => m.number !== 0)
-                .map((m, i) => (
-                  <span
-                    key={i}
-                    className="absolute instrument-serif tracking-wide text-[12px] whitespace-nowrap"
-                    style={{ left: `${m.index * (blockSize + 3)}px` }}
-                  >
-                    {m.label}
-                  </span>
-                ))}
-            </div>
+          <div className="flex mb-2 text-[10px] h-4 relative">
+            {monthLabels.map((m, i) => (
+              <span
+                key={i}
+                className={`absolute instrument-serif tracking-wide text-[12px] whitespace-nowrap ${
+                  isDarkMode ? 'text-white/60' : 'text-gray-800'
+                }`}
+                style={{ left: `${m.index * (blockSize + 3)}px` }}
+              >
+                {m.label}
+              </span>
+            ))}
+          </div>
 
             <div className="flex gap-0.75">
               {weeks.map((week, wi) => (
