@@ -19,7 +19,7 @@ export function Footer () {
                 </p>
             </div>
 
-            <div className="text-neutral-300 dark:text-neutral-700 w-full flex justify-center">
+            <div className="text-neutral-300 hover:text-indigo-500 dark:text-neutral-700 w-full flex justify-center transition-colors delay-100">
                 <Deco/>
             </div>
         </div>
