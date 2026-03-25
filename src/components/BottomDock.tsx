@@ -98,101 +98,103 @@ export function BottomDock() {
     setTheme(isDarkMode ? "light": "dark")
   };
   return (
-    <div className="fixed bottom-4 md:bottom-7 left-1/2 z-50 -translate-x-1/2 w-max max-w-[95vw]">
-      <TooltipProvider>
-        <Dock direction="middle" className="bg-white/25 dark:bg-neutral-900/40 backdrop-blur-[6px] rounded-[5px] px-2 md:px-4 gap-1 md:gap-2">
-          {DATA.navbar.map((item) => (
-            <DockIcon key={item.label}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={item.href}
-                    aria-label={item.label}
-                    target={item.target}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 md:size-12 rounded-full"
-                    )}
-                  >
-                    <item.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent className="hidden md:block">
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-          <Separator orientation="vertical" className="h-8 md:h-full mx-1" />
-          {Object.entries(DATA.contact.social).map(([name, social]) => (
-            <DockIcon key={name}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={social.url}
-                    aria-label={social.name}
-                    target="_blank"
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 md:size-12 rounded-full"
-                    )}
-                  >
-                    <social.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent className="hidden md:block">
-                  <p>{name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-          <Separator orientation="vertical" className="h-8 md:h-full mx-1" />
-            <DockIcon>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <button
-                    onClick={toggleDarkMode}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 md:size-12 rounded-full cursor-pointer relative overflow-hidden flex items-center justify-center"
-                    )}
-                  >
-                    <AnimatePresence mode="wait" initial={false}>
-                      {isDarkMode ? (
-                        <motion.span
-                          key="sun"
-                          initial={{ opacity: 0, scale: 0.6, rotate: -90 }}
-                          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                          exit={{ opacity: 0, scale: 0.6, rotate: 90 }}
-                          transition={{ duration: 0.25, ease: "easeOut" }}
-                          className="absolute"
-                        >
-                          <Sun className="size-4" />
-                        </motion.span>
-                      ) : (
-                        <motion.span
-                          key="moon"
-                          initial={{ opacity: 0, scale: 0.6, rotate: 90 }}
-                          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                          exit={{ opacity: 0, scale: 0.6, rotate: -90 }}
-                          transition={{ duration: 0.25, ease: "easeOut" }}
-                          className="absolute"
-                        >
-                          <Moon className="size-4" />
-                        </motion.span>
+    <div className="fixed bottom-4 md:bottom-7 inset-x-0 flex justify-center z-50">
+      <div className="w-max md:max-w-[95vw] max-w-[82vw]">
+        <TooltipProvider>
+          <Dock direction="middle" className="bg-white/25 dark:bg-neutral-900/40 backdrop-blur-[6px] rounded-[5px] px-2 md:px-4 gap-1 md:gap-2">
+            {DATA.navbar.map((item) => (
+              <DockIcon key={item.label}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={item.href}
+                      aria-label={item.label}
+                      target={item.target}
+                      className={cn(
+                        buttonVariants({ variant: "ghost", size: "icon" }),
+                        "size-10 md:size-12 rounded-full"
                       )}
-                    </AnimatePresence>
-                  </button>
-                </TooltipTrigger>
+                    >
+                      <item.icon className="size-4" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent className="hidden md:block">
+                    <p>{item.label}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </DockIcon>
+            ))}
+            <Separator orientation="vertical" className="h-8 md:h-full mx-1" />
+            {Object.entries(DATA.contact.social).map(([name, social]) => (
+              <DockIcon key={name}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={social.url}
+                      aria-label={social.name}
+                      target="_blank"
+                      className={cn(
+                        buttonVariants({ variant: "ghost", size: "icon" }),
+                        "size-10 md:size-12 rounded-full"
+                      )}
+                    >
+                      <social.icon className="size-4" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent className="hidden md:block">
+                    <p>{name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </DockIcon>
+            ))}
+            <Separator orientation="vertical" className="h-8 md:h-full mx-1" />
+              <DockIcon>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button
+                      onClick={toggleDarkMode}
+                      className={cn(
+                        buttonVariants({ variant: "ghost", size: "icon" }),
+                        "size-10 md:size-12 rounded-full cursor-pointer relative overflow-hidden flex items-center justify-center"
+                      )}
+                    >
+                      <AnimatePresence mode="wait" initial={false}>
+                        {isDarkMode ? (
+                          <motion.span
+                            key="sun"
+                            initial={{ opacity: 0, scale: 0.6, rotate: -90 }}
+                            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                            exit={{ opacity: 0, scale: 0.6, rotate: 90 }}
+                            transition={{ duration: 0.25, ease: "easeOut" }}
+                            className="absolute"
+                          >
+                            <Sun className="size-4" />
+                          </motion.span>
+                        ) : (
+                          <motion.span
+                            key="moon"
+                            initial={{ opacity: 0, scale: 0.6, rotate: 90 }}
+                            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                            exit={{ opacity: 0, scale: 0.6, rotate: -90 }}
+                            transition={{ duration: 0.25, ease: "easeOut" }}
+                            className="absolute"
+                          >
+                            <Moon className="size-4" />
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+                    </button>
+                  </TooltipTrigger>
 
-                <TooltipContent className="hidden md:block">
-                  {isDarkMode ? "Light" : "Dark"}
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
+                  <TooltipContent className="hidden md:block">
+                    {isDarkMode ? "Light" : "Dark"}
+                  </TooltipContent>
+                </Tooltip>
+              </DockIcon>
 
-        </Dock>
-      </TooltipProvider>
+          </Dock>
+        </TooltipProvider>
+      </div>
     </div>
   )
 }
