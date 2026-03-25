@@ -9,6 +9,7 @@ type Project = {
     livelink?: string;
   };
   status: boolean;
+  working?: boolean;
 };
 
 export type AchievementItem = {
@@ -49,6 +50,7 @@ export const projects: Project[] = [
       livelink: "https://paperless.probalghosh.dev",
     },
     status: true,
+    working: true,
   },
   {
     name:"GithubWrapX",
