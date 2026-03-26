@@ -14,6 +14,7 @@ import OnekoCat from "@/components/OnekoCat";
 import SidePattern from "@/components/Sidepattern";
 import Footer from "@/components/Footer";
 import LenisProvider from "@/components/LenisProvider";
+import ThemeShortcutProvider from "./hooks/useThemeShortcut";
 
 config.autoAddCss = false;
 
@@ -58,6 +59,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${instrumentSerif.variable} ${kablammo.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeShortcutProvider>
           <LenisProvider>
             <ScrollToTopOnLoad/>
             <Toaster />
@@ -76,6 +78,7 @@ export default function RootLayout({
             <SpeedInsights/>
             <BottomDock />
           </LenisProvider>
+          </ThemeShortcutProvider>
         </ThemeProvider>
         <script defer src="https://cloud.umami.is/script.js" data-website-id="652051f2-24d5-4acb-b79c-82930a61d307"></script>
       </body>
