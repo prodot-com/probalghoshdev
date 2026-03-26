@@ -11,9 +11,9 @@ export default function Profile(){
             <div className="">
               <div className="flex md:items-end gap-4">
               <div className="md:max-h-13 md:w-auto flex md:justify-between md:items-start">
-                  <h2 className="instrument-serif-bold text-black dark:text-white text-[45px] md:text-[45px] ">
-                  Probal Ghosh
-                </h2>
+                  <h2 className="instrument-serif-bold text-black dark:text-white text-[42px] md:text-[45px] ">
+                    Probal Ghosh
+                  </h2>
               </div>
               {/* <div className="border my-4 md:my-0 border-neutral-600 bg-neutral-100 dark:bg-zinc-800 rounded-2xl px-2 py-1 flex items-center gap-1.5 text-neutral-600 dark:text-neutral-400">
                 <div className="w-2.5 h-2.5 rounded-full bg-green-600"></div>
