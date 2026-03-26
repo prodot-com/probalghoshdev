@@ -55,14 +55,14 @@ export function EducationCard() {
                       href={edu.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="instrument-serif-bold text-[19px] md:text-[19px] text-neutral-800 dark:text-neutral-200"
+                      className="instrument-serif-bold text-[16px] md:text-[19px] text-neutral-800 dark:text-neutral-200"
                       >
                       {edu.name}
                     </a>
                     <ChevronRight className="w-4 text-neutral-800 dark:text-neutral-200 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-transform duration-200" />
                   </div>
 
-                  <p className="instrument-serif-italic-bold text-[17px] md:text-[15px] text-neutral-500 dark:text-neutral-400">
+                  <p className="instrument-serif-italic-bold text-[14px] md:text-[15px] text-neutral-500 dark:text-neutral-400">
                     {edu.subname}
                   </p>
                 </div>
@@ -70,9 +70,9 @@ export function EducationCard() {
 
               
               <div className="flex flex-col sm:flex-row items-end text-right text-neutral-600 dark:text-neutral-400 text-sm">
-                <p className="instrument-serif-bold text-[15px]">{edu.startDate}</p>
+                <p className="instrument-serif-bold text-[14px] md:text-[15px]">{edu.startDate}</p>
                 <p className="px-1 mb-0.75 md:inline hidden">-</p>
-                <p className="instrument-serif-bold text-[15px]">{edu.endDate ? edu.endDate: "Present"}</p>
+                <p className="instrument-serif-bold text-[14px] md:text-[15px]">{edu.endDate ? edu.endDate: "Present"}</p>
               </div>
             </div>
           </div>

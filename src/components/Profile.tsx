@@ -11,7 +11,7 @@ export default function Profile(){
             <div className="">
               <div className="flex md:items-end gap-4">
               <div className="md:max-h-13 md:w-auto flex md:justify-between md:items-start">
-                  <h2 className="instrument-serif-bold text-black dark:text-white text-[42px] md:text-[45px] ">
+                  <h2 className="instrument-serif-bold text-black dark:text-white text-[40px] md:text-[45px] ">
                     Probal Ghosh
                   </h2>
               </div>
@@ -23,7 +23,7 @@ export default function Profile(){
               </div> */}
               </div>
               
-              <p className="instrument-serif-italic dark:text-neutral-500 text-neutral-800 text-[22px] md:text-[22px]">
+              <p className="instrument-serif-italic dark:text-neutral-500 text-neutral-800 text-[20px] md:text-[22px]">
                 21 • engineer • fullstack developer
               </p>
             </div>

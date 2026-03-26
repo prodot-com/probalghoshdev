@@ -43,12 +43,10 @@ export function Experience() {
       <div className="space-y-7">
         {experiences.map((exp, index) => (
           <div key={index} className="flex flex-col gap-2">
-            {/* Top Row */}
             <div
               onClick={() => toggleDescription(index)}
               className="flex flex-row gap-7 sm:flex-row justify-between sm:items-center sm:justify-between sm:gap-3 cursor-pointer group"
             >
-              {/* Left: Icon + Company Info */}
               <div className="flex items-center gap-4">
                 <div className="border rounded-full">
                 <img
@@ -59,7 +57,7 @@ export function Experience() {
                 </div>
                 <div>
                   <div className="inline-flex items-center gap-1">
-                    <p className="font-semibold instrument-serif-bold text-[19px] md:text-[19px] text-neutral-800 dark:text-neutral-200">
+                    <p className="font-semibold instrument-serif-bold text-[17px] md:text-[19px] text-neutral-800 dark:text-neutral-200">
                       {exp.company}
                     </p>
                     <ChevronRight
@@ -68,21 +66,19 @@ export function Experience() {
                       }`}
                     />
                   </div>
-                  <p className="instrument-serif-italic-bold text-[17px] md:text-[15px] text-neutral-500 dark:text-neutral-400">
+                  <p className="instrument-serif-italic-bold text-[14px] md:text-[15px] text-neutral-500 dark:text-neutral-400">
                     {exp.sub}
                   </p>
                 </div>
               </div>
 
-              {/* Right: Start/End Date Stack */}
               <div className="flex flex-col sm:flex-row items-end text-right text-neutral-600 dark:text-neutral-400 text-sm">
-                <p className="text-[17px] md:text-[15px] instrument-serif-bold">{exp.startDate}</p>
+                <p className="text-[14px] md:text-[15px] instrument-serif-bold">{exp.startDate}</p>
                 <p className="px-1 md:pb-1 md:inline hidden">-</p>
-                <p className="text-[17px] md:text-[15px] instrument-serif-bold">{exp.endDate || "Present"}</p>
+                <p className="text-[14px] md:text-[15px] instrument-serif-bold">{exp.endDate || "Present"}</p>
               </div>
             </div>
 
-            {/* Description (Animated Expand) */}
             <AnimatePresence>
               {openIndex === index && (
                 <motion.p
