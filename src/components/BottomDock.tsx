@@ -98,8 +98,8 @@ export function BottomDock() {
     setTheme(isDarkMode ? "light": "dark")
   };
   return (
-    <div className="fixed bottom-4 md:bottom-7 inset-x-0 flex justify-center z-50">
-      <div className="w-max md:max-w-[95vw] max-w-[82vw]">
+    <div className="fixed bottom-7 md:bottom-7 inset-x-0 flex justify-center z-50">
+      <div className="w-max md:max-w-[95vw]">
         <TooltipProvider>
           <Dock direction="middle" className="bg-white/25 dark:bg-neutral-900/40 backdrop-blur-[6px] rounded-[5px] px-2 md:px-4 gap-1 md:gap-2">
             {DATA.navbar.map((item) => (

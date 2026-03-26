@@ -11,12 +11,12 @@ export function Footer () {
                 <div className="pl-2 flex items-start">
                     <p className="flex items-center gap-1">
                         <Copyright className="w-5 sm:w-5"/> 
-                        <span className="instrument-serif text-[19px] sm:text-[19px]">{date.getFullYear()} Designed & Developed by <span className="text-[21px] instrument-serif-bold underline ">Probal.</span></span>
+                        <span className="instrument-serif text-[18px] sm:text-[19px]">{date.getFullYear()} Designed & Developed by <span className="text-[14px] md:text-[21px] instrument-serif-bold underline ">Probal.</span></span>
                     </p>
                 </div>
-                <p className="instrument-serif text-[19px] sm:text-[19px] flex items-start pr-10">
+                {/* <p className="instrument-serif text-[16px] sm:text-[19px] flex items-start pr-10">
                     Asia/Kolkata
-                </p>
+                </p> */}
             </div>
 
             <div className="text-neutral-300 hover:text-indigo-500 dark:text-neutral-700 w-full flex justify-center transition-colors delay-100">
