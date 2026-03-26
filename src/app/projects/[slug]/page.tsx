@@ -62,7 +62,7 @@ export default async function ProjectPage({
           </h1>
 
           <div className="flex flex-wrap gap-4 mb-6">
-            {project.link?.livelink && (
+            {!project.working && project.link?.livelink && (
               <a
                 href={project.link.livelink}
                 target="_blank"
