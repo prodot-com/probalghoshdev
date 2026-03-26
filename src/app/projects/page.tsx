@@ -22,7 +22,7 @@ export default function Home() {
           <BackArrow className="cursor-pointer w-8 h-8 p-1 rounded-full hover:bg-neutral-300"
           onClick={()=>router.back()}
           />
-          <p className="pt-4 text-[27px] md:text-[29px] font-bold instrument-serif-italic-bold text-neutral-900 dark:text-white">
+          <p className="pt-4 text-[31px] md:text-[33px] font-bold instrument-serif-italic-bold text-neutral-900 dark:text-white">
             Proof of work
           </p>
         </div>

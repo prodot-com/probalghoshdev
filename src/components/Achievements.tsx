@@ -37,7 +37,7 @@ import { useRouter } from "next/navigation";
                             {item.title}
                         </p>
 
-                        <ChevronRight className="w-4 text-neutral-800 dark:text-neutral-200 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-transform duration-200" />
+                        <ChevronRight className="w-5 md:w-4 text-neutral-800 dark:text-neutral-200 group-hover:translate-x-1 transition-transform duration-200" />
                         </div>
 
                         <p className="instrument-serif-italic-bold text-[14px] md:text-[15px] text-neutral-500 dark:text-neutral-400">
@@ -47,9 +47,9 @@ import { useRouter } from "next/navigation";
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-end text-right text-neutral-600 dark:text-neutral-400 text-sm">
-                    <p className="instrument-serif-bold text-[14px] md:text-[15px]">
-                        {item.year}
-                    </p>
+                        <p className="instrument-serif-bold text-[14px] md:text-[15px]">
+                            {item.year}
+                        </p>
                     </div>
 
                 </div>

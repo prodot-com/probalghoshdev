@@ -9,7 +9,7 @@ export default function BackButton() {
   return (
     <BackArrow
       onClick={() => router.back()}
-      className="cursor-pointer w-8 h-8 p-1 rounded-full hover:bg-neutral-300"
+      className="cursor-pointer w-8 h-8 p-1 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700"
     />
   );
 }
