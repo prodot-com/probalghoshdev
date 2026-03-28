@@ -74,7 +74,7 @@ export default function Home() {
               <CardFooter className="px-3 mt-auto">
                 {project.link && (
                   <div className="flex items-center gap-3">
-                    {!project.working && project.link.livelink && (
+                    {project.working && project.link.livelink && (
                       <a
                         href={project.link.livelink}
                         target="_blank"
