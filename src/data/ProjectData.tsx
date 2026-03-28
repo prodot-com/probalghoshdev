@@ -62,7 +62,8 @@ export const projects: Project[] = [
       gitlink: "https://github.com/prodot-com/GithubWrap",
       livelink: "https://githubwrapx.vercel.app",
     },
-    status: true
+    status: true,
+    working: true,
 
   },
   {
@@ -77,6 +78,7 @@ export const projects: Project[] = [
       livelink: "https://cric-scoreboard.vercel.app/",
     },
     status: true,
+    working: true,
   },
   {
     name: "SyncSpace",
@@ -90,6 +92,7 @@ export const projects: Project[] = [
       livelink: "https://sync-space-dun.vercel.app/",
     },
     status: true,
+    working: true,
   },
 ];
 
