@@ -10,6 +10,7 @@ import OnekoCat from "@/components/OnekoCat";
 import Profile from "@/components/Profile";
 import { Projectcard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
+import Section from "@/components/Section";
 import SidePattern from "@/components/Sidepattern";
 import { TechStackMarquee } from "@/components/TechStack";
 import TopArrow from "@/components/TopArrow";
@@ -17,53 +18,52 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-      <div className="col-span-1 xl:col-span-2 selection:bg-orange-300 dark:selection:bg-indigo-500">
-        <div className="flex flex-col min-h-screen relative overflow-hidden">
+    <div className="w-full selection:bg-orange-300 dark:selection:bg-indigo-500">
+      <div className="relative border-x border-black mx-auto w-full max-w-3xl">
+        <Hero />
 
-          <Hero />
-
+        <Section>
           <Reveal delay={0.1}>
             <Profile />
           </Reveal>
+        </Section>
 
-          <Reveal delay={0.15}>
-            <About />
-          </Reveal>
+        <Reveal delay={0.15}>
+          <About />
+        </Reveal>
 
-          <Reveal delay={0.15}>
-            <TechStackMarquee/>
-          </Reveal>
+        <Reveal delay={0.15}>
+          <TechStackMarquee />
+        </Reveal>
 
-          <Reveal delay={0.15}>
-            <GithubCalendar />
-          </Reveal>
+        <Reveal delay={0.15}>
+          <GithubCalendar />
+        </Reveal>
 
-          <Reveal delay={0.15}>
-            <Projectcard />
-          </Reveal>
+        <Reveal delay={0.15}>
+          <Projectcard />
+        </Reveal>
 
-          <Reveal delay={0.15}>
-            <Achievements/>
-          </Reveal>
+        <Reveal delay={0.15}>
+          <Achievements />
+        </Reveal>
 
-          <Reveal delay={0.15}>
-            <Experience />
-          </Reveal>
+        <Reveal delay={0.15}>
+          <Experience />
+        </Reveal>
 
-          <Reveal delay={0.15}>
-            <EducationCard />
-          </Reveal>
+        <Reveal delay={0.15}>
+          <EducationCard />
+        </Reveal>
 
-          <Reveal delay={0.25}>
-            <Contact />
-          </Reveal>
+        <Reveal delay={0.25}>
+          <Contact />
+        </Reveal>
 
-          {/* <Footer /> */}
+        {/* <Footer /> */}
 
-          <TopArrow />
-
-        </div>
+        <TopArrow />
       </div>
+    </div>
   );
 }
-
