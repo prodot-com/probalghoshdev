@@ -9,8 +9,8 @@ import Navbar from "@/components/Navbar";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { Toaster } from "sonner";
 import ScrollToTopOnLoad from "@/components/ScrollToponLoad";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+// import { Analytics } from "@vercel/analytics/next";
+// import { SpeedInsights } from "@vercel/speed-insights/next";
 import OnekoCat from "@/components/OnekoCat";
 import SidePattern from "@/components/Sidepattern";
 import Footer from "@/components/Footer";
@@ -77,8 +77,8 @@ export default function RootLayout({
                 </div>
               </div>
               <OnekoCat />
-              <Analytics />
-              <SpeedInsights />
+              {/* <Analytics />
+              <SpeedInsights /> */}
               <BottomDock />
             </LenisProvider>
           </ThemeShortcutProvider>
