@@ -19,65 +19,67 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="w-full selection:bg-orange-300 dark:selection:bg-indigo-500">
-      <div className="relative mx-auto w-full max-w-3xl border-x border-neutral-300 dark:border-neutral-800">
+      {/* <div className="relative mx-auto w-full border-x border-neutral-300 dark:border-neutral-800"> */}
+      <Section showTopBorder={false}>
         <Hero />
+      </Section>
 
-        <Section>
-          <Reveal delay={0.1}>
-            <Profile />
-          </Reveal>
-        </Section>
+      <Section>
+        <Reveal delay={0.1}>
+          <Profile />
+        </Reveal>
+      </Section>
 
-        <Section>
-          <Reveal delay={0.15}>
-            <About />
-          </Reveal>
-        </Section>
+      <Section className="bg-white">
+        <Reveal delay={0.15}>
+          <About />
+        </Reveal>
+      </Section>
 
-        <Section>
-          <Reveal delay={0.15}>
-            <TechStackMarquee />
-          </Reveal>
-        </Section>
+      <Section>
+        <Reveal delay={0.15}>
+          <TechStackMarquee />
+        </Reveal>
+      </Section>
 
-        <Section>
-          <Reveal delay={0.15}>
-            <GithubCalendar />
-          </Reveal>
-        </Section>
+      <Section>
+        <Reveal delay={0.15}>
+          <GithubCalendar />
+        </Reveal>
+      </Section>
 
-        <Section>
-          <Reveal delay={0.15}>
-            <Projectcard />
-          </Reveal>
-        </Section>
+      <Section>
+        <Reveal delay={0.15}>
+          <Projectcard />
+        </Reveal>
+      </Section>
 
-        <Section>
-          <Reveal delay={0.15}>
-            <Achievements />
-          </Reveal>
-        </Section>
+      <Section>
+        <Reveal delay={0.15}>
+          <Achievements />
+        </Reveal>
+      </Section>
 
-        <Section>
-          <Reveal delay={0.15}>
-            <Experience />
-          </Reveal>
-        </Section>
+      <Section>
+        <Reveal delay={0.15}>
+          <Experience />
+        </Reveal>
+      </Section>
 
-        <Section>
-          <Reveal delay={0.15}>
-            <EducationCard />
-          </Reveal>
-        </Section>
+      <Section>
+        <Reveal delay={0.15}>
+          <EducationCard />
+        </Reveal>
+      </Section>
 
-        <Section>
-          <Reveal delay={0.25}>
-            <Contact />
-          </Reveal>
-        </Section>
+      <Section>
+        <Reveal delay={0.25}>
+          <Contact />
+        </Reveal>
+      </Section>
 
-        <TopArrow />
-      </div>
+      <TopArrow />
+      {/* </div> */}
     </div>
   );
 }

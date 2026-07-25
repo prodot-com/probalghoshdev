@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Kablammo } from "next/font/google";
+import { Fraunces, Instrument_Serif, Kablammo } from "next/font/google";
 // @ts-ignore
 import "./globals.css";
 import { BottomDock } from "@/components/BottomDock";
@@ -31,6 +31,14 @@ const kablammo = Kablammo({
   subsets: ["latin"],
   variable: "--font-kablammo",
   display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+  weight: ["500", "600", "700", "900"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -70,8 +78,21 @@ export default function RootLayout({
               <Navbar />
               <ScrollProgress className="fixed left-0 w-full h-1.25 transition-all duration-300" />
               <div className="relative min-h-screen bg-white dark:bg-neutral-900">
-                {/* Main Content */}
-                <div className="relative">
+                <div
+                  className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block w-px bg-neutral-300 dark:bg-neutral-800 z-50"
+                  style={{
+                    transform: "translateX(calc(-48rem / 2))",
+                  }}
+                />
+
+                <div
+                  className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block w-px bg-neutral-300 dark:bg-neutral-800 z-50"
+                  style={{
+                    transform: "translateX(calc(48rem / 2))",
+                  }}
+                />
+
+                <div className="relative z-20">
                   {children}
                   <Footer />
                 </div>
