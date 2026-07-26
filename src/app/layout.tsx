@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Fraunces, Instrument_Serif, Kablammo } from "next/font/google";
+import {
+  Fraunces,
+  Instrument_Serif,
+  Kablammo,
+  Jersey_10_Charted,
+} from "next/font/google";
 // @ts-ignore
 import "./globals.css";
 import { BottomDock } from "@/components/BottomDock";
@@ -81,14 +86,14 @@ export default function RootLayout({
                 <div
                   className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block w-px bg-neutral-300 dark:bg-neutral-800 z-50"
                   style={{
-                    transform: "translateX(calc(-48rem / 2))",
+                    transform: "translateX(calc(var(--content-width) / -2))",
                   }}
                 />
 
                 <div
                   className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block w-px bg-neutral-300 dark:bg-neutral-800 z-50"
                   style={{
-                    transform: "translateX(calc(48rem / 2))",
+                    transform: "translateX(calc(var(--content-width) / 2))",
                   }}
                 />
 
@@ -97,7 +102,7 @@ export default function RootLayout({
                   <Footer />
                 </div>
               </div>
-              <OnekoCat />
+              {/* <OnekoCat /> */}
               {/* <Analytics />
               <SpeedInsights /> */}
               <BottomDock />

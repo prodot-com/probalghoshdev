@@ -18,13 +18,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full">
+    <header className="fixed top-0 left-0 z-50 w-full bg-white/70">
       <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 border-b border-dashed border-neutral-400 dark:border-neutral-800" />
-      <div className="mx-auto w-full max-w-3xl">
+      <div className="mx-auto w-full max-w-4xl">
         <div
           className={`
             relative
-            h-[70px]
+            h-14
             border-x
             border-b
             border-neutral-300
@@ -47,7 +47,6 @@ const Navbar = () => {
               Probal
             </h1>
 
-            {/* Right Side */}
             <div>{/* Nav Links */}</div>
           </div>
         </div>

@@ -22,7 +22,7 @@ export default function Section({
 
       {/* Content */}
       <div
-        className={`relative z-10 mx-auto w-full max-w-3xl ${contentClassName}`}
+        className={`relative z-10 mx-auto w-full max-w-4xl ${contentClassName}`}
       >
         {children}
       </div>

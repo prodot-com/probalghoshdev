@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div className="relative w-full max-w-5xl mt-17.5 h-52 overflow-hidden">
+    <div className="relative w-full max-w-5xl mt-14 h-52 overflow-hidden">
       <img
         src="/banner.gif"
         alt="Hero Background"

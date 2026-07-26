@@ -4,7 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --content-width: 48rem; /* max-w-3xl */
+  --content-width: 56rem; /* max-w-4xl */
 }
 
 .kablammo-font {
