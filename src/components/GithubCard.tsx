@@ -39,7 +39,7 @@ export function GithubCard() {
 
   return (
     <div className="selection:bg-neutral-700 w-full p-3">
-      <div className="relative w-full bg-white/10 dark:bg-black transition-all duration-300">
+      <div className="relative w-full transition-all duration-300">
         {/* Header */}
         <div className="">
           <div className="text-[22px] md:text-[27px] instrument-serif-bold text-black dark:text-white">
@@ -74,7 +74,7 @@ export function GithubCard() {
         <Divider dashed />
 
         {/* Content */}
-        <div className="borde border-black pt-3">
+        <div className="borde pt-3">
           <GithubCalendar2 isDarkMode={isDarkMode} />
         </div>
       </div>

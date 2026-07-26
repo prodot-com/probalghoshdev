@@ -60,10 +60,10 @@ export default function Profile() {
 
           <TextAnimate
             key={roles[index]}
-            duration={0.5}
-            delay={0.2}
-            animation="blurInUp"
-            by="line"
+            duration={0.7}
+            delay={0.3}
+            animation="blurInDown"
+            by="character"
             className="text-xl md:text-2xl font-semibold text-neutral-500"
           >
             {roles[index]}

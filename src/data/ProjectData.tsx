@@ -1,6 +1,6 @@
 type Project = {
   name: string;
-  slug:string;
+  slug: string;
   description: string;
   tools: string[];
   image?: string;
@@ -10,6 +10,12 @@ type Project = {
   };
   status: boolean;
   working?: boolean;
+  badge?: {
+    text: string;
+    color: string;
+    icon: string;
+    iconColor?: string;
+  };
 };
 
 export type AchievementItem = {
@@ -25,9 +31,8 @@ export type AchievementItem = {
   link: string;
   image?: string;
   year: string;
-  docLink: string
+  docLink: string;
 };
-
 
 export const projects: Project[] = [
   {
@@ -42,7 +47,7 @@ export const projects: Project[] = [
       "Prisma",
       "PostgreSQL",
       "Cloudflare",
-      "Tailwind"
+      "Tailwind",
     ],
     image: "/paperless.png",
     link: {
@@ -51,11 +56,17 @@ export const projects: Project[] = [
     },
     status: true,
     working: true,
+    badge: {
+      text: "Encrypted",
+      color: "from-emerald-400 to-green-600",
+      icon: "shield",
+    },
   },
   {
-    name:"GithubWrapX",
+    name: "GithubWrapX",
     slug: "githubwrapx",
-    description: "Visualize coding activity throughout the year with animations, persona, and final shareable card. Get AI quote.",
+    description:
+      "Visualize coding activity throughout the year with animations, persona, and final shareable card. Get AI quote.",
     tools: ["Next.js", "Tailwind", "GraphQL", "OpenAI"],
     image: "/githubwrapx.png",
     link: {
@@ -64,11 +75,10 @@ export const projects: Project[] = [
     },
     status: true,
     working: true,
-
   },
   {
     name: "Cric-Scoreboard",
-    slug: 'cricscoreboard',
+    slug: "cricscoreboard",
     description:
       "Provides live ball-by-ball scoring for cricket matches. It includes an admin panel for scoring and a shareable spectator link, with updates powered by Socket.IO.",
     tools: ["React", "Node.js", "MongoDB", "Socket.IO", "Tailwind"],
@@ -79,6 +89,11 @@ export const projects: Project[] = [
     },
     status: true,
     working: true,
+    badge: {
+      text: "Cricket",
+      color: "from-orange-400 to-red-500",
+      icon: "trophy",
+    },
   },
   {
     name: "SyncSpace",
@@ -96,15 +111,18 @@ export const projects: Project[] = [
   },
 ];
 
-
 export const achievements: AchievementItem[] = [
   {
     subname: "Multimodal Sensor Fusion for Heart Disease Prediction",
-    subname2: "Towards Smarter Healthcare: A Multimodal Sensor Fusion Approach for Heart Disease Prediction with Artificial Intelligence.",
+    subname2:
+      "Towards Smarter Healthcare: A Multimodal Sensor Fusion Approach for Heart Disease Prediction with Artificial Intelligence.",
     title: "IEEE Conference Publication - ICRCICN 2025",
-    title2: "Towards Smarter Healthcare: A Multimodal Sensor Fusion Approach for Heart Disease Prediction with Artificial Intelligence",
-    conference: "2025 International Conference on Research in Computational Intelligence and Communication Networks (ICRCICN)",
-    abstract: "This research presents a multimodal deep learning framework integrating ECG image analysis using CNN and structured clinical data processed through an MLP via a late-fusion architecture. The system predicts cardiovascular disease risk across three categories — Normal, Mild Risk, and High Risk. The proposed approach enhances diagnostic accuracy by combining heterogeneous physiological data sources and demonstrates strong performance with 90.67% accuracy and a 0.91 F1-score. The model was rigorously evaluated using standard classification metrics and deployed through an interactive application to support real-time clinical risk assessment.",
+    title2:
+      "Towards Smarter Healthcare: A Multimodal Sensor Fusion Approach for Heart Disease Prediction with Artificial Intelligence",
+    conference:
+      "2025 International Conference on Research in Computational Intelligence and Communication Networks (ICRCICN)",
+    abstract:
+      "This research presents a multimodal deep learning framework integrating ECG image analysis using CNN and structured clinical data processed through an MLP via a late-fusion architecture. The system predicts cardiovascular disease risk across three categories — Normal, Mild Risk, and High Risk. The proposed approach enhances diagnostic accuracy by combining heterogeneous physiological data sources and demonstrates strong performance with 90.67% accuracy and a 0.91 F1-score. The model was rigorously evaluated using standard classification metrics and deployed through an interactive application to support real-time clinical risk assessment.",
 
     tags: [
       "IEEE 2025",
@@ -121,6 +139,7 @@ export const achievements: AchievementItem[] = [
     link: "https://ieeexplore.ieee.org/document/11364968",
     image: "/ieee.png",
     year: "2025",
-    docLink: "https://drive.google.com/file/d/1AsBvg-XYgAzTrBrObN3aWeJyJxGQ-LoX/view?usp=sharing"
+    docLink:
+      "https://drive.google.com/file/d/1AsBvg-XYgAzTrBrObN3aWeJyJxGQ-LoX/view?usp=sharing",
   },
 ];

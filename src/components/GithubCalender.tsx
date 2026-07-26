@@ -117,7 +117,7 @@ export default function GithubCalendar({
 
   return (
     <TooltipProvider>
-      <div className="w-full max-w-full bg-white/10 dark:bg-black rounded-sm overflow-hidden">
+      <div className="w-full max-w-full rounded-sm overflow-hidden">
         <div className="overflow-x-auto scrollbar-hide scroll-smooth">
           <div style={{ width: gridWidth }} className="relative min-w-max">
             
