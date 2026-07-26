@@ -1,33 +1,83 @@
+"use client";
 
-export default function Profile(){
+import { Eye } from "lucide-react";
+import { useEffect, useState } from "react";
+import { TextAnimate } from "@/components/ui/text-animate";
+
+const roles = [
+  "Engineer?",
+  "Full Stack Developer"
+];
+
+export default function Profile() {
+  const [showRealProfile, setShowRealProfile] = useState(false);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-          <div className="w-full max-w-5x -mt-14 md:-mt-18 px-4 sm:pl-10 z-20">
-            <img
-              src="/profile.jpg"
-              alt="Profile Image"
-              className="w-41 h-41 md:w-42 md:h-42 rounded-full ring-4 ring-black/55 dark:ring-white/30 hover:ring-black/40 dark:hover:ring-white/20 transition-all delay-50 
-              shadow-2xl shadow-black/75 dark:shadow-white/15 mb-4 object-cover md:ml-2"
-            />
-            <div className="">
-              <div className="flex md:items-end gap-4">
-              <div className="md:max-h-13 md:w-auto flex md:justify-between md:items-start">
-                  <h2 className="instrument-serif-bold text-black dark:text-white text-[40px] md:text-[45px] ">
-                    Probal Ghosh
-                  </h2>
-              </div>
-              {/* <div className="border my-4 md:my-0 border-neutral-600 bg-neutral-100 dark:bg-zinc-800 rounded-2xl px-2 py-1 flex items-center gap-1.5 text-neutral-600 dark:text-neutral-400">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-600"></div>
-                <p className="text-[14px] md:text-[18px] instrument-serif tracking-wide">
-                  Available for work
-                </p>
-              </div> */}
-              </div>
-              
-              <p className="instrument-serif-italic dark:text-neutral-500 text-neutral-800 text-[20px] md:text-[22px]">
-                21 • engineer • fullstack developer
-              </p>
-            </div>
-          </div>
-  )
-}
+    <section className="flex items-start justify-between px-3 py-5">
+      <div className="flex items-start gap-8">
+        <div className="relative h-28 w-28 md:h-35 md:w-35">
+          <img
+            src="/profile2.jpg"
+            className={`absolute inset-0 h-full w-full rounded-2xl border-4 border-neutral-500 object-cover transition-opacity duration-300 ${
+              showRealProfile ? "opacity-100" : "opacity-0"
+            }`}
+          />
 
+          <img
+            src="/profile.jpg"
+            className={`absolute inset-0 h-full w-full rounded-2xl border-4 border-neutral-500 object-cover transition-opacity duration-300 ${
+              showRealProfile ? "opacity-0" : "opacity-100"
+            }`}
+          />
+        </div>
+
+        <div className="space-y-1">
+          <div
+            className="relative h-4 w-4 rounded-full border border-neutral-500 cursor-pointer"
+            onClick={() => setShowRealProfile((prev) => !prev)}
+          >
+            <div
+              className={`absolute inset-y-0 w-1/2 bg-neutral-900 dark:bg-white transition-all duration-75 ease-in-out ${
+                showRealProfile
+                  ? "left-0 rounded-l-full"
+                  : "left-1/2 rounded-r-full"
+              }`}
+            />
+          </div>
+
+          <h1 className="instrument-serif-bold text-4xl leading-none text-black dark:text-white">
+            Probal Ghosh
+          </h1>
+
+          <TextAnimate
+            key={roles[index]}
+            duration={0.7}
+            delay={0.3}
+            animation="blurInDown"
+            by="character"
+            className="text-xl md:text-2xl font-semibold text-neutral-500"
+          >
+            {roles[index]}
+          </TextAnimate>
+
+          <p className="text-sm text-neutral-500">21, West Bengal, IND</p>
+        </div>
+      </div>
+
+      {/* Right */}
+      <div className="flex items-center gap-1 text-neutral-500">
+        <Eye className="h-4 w-4" />
+        <span className="text-[12px]">6576</span>
+      </div>
+    </section>
+  );
+}

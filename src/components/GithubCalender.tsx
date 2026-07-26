@@ -22,7 +22,7 @@ interface CalendarProps {
 
 export default function GithubCalendar({
   isDarkMode,
-  blockSize = 10,
+  blockSize = 12,
   dataUrl = "/api/v1/githubData"
 }: CalendarProps) {
   const [days, setDays] = useState<Day[]>([]);
@@ -117,11 +117,11 @@ export default function GithubCalendar({
 
   return (
     <TooltipProvider>
-      <div className="w-full max-w-full bg-white/10 dark:bg-black rounded-sm overflow-hidden border border-white/5">
-        <div className="overflow-x-auto pb-2 scrollbar-hide scroll-smooth">
+      <div className="w-full max-w-full rounded-sm overflow-hidden">
+        <div className="overflow-x-auto scrollbar-hide scroll-smooth">
           <div style={{ width: gridWidth }} className="relative min-w-max">
             
-          <div className="flex mb-2 text-[10px] h-4 relative">
+          <div className="flex text-[10px] mb-1 h-4 relative">
             {monthLabels.map((m, i) => (
               <span
                 key={i}
@@ -162,9 +162,9 @@ export default function GithubCalendar({
           </div>
         </div>
 
-        <div className="flex justify-between items-center mt-4 text-[12px] instrument-serif tracking-wide opacity-80">
-          <span>{totalContributions} contributions in the last year</span>
-          <div className="flex items-center gap-1 text-[11px]">
+        <div className="flex justify-between items-center mt-4 text-[14px] instrument-serif tracking-wide opacity-80">
+          <span>I have <span className="font-bold">{totalContributions}</span> contributions so far.</span>
+          <div className="flex items-center gap-1 text-[14px]">
             <span className="mr-1">Less</span>
             {[0, 2, 5, 8, 12].map(v => (
               <div 

@@ -1,50 +1,57 @@
-"use client"
+"use client";
 
 import { useRouter } from "next/navigation";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
-    const router = useRouter()
-    const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
+  const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
-        if (window.scrollY > 4) {
-        setScrolled(true);
-        } else {
-        setScrolled(false);
-        }
+      setScrolled(window.scrollY > 4);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => { 
-        window.removeEventListener("scroll", handleScroll);
-    };
-    }, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
+  return (
+    <header className="fixed top-0 left-0 z-50 w-full bg-white/70
+            dark:bg-neutral-900">
+      <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 border-b border-dashed border-neutral-400 dark:border-neutral-800" />
+      <div className="mx-auto w-full max-w-[var(--content-width)]">
+        <div
+          className={`
+            relative
+            h-14
+            border-b
+            border-neutral-300
+            dark:border-neutral-800
+            
+            backdrop-blur-md
+            transition-all
+            ${scrolled ? "shadow-sm" : ""}
+          `}
+        >
+          <div className="flex h-full items-center justify-between px-4">
+            <h1
+              onClick={() => {
+                router.refresh();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="fraunces-italic-bold cursor-pointer text-[35px] tracking-tight text-indigo-700 hover:underline decoration-indigo-700"
+            >
+              Probal
+            </h1>
 
-    return (
-            <div className={`grid grid-cols-1 xl:grid-cols-4 fixed top-0 left-0 w-full h-17.5  z-10 transition-all delay-75 justify-center`}>
-
-                <div></div>
-                <div className="col-span-1 xl:col-span-2 h-17.5 bg-white/15 dark:bg-black/15 backdrop-blur-xs">
-                    <div className="w-full h-full px-2 flex justify-between items-center">
-                        <div className="h-full flex justify-between items-center">
-                        <h1
-                        onClick={()=>{router.refresh()
-                            window.scrollTo({top: 0, behavior: "smooth"})
-                        }}
-                        className="cursor-pointer kablammo-font hover:underline decoration-indigo-700 text-[35px] text-indigo-700 tracking-tight transition delay-25">
-                            probal
-                        </h1>
-                        </div>
-                    </div>
-                </div>
-                <div></div>
-
+            <div>{/* Nav Links */}</div>
+          </div>
         </div>
-    )
-}
+      </div>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;
