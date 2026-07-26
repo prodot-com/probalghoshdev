@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "./ui/marquee";
-import { TechStack } from "@/data/TechData";
+import { TechStack, TechStackColorfull } from "@/data/TechData";
 
 const firstRow = TechStack.slice(0, TechStack.length / 2);
 const secondRow = TechStack.slice(TechStack.length / 2);
@@ -28,7 +28,7 @@ const TechIcon = ({ icon, name }: { icon: string; name: string }) => {
 
 export function TechStackMarquee() {
   return (
-    <div className="bg-white selection:bg-neutral-700 relative px-4 md:px-10 flex flex-col gap-3 w-full max-w-5xl overflow-hidden">
+    <div className="relative flex flex-col gap-3 w-full max-w-5xl overflow-hidden p-3">
       <div>
         <p className="instrument-serif-bold text-[24px] md:text-[27px]">Technologies I use.</p>
       </div>
@@ -42,8 +42,8 @@ export function TechStackMarquee() {
           <TechIcon key={tech.name} {...tech} />
         ))}
       </Marquee>
-      <div className="absolute left-3 top-8 md:left-10 md:top-8 w-20 h-full bg-linear-to-r from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
-      <div className="absolute right-3 md:right-10 md:top-8 top-8 w-20 h-full bg-linear-to-l from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
+      <div className="absolute left-3 top-8 md:left-1 md:top-14 w-20 h-full bg-linear-to-r from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
+      <div className="absolute right-3 md:right-1 md:top-14 top-8 w-20 h-full bg-linear-to-l from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
     </div>
   );
 }

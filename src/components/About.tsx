@@ -1,30 +1,59 @@
 import Divider from "./Divider";
 import { Tooltip } from "./ui/tooltip-card";
 
-export default function About(){
+export default function About() {
   return (
-    <div className="w-full">
+    <div className="w-full p-3">
       <div className="flex">
-        <p className=" text-[24px] md:text-[28px] text-black dark:text-white instrument-serif-bold">
+        <p className="text-[24px] md:text-[28px] instrument-serif-bold text-black dark:text-white">
           About.
         </p>
       </div>
 
-      <Divider dashed/>
+      <Divider dashed />
 
-      <div className="instrument-serif  text-black text-[17px] md:text-[20px] dark:text-neutral-400">
-        Hello! I'm a developer from Kolkata, India. I enjoy programming and
-        exploring technology. Currently working on my own projects. Open to
-        work, freelance, or collaborate.{" "}
-        <Tooltip
-          containerClassName="instrument-serif-italic-bold"
-          content="Leave a message below"
-        >
-          <span className="font-bold dark:text-neutral-200 instrument-serif-bold cursor-pointer hover:underline">
-            Let's connect.
-          </span>
-        </Tooltip>
+      <div className="px-3 py-2">
+        <ul className="list-disc space-y-4 pl-5 text-[20px] leading-[1.6] instrument-serif text-black dark:text-neutral-300 marker:text-neutral-500">
+          <li>
+            I'm a{" "}
+            <span className="instrument-serif-bold underline decoration-1 underline-offset-2">
+              Full Stack Developer
+            </span>{" "}
+            focused on creating digital products that balance elegant design,
+            seamless user experiences, and scalable engineering.
+          </li>
+
+          <li>
+            From designing intuitive interfaces with{" "}
+            <span className="instrument-serif-bold underline decoration-1 underline-offset-2">
+              React, Next.js, Tailwind CSS & Framer Motion
+            </span>{" "}
+            to building robust backend systems with{" "}
+            <span className="instrument-serif-bold underline decoration-1 underline-offset-2">
+              Node.js, Prisma & PostgreSQL
+            </span>
+            , I enjoy bringing ideas to life from concept to deployment.
+          </li>
+
+          <li>
+            Currently a{" "}
+            <span className="instrument-serif-bold underline decoration-1 underline-offset-2">
+              final-year B.Tech student
+            </span>
+            , I enjoy transforming ideas into polished products, exploring new
+            technologies, refining details, and creating intuitive and memorable
+            experiences.{" "}
+            <Tooltip
+              containerClassName="inline instrument-serif-italic-bold"
+              content="Leave a message below"
+            >
+              <span className="cursor-pointer instrument-serif-bold underline decoration-1 underline-offset-2">
+                Let's connect.
+              </span>
+            </Tooltip>
+          </li>
+        </ul>
       </div>
     </div>
   );
-};
+}

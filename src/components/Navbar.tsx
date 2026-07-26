@@ -26,7 +26,6 @@ const Navbar = () => {
           className={`
             relative
             h-14
-            border-x
             border-b
             border-neutral-300
             dark:border-neutral-800
