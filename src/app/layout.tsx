@@ -75,7 +75,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${instrumentSerif.variable} ${kablammo.variable}`}>
+      <body className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ThemeShortcutProvider>
             <LenisProvider>
