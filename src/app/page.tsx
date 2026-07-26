@@ -20,59 +20,59 @@ export default function Home() {
   return (
     <div className="w-full selection:bg-orange-300 dark:selection:bg-indigo-500">
       {/* <div className="relative mx-auto w-full border-x border-neutral-300 dark:border-neutral-800"> */}
-      <Section showTopBorder={false}>
+      <Section className="mt-14" showTopBorder={false}>
         <Hero />
       </Section>
 
-      <Section>
+      <Section className="mt-5">
         <Reveal delay={0.1}>
           <Profile />
         </Reveal>
       </Section>
 
-      <Section className="bg-white">
+      <Section className="mt-5 bg-white dark:bg-neutral-900">
         <Reveal delay={0.15}>
           <About />
         </Reveal>
       </Section>
 
-      <Section>
+      <Section className="mt-5">
         <Reveal delay={0.15}>
           <TechStackMarquee />
         </Reveal>
       </Section>
 
-      <Section>
+      <Section className="mt-5">
         <Reveal delay={0.15}>
           <GithubCalendar />
         </Reveal>
       </Section>
 
-      <Section>
+      <Section className="mt-5">
         <Reveal delay={0.15}>
           <Projectcard />
         </Reveal>
       </Section>
 
-      <Section>
+      <Section className="mt-5">
         <Reveal delay={0.15}>
           <Achievements />
         </Reveal>
       </Section>
 
-      <Section>
+      <Section className="mt-5">
         <Reveal delay={0.15}>
           <Experience />
         </Reveal>
       </Section>
 
-      <Section>
+      <Section className="mt-5">
         <Reveal delay={0.15}>
           <EducationCard />
         </Reveal>
       </Section>
 
-      <Section>
+      <Section className="mt-5">
         <Reveal delay={0.25}>
           <Contact />
         </Reveal>

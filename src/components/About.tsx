@@ -1,13 +1,16 @@
+import Divider from "./Divider";
 import { Tooltip } from "./ui/tooltip-card";
 
 export default function About(){
   return (
-    <div className=" bg-white w-full md:pr-17 max-w-5xl px-4 md:pl-10 mt-9 z-0">
+    <div className="w-full">
       <div className="flex">
         <p className=" text-[24px] md:text-[28px] text-black dark:text-white instrument-serif-bold">
           About.
         </p>
       </div>
+
+      <Divider dashed/>
 
       <div className="instrument-serif  text-black text-[17px] md:text-[20px] dark:text-neutral-400">
         Hello! I'm a developer from Kolkata, India. I enjoy programming and

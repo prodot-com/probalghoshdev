@@ -38,7 +38,7 @@ export function GithubCard() {
   }, []);
 
   return (
-    <div className="selection:bg-neutral-700 mt-10 px-3 md:px-4 md:pl-9 flex flex-col gap-3 w-full max-w-5xl">
+    <div className="selection:bg-neutral-700 flex flex-col gap-3 w-full max-w-5xl">
       <Card
         className="relative w-full overflow-hidden bg-white/10 dark:bg-black 
             rounded-[5px] transition-all duration-300 min-h-52.5 border-none"

@@ -21,6 +21,7 @@ import SidePattern from "@/components/Sidepattern";
 import Footer from "@/components/Footer";
 import LenisProvider from "@/components/LenisProvider";
 import ThemeShortcutProvider from "./hooks/useThemeShortcut";
+import Section from "@/components/Section";
 
 config.autoAddCss = false;
 
@@ -82,16 +83,18 @@ export default function RootLayout({
               <Toaster />
               <Navbar />
               <ScrollProgress className="fixed left-0 w-full h-1.25 transition-all duration-300" />
-              <div className="relative min-h-screen bg-white dark:bg-neutral-900">
+              <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c]">
                 <div
-                  className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block w-px bg-neutral-300 dark:bg-neutral-800 z-50"
+                  className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block
+             border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
                   style={{
                     transform: "translateX(calc(var(--content-width) / -2))",
                   }}
                 />
 
                 <div
-                  className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block w-px bg-neutral-300 dark:bg-neutral-800 z-50"
+                  className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block
+             border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
                   style={{
                     transform: "translateX(calc(var(--content-width) / 2))",
                   }}
@@ -99,7 +102,9 @@ export default function RootLayout({
 
                 <div className="relative z-20">
                   {children}
-                  <Footer />
+                  <Section>
+                    <Footer />
+                  </Section>
                 </div>
               </div>
               {/* <OnekoCat /> */}

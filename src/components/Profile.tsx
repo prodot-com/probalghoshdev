@@ -1,33 +1,43 @@
+import { Eye } from "lucide-react";
 
-export default function Profile(){
+export default function Profile() {
   return (
-          <div className="w-full max-w-5x px-4 sm:pl-10 mt-4">
-            <img
-              src="/profile.jpg"
-              alt="Profile Image"
-              className="w-41 h-41 md:w-42 md:h-42 rounded-full ring-4 ring-black/55 dark:ring-white/30 hover:ring-black/40 dark:hover:ring-white/20 transition-all delay-50 
-              shadow-2xl shadow-black/75 dark:shadow-white/15 mb-4 object-cover md:ml-2"
-            />
-            <div className="">
-              <div className="flex md:items-end gap-4">
-              <div className="md:max-h-13 md:w-auto flex md:justify-between md:items-start">
-                  <h2 className="instrument-serif-bold text-black dark:text-white text-[40px] md:text-[45px] ">
-                    Probal Ghosh
-                  </h2>
-              </div>
-              {/* <div className="border my-4 md:my-0 border-neutral-600 bg-neutral-100 dark:bg-zinc-800 rounded-2xl px-2 py-1 flex items-center gap-1.5 text-neutral-600 dark:text-neutral-400">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-600"></div>
-                <p className="text-[14px] md:text-[18px] instrument-serif tracking-wide">
-                  Available for work
-                </p>
-              </div> */}
-              </div>
-              
-              <p className="instrument-serif-italic dark:text-neutral-500 text-neutral-800 text-[20px] md:text-[22px]">
-                21 • engineer • fullstack developer
-              </p>
+    <section className="flex items-start justify-between p-2">
+      {/* Left */}
+      <div className="flex items-start gap-8">
+        <img
+          src="/profile.jpg"
+          alt="Profile"
+          className="h-32 w-32 rounded-2xl border-4 border-neutral-500 object-cover"
+        />
+
+        <div className="space-y-1">
+          <div className="flex gap-1">
+            <div className="relative h-4 w-4 rounded-full border border-neutral-500">
+              <div className="absolute inset-y-0 left-0 w-1/2 rounded-l-full bg-neutral-900" />
+            </div>
+            <div className="relative h-4 w-4 rounded-full border border-neutral-500">
+              <div className="absolute inset-y-0 right-0 w-1/2 rounded-r-full bg-neutral-900" />
             </div>
           </div>
-  )
-}
 
+          <h1 className="instrument-serif-bold text-4xl leading-none text-black dark:text-white">
+            Probal Ghosh
+          </h1>
+
+          <p className="text-2xl font-semibold text-neutral-500">
+            Full Stack Developer
+          </p>
+
+          <p className="text-sm text-neutral-500">21, West Bengal, IND</p>
+        </div>
+      </div>
+
+      {/* Right */}
+      <div className="flex items-center gap-2 text-neutral-500">
+        <Eye className="h-5 w-5" />
+        <span className="text-lg">6576</span>
+      </div>
+    </section>
+  );
+}

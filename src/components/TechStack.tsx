@@ -28,7 +28,7 @@ const TechIcon = ({ icon, name }: { icon: string; name: string }) => {
 
 export function TechStackMarquee() {
   return (
-    <div className="bg-white selection:bg-neutral-700 relative mt-10 px-4 md:px-10 flex flex-col gap-3 w-full max-w-5xl overflow-hidden">
+    <div className="bg-white selection:bg-neutral-700 relative px-4 md:px-10 flex flex-col gap-3 w-full max-w-5xl overflow-hidden">
       <div>
         <p className="instrument-serif-bold text-[24px] md:text-[27px]">Technologies I use.</p>
       </div>
