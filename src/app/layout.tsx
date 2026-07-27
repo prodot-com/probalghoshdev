@@ -102,7 +102,7 @@ export default function RootLayout({
 
                 <div className="relative z-20">
                   {children}
-                  <Section>
+                  <Section className="mt-5">
                     <Footer />
                   </Section>
                 </div>

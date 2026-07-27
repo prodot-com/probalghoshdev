@@ -1,4 +1,7 @@
+"use client";
+
 import { ChevronRight } from "lucide-react";
+import Divider from "./Divider";
 
 type EducationItem = {
   icon: string;
@@ -16,7 +19,7 @@ const educations: EducationItem[] = [
     subname: "B.Tech in Information Technology",
     startDate: "2023",
     link: "https://www.gcetts.ac.in/",
-  }, 
+  },
   {
     icon: "/rkm.png",
     name: "Sargachi Ramakrishna Mission High School",
@@ -29,56 +32,54 @@ const educations: EducationItem[] = [
 
 export function EducationCard() {
   return (
-    <div className="font-bold w-full max-w-5xl">
-    <section className="px-2 md:px-8 md:pl-0 md:pt-3 md:pb-4">
-      <p className="text-[24px] md:text-[27px] instrument-serif-bold mb-6 text-neutral-900 dark:text-white">
+    <div className="w-full">
+      <p className="text-[24px] md:text-[29px] instrument-serif-bold text-neutral-900 dark:text-white px-3 py-1.5">
         Education.
       </p>
 
-      <div className="space-y-7">
+      <Divider dashed />
+
+      <div>
         {educations.map((edu, index) => (
-          <div key={index} className="flex flex-col gap-2">
-            
-            <div
-              className="flex flex-row gap-7 sm:flex-row sm:items-center sm:justify-between sm:gap-3 group"
-            >
-              
-              <div className="flex items-center gap-4">
-                <img
-                  src={edu.icon}
-                  alt={edu.name}
-                  className="w-11 h-11 md:w-12 md:h-12 p-1 rounded-full object-cover border border-neutral-300 dark:border-neutral-700"
-                />
-                <div>
-                  <div className="inline-flex items-center gap-1 group">
-                    <a
-                      href={edu.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="instrument-serif-bold text-[16px] md:text-[19px] text-neutral-800 dark:text-neutral-200"
-                      >
-                      {edu.name}
-                    </a>
-                    <ChevronRight className="w-4 text-neutral-800 dark:text-neutral-200 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-transform duration-200" />
-                  </div>
+          <a
+            key={index}
+            href={edu.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-start justify-between gap-6 p-3 border-b border-dashed border-neutral-300 dark:border-neutral-800 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40"
+          >
+            {/* Left */}
+            <div className="flex items-start gap-4 flex-1 min-w-0">
+              <img
+                src={edu.icon}
+                alt={edu.name}
+                className="w-12 h-12 rounded-full object-cover border border-neutral-300 dark:border-neutral-700 flex-shrink-0"
+              />
 
-                  <p className="instrument-serif-italic-bold text-[14px] md:text-[15px] text-neutral-500 dark:text-neutral-400">
-                    {edu.subname}
-                  </p>
+              <div className="min-w-0">
+                <div className="flex items-center gap-2">
+                  <h3 className="instrument-serif-bold text-[19px] text-neutral-900 dark:text-white">
+                    {edu.name}
+                  </h3>
+
+                  <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>
-              </div>
 
-              
-              <div className="flex flex-col sm:flex-row items-end text-right text-neutral-600 dark:text-neutral-400 text-sm">
+                <p className="instrument-serif-italic text-[15px] text-neutral-500 dark:text-neutral-400 mt-1">
+                  {edu.subname}
+                </p>
+              </div>
+            </div>
+
+            {/* Right */}
+            <div className="flex flex-col sm:flex-row items-end text-right text-neutral-600 dark:text-neutral-400 text-sm">
                 <p className="instrument-serif-bold text-[14px] md:text-[15px]">{edu.startDate}</p>
                 <p className="px-1 mb-0.75 md:inline hidden">-</p>
                 <p className="instrument-serif-bold text-[14px] md:text-[15px]">{edu.endDate ? edu.endDate: "Present"}</p>
               </div>
-            </div>
-          </div>
+          </a>
         ))}
       </div>
-    </section>
     </div>
   );
 }

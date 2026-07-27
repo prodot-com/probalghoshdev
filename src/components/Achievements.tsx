@@ -10,7 +10,7 @@ export default function AchievementCard() {
 
   return (
     <div className="w-full">
-      <p className="text-[24px] md:text-[29px] instrument-serif-bold text-neutral-900 dark:text-white p-3">
+      <p className="text-[24px] md:text-[29px] instrument-serif-bold text-neutral-900 dark:text-white px-3 py-1.5">
         Achievements.
       </p>
 
