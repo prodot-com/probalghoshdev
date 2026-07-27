@@ -1,13 +1,5 @@
 "use client";
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from "./ui/card";
-import { BorderBeam } from "./ui/border-beam";
 import ReactMarkdown from "react-markdown";
 import {
   Github,
@@ -68,15 +60,15 @@ export function Projectcard() {
   };
 
   return (
-    <div className="font-bold w-full p-3">
+    <div className="font-bold w-full">
       <div>
-        <p className="text-[24px] md:text-[29px] font-bold instrument-serif-bold text-neutral-900 dark:text-white">
+        <p className="text-[24px] p-3 md:text-[29px] font-bold instrument-serif-bold text-neutral-900 dark:text-white">
           Featured Projects.
         </p>
 
         <Divider dashed />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center mt-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start pt-">
           {projects.map((project, index) => {
             const bgGradient = getGradient(project.slug ?? project.name);
 
@@ -84,17 +76,24 @@ export function Projectcard() {
               project.badge &&
               badgeIcons[project.badge.icon as keyof typeof badgeIcons];
             return (
-              <Card
+              <div
                 key={`${project.name}-${index}`}
-                className="relative w-full max-w-sm flex flex-col overflow-hidden bg-white/10 dark:bg-black dark:border-neutral-800 backdrop-blur-md border border-indigo-800/20 shadow-lg hover:shadow-xl transition-all duration-300 h-full"
+                className={`relative w-full flex flex-col overflow-hidden bg-white/10 dark:bg-black backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300 h-full border-dashed border-neutral-400 dark:border-neutral-800
+                        ${
+                          index % 2 === 0
+                            ? "border-r border-b"
+                            : "border-l border-b"
+                        }
+                      `}
               >
                 {project.image && (
                   <div
-                    className={`group relative w-full h-56 overflow-hidden rounded-t-[4px] bg-gradient-to-br ${bgGradient}`}
+                    className={`group relative w-full h-56 overflow-hidden bg-gradient-to-br ${bgGradient}`}
                   >
                     {project.badge && (
                       <div className="absolute top-0 left-0 z-20 overflow-hidden w-28 h-28 pointer-events-none">
-                        <span className={`absolute top-5 -left-8 w-40 -rotate-39 bg-gradient-to-r ${project.badge.color} text-white text-[11px] font-bold tracking-wide py-1 shadow-lg border-y border-dashed border-black/20 flex items-center justify-center gap-1`}
+                        <span
+                          className={`absolute top-5 -left-8 w-40 -rotate-39 bg-gradient-to-r ${project.badge.color} text-white text-[11px] font-bold tracking-wide py-1 shadow-lg border-y border-dashed border-black/20 flex items-center justify-center gap-1`}
                         >
                           {BadgeIcon && (
                             <BadgeIcon
@@ -121,18 +120,18 @@ export function Projectcard() {
                 )}
 
                 <Link href={`/projects/${project.slug}`} className="flex-grow">
-                  <CardHeader className="px-4 pt-4 flex flex-col gap-2">
-                    <CardTitle className="instrument-serif-bold text-[22px] md:text-[20px]">
+                  <div className="px-4 pt-4 flex flex-col gap-2">
+                    <h3 className="instrument-serif-bold text-[22px] md:text-[20px]">
                       {project.name}
-                    </CardTitle>
+                    </h3>
 
                     <div className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4">
                       <ReactMarkdown>{project.description}</ReactMarkdown>
                     </div>
-                  </CardHeader>
+                  </div>
                 </Link>
 
-                <CardContent className="px-4 pt-2">
+                <div className="px-4 pt-2">
                   <div className="flex flex-wrap gap-2">
                     {project.tools.map((tool) => (
                       <span
@@ -143,9 +142,9 @@ export function Projectcard() {
                       </span>
                     ))}
                   </div>
-                </CardContent>
+                </div>
 
-                <CardFooter className="px-4 mt-auto pb-4">
+                <div className="px-4 pt-2 pb-4">
                   {project.link && (
                     <div className="flex items-center gap-3">
                       {project.working && project.link.livelink && (
@@ -171,15 +170,15 @@ export function Projectcard() {
                       )}
                     </div>
                   )}
-                </CardFooter>
-              </Card>
+                </div>
+              </div>
             );
           })}
         </div>
 
-        <div className="flex justify-start mt-4">
+        <div className="mt-4">
           <ShinyButton
-            className="cursor-pointer ml-4 md:ml-8 rounded-[5px] bg-black text-white instrument-serif-bold text-[17px] px-4 border dark:border-neutral-600"
+            className="cursor-pointer bg-black text-white instrument-serif-bold text-[17px] px-4 border-t border-r border-dashed border-neutral-400 dark:border-neutral-800"
             onClick={() => router.push("/projects")}
           >
             View All
