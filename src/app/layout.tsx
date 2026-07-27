@@ -114,11 +114,11 @@ export default function RootLayout({
             </LenisProvider>
           </ThemeShortcutProvider>
         </ThemeProvider>
-        <script
+        {/* <script
           defer
           src="https://cloud.umami.is/script.js"
           data-website-id="652051f2-24d5-4acb-b79c-82930a61d307"
-        ></script>
+        ></script> */}
       </body>
     </html>
   );
