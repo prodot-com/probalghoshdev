@@ -62,7 +62,7 @@ export function Projectcard() {
   return (
     <div className="font-bold w-full">
       <div>
-        <p className="text-[24px] p-3 md:text-[29px] font-bold instrument-serif-bold text-neutral-900 dark:text-white">
+        <p className="text-[24px] px-3 py-1.5 md:text-[29px] font-bold instrument-serif-bold text-neutral-900 dark:text-white">
           Featured Projects.
         </p>
 
