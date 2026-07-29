@@ -92,11 +92,11 @@ export function BottomDock() {
 
   if (!mounted) return null;
 
-  const isDarkMode = theme === "dark";
+  // const isDarkMode = theme === "dark";
 
-    const toggleDarkMode = () => {
-    setTheme(isDarkMode ? "light": "dark")
-  };
+  //   const toggleDarkMode = () => {
+  //   setTheme(isDarkMode ? "light": "dark")
+  // };
   return (
     <div className="fixed bottom-7 md:bottom-7 inset-x-0 flex justify-center z-50">
       <div className="w-max md:max-w-[95vw]">
@@ -149,7 +149,7 @@ export function BottomDock() {
             ))}
             <Separator orientation="vertical" className="h-8 md:h-full mx-1" />
               <DockIcon>
-                <Tooltip>
+                {/* <Tooltip>
                   <TooltipTrigger asChild>
                     <button
                       onClick={toggleDarkMode}
@@ -189,7 +189,7 @@ export function BottomDock() {
                   <TooltipContent className="hidden md:block">
                     {isDarkMode ? "Light" : "Dark"}
                   </TooltipContent>
-                </Tooltip>
+                </Tooltip> */}
               </DockIcon>
 
           </Dock>

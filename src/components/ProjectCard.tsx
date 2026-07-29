@@ -22,7 +22,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Divider from "./Divider";
 
-// Array of premium gradients to cycle through for different project backgrounds
 const gradients = [
   ["from-white", "via-orange-300", "to-rose-500"],
   ["from-white", "via-cyan-300", "to-blue-600"],
@@ -51,7 +50,15 @@ const badgeIcons = {
   chart: BarChart3,
 } as const;
 
-export function Projectcard() {
+type ProjectcardProps = {
+  showHeading?: boolean;
+  showViewAll?: boolean;
+};
+
+export function Projectcard({
+  showHeading = true,
+  showViewAll = true,
+}: ProjectcardProps) {
   const router = useRouter();
 
   const getGradient = (key: string) => {
@@ -62,12 +69,15 @@ export function Projectcard() {
   return (
     <div className="font-bold w-full">
       <div>
-        <p className="text-[24px] px-3 py-1.5 md:text-[29px] font-bold instrument-serif-bold text-neutral-900 dark:text-white">
-          Featured Projects.
-        </p>
+        {showHeading && (
+          <>
+            <p className="text-[24px] px-3 py-1.5 md:text-[29px] font-bold instrument-serif-bold text-neutral-900 dark:text-white">
+              Featured Projects.
+            </p>
 
-        <Divider dashed />
-
+            <Divider dashed />
+          </>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start pt-">
           {projects.map((project, index) => {
             const bgGradient = getGradient(project.slug ?? project.name);
@@ -78,12 +88,13 @@ export function Projectcard() {
             return (
               <div
                 key={`${project.name}-${index}`}
-                className={`relative w-full flex flex-col overflow-hidden bg-white/10 dark:bg-black backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300 h-full border-dashed border-neutral-400 dark:border-neutral-800
+                className={`relative w-full flex flex-col overflow-hidden bg-white/10 dark:bg-black backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300 h-full border-dashed border-neutral-300 dark:border-neutral-800
                         ${
                           index % 2 === 0
                             ? "border-r border-b"
                             : "border-l border-b"
                         }
+                        ${index !== 1 && 2 ? "border-t" : ""}
                       `}
               >
                 {project.image && (
@@ -176,14 +187,16 @@ export function Projectcard() {
           })}
         </div>
 
-        <div className="mt-4">
-          <ShinyButton
-            className="cursor-pointer bg-black text-white instrument-serif-bold text-[17px] px-4 border-t border-r border-dashed border-neutral-400 dark:border-neutral-800"
-            onClick={() => router.push("/projects")}
-          >
-            View All
-          </ShinyButton>
-        </div>
+        {showViewAll && (
+          <div className="mt-4">
+            <ShinyButton
+              className="cursor-pointer bg-black text-white instrument-serif-bold text-[17px] px-4 border-t border-r border-dashed border-neutral-100 dark:border-neutral-800"
+              onClick={() => router.push("/projects")}
+            >
+              View All
+            </ShinyButton>
+          </div>
+        )}
       </div>
     </div>
   );

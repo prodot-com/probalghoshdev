@@ -110,7 +110,7 @@ export default function RootLayout({
               {/* <OnekoCat /> */}
               {/* <Analytics />
               <SpeedInsights /> */}
-              <BottomDock />
+              {/* <BottomDock /> */}
             </LenisProvider>
           </ThemeShortcutProvider>
         </ThemeProvider>

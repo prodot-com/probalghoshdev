@@ -17,7 +17,7 @@ export default function Section({
     <section className={`relative w-full bg-white dark:bg-neutral-900 ${className}`}>
       {/* Top Divider */}
       {showTopBorder && (
-        <div className="absolute top-0 left-1/2 z-20 w-screen -translate-x-1/2 border-t border-dashed border-neutral-400 dark:border-neutral-800" />
+        <div className="absolute top-0 left-1/2 z-20 w-screen -translate-x-1/2 border-t border-dashed border-neutral-300 dark:border-neutral-800" />
       )}
 
       {/* Content */}
@@ -29,7 +29,7 @@ export default function Section({
 
       {/* Bottom Divider */}
       {showBottomBorder && (
-        <div className="absolute bottom-0 left-1/2 z-20 w-screen -translate-x-1/2 border-b border-dashed border-neutral-400 dark:border-neutral-800" />
+        <div className="absolute bottom-0 left-1/2 z-20 w-screen -translate-x-1/2 border-b border-dashed border-neutral-300 dark:border-neutral-800" />
       )}
     </section>
   );
