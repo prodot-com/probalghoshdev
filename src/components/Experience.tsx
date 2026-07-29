@@ -12,18 +12,33 @@ type ExperienceItem = {
   startDate: string;
   endDate?: string;
   link?: string;
-  description?: string;
+  description?: string[];
 };
 
 const experiences: ExperienceItem[] = [
+  {
+    icon: "/erfolgwerke.svg",
+    company: "Erfolgwerke",
+    sub: "Freelance Full Stack Developer",
+    startDate: "April 2026",
+    endDate: "June 2026",
+    description: [
+      "Engineered a configurable audit form builder supporting reusable components, conditional logic, macros, and draft-based workflows for enterprise audit processes.",
+      "Implemented audit lifecycle features including audit history, KYC verification, structured document repositories, and role-based document management.",
+      "Integrated Appwrite backend services and REST APIs to build secure, scalable data management and file handling solutions.",
+      "Developed responsive user interfaces with Next.js, TypeScript, Tailwind CSS, and Framer Motion while optimizing performance and maintainability.",
+      "Worked in an agile development environment, collaborating through feature branches, code reviews, and iterative releases to deliver production-ready functionality.",
+    ],
+  },
   {
     icon: "/zaalima.svg",
     company: "Zaalima Development",
     sub: "Software Engineer",
     startDate: "August 2025",
     endDate: "October 2025",
-    description:
+    description: [
       "Built and optimized full-stack web applications using the MERN stack. Implemented secure authentication, real-time features, and responsive UIs with smooth frontend–backend integration for high-performance user experiences.",
+    ],
   },
 ];
 
@@ -33,21 +48,16 @@ export function Experience() {
   return (
     <div className="w-full">
       <p className="text-[24px] md:text-[29px] instrument-serif-bold text-neutral-900 dark:text-white py-1.5 px-3">
-        Work Experience.
+        Experience.
       </p>
 
       <Divider dashed />
 
       <div>
         {experiences.map((exp, index) => (
-          <div
-            key={index}
-            className=""
-          >
+          <div key={index} className="">
             <button
-              onClick={() =>
-                setOpenIndex(openIndex === index ? null : index)
-              }
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
               className="w-full p-3 text-left transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40"
             >
               <div className="flex items-start justify-between gap-6">
@@ -56,7 +66,7 @@ export function Experience() {
                     <img
                       src={exp.icon}
                       alt={exp.company}
-                      className="w-8 h-8 object-contain"
+                      className="w-8 h-8 object-contain text-black dark:text-white"
                     />
                   </div>
 
@@ -80,10 +90,14 @@ export function Experience() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-end text-right text-neutral-600 dark:text-neutral-400 text-sm">
-                <p className="text-[14px] md:text-[15px] instrument-serif-bold">{exp.startDate}</p>
-                <p className="px-1 md:pb-1 md:inline hidden">-</p>
-                <p className="text-[14px] md:text-[15px] instrument-serif-bold">{exp.endDate || "Present"}</p>
-              </div>
+                  <p className="text-[14px] md:text-[15px] instrument-serif-bold">
+                    {exp.startDate}
+                  </p>
+                  <p className="px-1 md:pb-1 md:inline hidden">-</p>
+                  <p className="text-[14px] md:text-[15px] instrument-serif-bold">
+                    {exp.endDate || "Present"}
+                  </p>
+                </div>
               </div>
             </button>
 
@@ -96,9 +110,16 @@ export function Experience() {
                   transition={{ duration: 0.25 }}
                   className="overflow-hidden"
                 >
-                  <p className="instrument-serif text-[16px] leading-relaxed text-neutral-700 dark:text-neutral-300 px-5 pb-5 pl-20">
-                    {exp.description}
-                  </p>
+                  <ul className="list-disc pl-24 pr-5 pb-5">
+                    {exp.description?.map((item, i) => (
+                      <li
+                        key={i}
+                        className="instrument-serif text-[16px] leading-relaxed text-neutral-700 dark:text-neutral-300"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </motion.div>
               )}
             </AnimatePresence>

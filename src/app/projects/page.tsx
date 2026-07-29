@@ -149,11 +149,11 @@ export default function ProjectsPage() {
   const router = useRouter();
   return (
     <>
-      <Section>
-        <div className="p-3">
+      <Section className="mt-14" showTopBorder={false}>
+        <div className="px-3 py-1.5 flex gap-3 items-center">
           <BackArrow
             onClick={() => router.back()}
-            className="mb-4 h-8 w-8 cursor-pointer rounded-full p-1 hover:bg-neutral-200 dark:hover:bg-neutral-800"
+            className="h-8 w-8 cursor-pointer rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800"
           />
 
           <h1 className="instrument-serif-bold text-[30px] md:text-[34px]">

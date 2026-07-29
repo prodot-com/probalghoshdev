@@ -75,7 +75,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable}`}>
+      <body className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ThemeShortcutProvider>
             <LenisProvider>
@@ -83,7 +83,7 @@ export default function RootLayout({
               <Toaster />
               <Navbar />
               <ScrollProgress className="fixed left-0 w-full h-1.25 transition-all duration-300" />
-              <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c]">
+              <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c] text-black dark:text-white">
                 <div
                   className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block
              border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"

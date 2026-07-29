@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100" width="100%" height="100%">
+<style>
+  .erfolg {
+    fill: #1C2533;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .erfolg {
+      fill: #ffffff;
+    }
+  }
+</style>
+  <!-- Dark Navy / Black: #1C2533 | Orange: #F49420 -->
+  
+  <!-- First Bar (Dark) -->
+  <polygon points="25,68 35,68 35,52 25,55" fill="#1C2533" />
+  
+  <!-- Second Bar (Dark) -->
+  <polygon points="40,68 50,68 50,42 40,47" fill="#1C2533" />
+  
+  <!-- Third Bar (Orange) -->
+  <polygon points="55,68 65,68 65,30 55,36" fill="#F49420" />
+  
+  <!-- Swooping Arrow (Orange) -->
+  <path d="M 12,59 
+           C 35,53 52,41 68,28 
+           L 67,34 
+           L 81,15 
+           L 60,18 
+           L 63,23 
+           C 47,35 31,48 12,55 Z" 
+        fill="#F49420" />
+        
+  <!-- Logo Text -->
+  <text x="92" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.5">
+    <tspan class="erfolg">Erfolg</tspan><tspan fill="#F49420">Werke</tspan>
+  </text>
+</svg>
