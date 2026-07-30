@@ -58,7 +58,7 @@ export function Experience() {
           <div key={index} className="">
             <button
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              className="w-full p-3 text-left transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40"
+              className="w-full p-3 text-left transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40 border-b border-dashed border-neutral-300 dark:border-neutral-800"
             >
               <div className="flex items-start justify-between gap-6">
                 <div className="flex items-start gap-4 flex-1 min-w-0">

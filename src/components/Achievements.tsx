@@ -24,7 +24,7 @@ export default function AchievementCard() {
             className="group cursor-pointer p-3 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40"
           >
             <div className="flex items-start justify-between gap-6">
-              {/* Left */}
+              
               <div className="flex items-start gap-4 flex-1 min-w-0">
                 <img
                   src={item.image}
@@ -47,7 +47,7 @@ export default function AchievementCard() {
                 </div>
               </div>
 
-              {/* Right */}
+              
               <div className="flex-shrink-0">
                 <span className="instrument-serif-bold text-[15px] text-neutral-500 dark:text-neutral-400">
                   {item.year}

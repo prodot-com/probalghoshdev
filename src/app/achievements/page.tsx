@@ -7,21 +7,31 @@ import BackButton from "@/components/ui/BackButton";
 import Section from "@/components/Section";
 import BackArrow from "@/components/icons/Arrow";
 import { useRouter } from "next/navigation";
+import Divider from "@/components/Divider";
 
 export default function Achievements() {
   const router = useRouter();
 
   return (
     <Section showTopBorder={false}>
-      <main className="px-3 pt-17 min-h-screen overflow-hidden bg-white text-neutral-900 selection:bg-orange-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-indigo-500">
+      <main className="px-3 pt-14 min-h-screen bg-white text-neutral-900 selection:bg-orange-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-indigo-500">
         <div className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-orange-200/30 blur-3xl dark:bg-indigo-500/10" />
 
-        <BackArrow
-          onClick={() => router.back()}
-          className="h-8 w-8 mb-2 cursor-pointer rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800"
-        />
+        <Section showTopBorder={false} className="py-2">
+          <div className="flex gap-3 items-center">
+            <BackArrow
+              onClick={() => router.back()}
+              className="h-8 w-8 mb-2 cursor-pointer rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800"
+            />
+            <p className="text-[24px] md:text-[28px] instrument-serif-bold">
+              Achievements
+            </p>
+          </div>
+        </Section>
 
-        <div className="relative z-10 mx-auto w-full max-w-[var(--content-width)]">
+        {/* <Divider dashed /> */}
+
+        <div className="mt-2 relative z-10 mx-auto w-full max-w-[var(--content-width)]">
           {achievements.map((paper, index) => (
             <article key={paper.doiLink} className="pb-16 md:pb-24">
               <header className="mb-5 max-w-4xl md:mb-5">
@@ -37,6 +47,9 @@ export default function Achievements() {
                 <h1 className="instrument-serif-bold max-w-4xl text-4xl leading-[0.98] tracking-tight sm:text-5xl">
                   {paper.title2}
                 </h1>
+
+                <Divider dashed className="mt-2" />
+
                 <p className="instrument-serif mt-6 max-w-3xl text-xl leading-relaxed text-neutral-600 md:text-2xl dark:text-neutral-300">
                   {paper.conference}
                 </p>
@@ -56,7 +69,7 @@ export default function Achievements() {
                       />
                       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/55 to-transparent" />
                       <p className="instrument-serif absolute bottom-4 left-5 text-sm text-white/90 sm:bottom-5 sm:left-6 sm:text-base">
-                        ICRCICN 2025 · Certificate presentation
+                        ICRCICN 2025 · KALYANI · Certificate presentation
                       </p>
                     </div>
                   </figure>
