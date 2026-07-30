@@ -1,62 +1,62 @@
-"use client"
+"use client";
 
 import { achievements } from "@/data/ProjectData";
 import { ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Divider from "./Divider";
 
+export default function AchievementCard() {
+  const router = useRouter();
 
-    export default function AchievementCard() {
+  return (
+    <div className="w-full">
+      <p className="text-[24px] md:text-[29px] instrument-serif-bold text-neutral-900 dark:text-white px-3 py-1.5">
+        Achievements.
+      </p>
 
-        const router = useRouter();
+      <Divider dashed />
 
-    return (
-        <div className="font-bold w-full max-w-5xl">
-        <section className="px-2 md:px-8 md:pl-0 md:pt-3 md:pb-4">
-            <p className="text-[24px] md:text-[27px] instrument-serif-bold mb-6 text-neutral-900 dark:text-white">
-            Achievements.
-            </p>
+      <div>
+        {achievements.map((item, index) => (
+          <div
+            key={index}
+            onClick={() => router.push("/achievements")}
+            className="group cursor-pointer p-3 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40"
+          >
+            <div className="flex items-start justify-between gap-6">
+              
+              <div className="flex items-start gap-4 flex-1 min-w-0">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-12 h-12 rounded-full border border-neutral-300 dark:border-neutral-700 object-cover flex-shrink-0"
+                />
 
-            <div className="space-y-7">
-            {achievements.map((item, index) => (
-                <div key={index} className="flex flex-col gap-2">
-                <div className="flex flex-row gap-7 sm:flex-row sm:items-center sm:justify-between sm:gap-3 group">
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    <h3 className="instrument-serif-bold text-[19px] text-neutral-900 dark:text-white">
+                      {item.title}
+                    </h3>
 
-                    <div className="flex items-center gap-4">
-                    <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-11 h-11 md:w-12 md:h-12 p-1 rounded-full object-cover border border-neutral-300 dark:border-neutral-700"
-                    />
+                    <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </div>
 
-                    <div
-                    className="cursor-pointer" 
-                    onClick={()=>{router.push("/achievements")}}
-                    >
-                        <div className="inline-flex items-center gap-1 group">
-                        <p className="instrument-serif-bold text-[17px] md:text-[19px] text-neutral-800 dark:text-neutral-200">
-                            {item.title}
-                        </p>
-
-                        <ChevronRight className="w-5 md:w-4 text-neutral-800 dark:text-neutral-200 group-hover:translate-x-1 transition-transform duration-200" />
-                        </div>
-
-                        <p className="instrument-serif-italic-bold text-[14px] md:text-[15px] text-neutral-500 dark:text-neutral-400">
-                        {item.subname}
-                        </p>
-                    </div>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row items-end text-right text-neutral-600 dark:text-neutral-400 text-sm">
-                        <p className="instrument-serif-bold text-[14px] md:text-[15px]">
-                            {item.year}
-                        </p>
-                    </div>
-
+                  <p className="instrument-serif-italic text-[15px] text-neutral-500 dark:text-neutral-400 mt-1">
+                    {item.subname}
+                  </p>
                 </div>
-                </div>
-            ))}
+              </div>
+
+              
+              <div className="flex-shrink-0">
+                <span className="instrument-serif-bold text-[15px] text-neutral-500 dark:text-neutral-400">
+                  {item.year}
+                </span>
+              </div>
             </div>
-        </section>
-        </div>
-    );
-    }
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

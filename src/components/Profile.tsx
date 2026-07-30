@@ -4,10 +4,7 @@ import { Eye } from "lucide-react";
 import { useEffect, useState } from "react";
 import { TextAnimate } from "@/components/ui/text-animate";
 
-const roles = [
-  "Engineer?",
-  "Full Stack Developer"
-];
+const roles = ["Engineer?", "Full Stack Developer"];
 
 export default function Profile() {
   const [showRealProfile, setShowRealProfile] = useState(false);
@@ -20,6 +17,19 @@ export default function Profile() {
 
     return () => clearInterval(interval);
   }, []);
+
+  const [views, setViews] = useState<number | null>(null);
+
+  // useEffect(() => {
+  //   async function loadViews() {
+  //     const res = await fetch("/api/v1/views");
+  //     const data = await res.json();
+
+  //     setViews(data.views);
+  //   }
+
+  //   loadViews();
+  // }, []);
 
   return (
     <section className="flex items-start justify-between px-3 py-5">
@@ -69,14 +79,13 @@ export default function Profile() {
             {roles[index]}
           </TextAnimate>
 
-          <p className="text-sm text-neutral-500">21, West Bengal, IND</p>
+          <p className="text-sm text-neutral-500 ">21, West Bengal, IND</p>
         </div>
       </div>
 
-      {/* Right */}
       <div className="flex items-center gap-1 text-neutral-500">
         <Eye className="h-4 w-4" />
-        <span className="text-[12px]">6576</span>
+        <span className="text-[12px]">{views?.toLocaleString() ?? "0000"}</span>
       </div>
     </section>
   );

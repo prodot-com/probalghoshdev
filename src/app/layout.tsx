@@ -22,6 +22,7 @@ import Footer from "@/components/Footer";
 import LenisProvider from "@/components/LenisProvider";
 import ThemeShortcutProvider from "./hooks/useThemeShortcut";
 import Section from "@/components/Section";
+import { tanker } from "./font";
 
 config.autoAddCss = false;
 
@@ -74,16 +75,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable}`}>
+    <html lang="en" className={tanker.variable} suppressHydrationWarning>
+      <body className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ThemeShortcutProvider>
             <LenisProvider>
               <ScrollToTopOnLoad />
               <Toaster />
               <Navbar />
-              <ScrollProgress className="fixed left-0 w-full h-1.25 transition-all duration-300" />
-              <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c]">
+              <ScrollProgress className="fixed left-0 w-full h-0.5 transition-all duration-300 z-100" />
+              <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c] text-black dark:text-white">
                 <div
                   className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block
              border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
@@ -102,7 +103,7 @@ export default function RootLayout({
 
                 <div className="relative z-20">
                   {children}
-                  <Section>
+                  <Section className="mt-5">
                     <Footer />
                   </Section>
                 </div>
@@ -110,15 +111,15 @@ export default function RootLayout({
               {/* <OnekoCat /> */}
               {/* <Analytics />
               <SpeedInsights /> */}
-              <BottomDock />
+              {/* <BottomDock /> */}
             </LenisProvider>
           </ThemeShortcutProvider>
         </ThemeProvider>
-        <script
+        {/* <script
           defer
           src="https://cloud.umami.is/script.js"
           data-website-id="652051f2-24d5-4acb-b79c-82930a61d307"
-        ></script>
+        ></script> */}
       </body>
     </html>
   );

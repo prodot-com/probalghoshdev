@@ -1,59 +1,62 @@
-"use client"
+"use client";
 
 import { Copy, ArrowUpLeft } from "lucide-react";
 import { RainbowButtonCustom } from "./RainbowButton";
 import { toast } from "sonner";
 import { Tooltip } from "./ui/tooltip-card";
+import Divider from "./Divider";
 
 export function Contact() {
   const email = "xprobal52@gmail.com";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
-    toast.success("Email Copied");
+    toast.success("Email copied");
   };
 
   return (
-    <div className="heading-font z-0 w-full max-w-5xl border-neutral-500 dark:border-neutral-600 pt-4">
-      <section className="w-full pt-0 md:pl-0 md:pt-0 rounded-lg flex flex-col gap-4">
-        <h2 className="font-bold text-[24px] md:text-[27px] instrument-serif-bold text-neutral-900 dark:text-neutral-100">
-          Contact.
-        </h2>
-        <div className="instrument-serif-italic text-[17px] md:text-[19px] text-neutral-600 dark:text-neutral-400">
+    <div className="w-full">
+      <p className="text-[24px] md:text-[29px] instrument-serif-bold text-neutral-900 dark:text-white px-3 py-1.5">
+        Contact.
+      </p>
+
+      <Divider dashed />
+
+      <div className="p-3 space-y-6">
+        <div className="instrument-serif text-[17px] md:text-[19px] leading-relaxed text-neutral-600 dark:text-neutral-400">
           Always open to discussing new projects, creative ideas, or
           opportunities.{" "}
           <Tooltip
             containerClassName="instrument-serif-italic-bold"
             content={<ContactTooltipCard />}
           >
-            <span className="instrument-serif-italic-bold cursor-pointer">
-              Feel free to reach out!
+            <span className="instrument-serif-italic-bold cursor-pointer underline underline-offset-4">
+              Feel free to reach out.
             </span>
           </Tooltip>
         </div>
-        <div className="flex flex-col sm:flex-row gap-7 mt-2">
+
+        <div className="flex flex-col sm:flex-row gap-4">
           <RainbowButtonCustom />
 
           <button
             onClick={handleCopy}
-            className="group cursor-pointer flex items-center justify-center gap-2 px-4 py-2 text-[15px] md:text-sm font-semibold rounded-[5px] border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors"
+            className="flex items-center justify-center gap-2 rounded-[5px] border border-neutral-300 dark:border-neutral-700 px-4 py-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-900"
           >
-            <Copy className="w-5 h-5" />
-            <span className="instrument-serif-bold tracking-wider text-[16px]">
+            <Copy className="h-4 w-4" />
+            <span className="instrument-serif-bold tracking-wide text-[16px]">
               {email}
             </span>
           </button>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
 
-const ContactTooltipCard = () => {
-  return (
-    <span className="flex gap-1">
-      <ArrowUpLeft className="rotate-290" />
-      <p>Leave a mail</p>
-    </span>
-  );
-};
+const ContactTooltipCard = () => (
+  <span className="flex items-center gap-1">
+    <ArrowUpLeft className="h-4 w-4" />
+    <span>Leave a mail</span>
+  </span>
+);

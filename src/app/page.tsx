@@ -53,6 +53,12 @@ export default function Home() {
           <Projectcard />
         </Reveal>
       </Section>
+      
+      <Section className="mt-5">
+        <Reveal delay={0.15}>
+          <Experience />
+        </Reveal>
+      </Section>
 
       <Section className="mt-5">
         <Reveal delay={0.15}>
@@ -60,11 +66,6 @@ export default function Home() {
         </Reveal>
       </Section>
 
-      <Section className="mt-5">
-        <Reveal delay={0.15}>
-          <Experience />
-        </Reveal>
-      </Section>
 
       <Section className="mt-5">
         <Reveal delay={0.15}>

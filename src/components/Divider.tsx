@@ -12,7 +12,7 @@ export default function Divider({
       <div
         className={`absolute left-1/2 w-screen -translate-x-1/2 ${
           dashed ? "border-dashed" : ""
-        } border-t border-neutral-400 dark:border-neutral-800`}
+        } border-t border-neutral-300 dark:border-neutral-800`}
       />
     </div>
   );
