@@ -13,7 +13,7 @@ export default function About() {
       <Divider dashed />
 
       <div className="px-3 py-2">
-        <ul className="list-disc space-y-4 pl-5 text-[20px] leading-[1.6] instrument-serif text-black dark:text-neutral-300 marker:text-neutral-500">
+        <ul className="list-disc space-y-2 pl-5 text-[20px] leading-[1.6] instrument-serif text-black dark:text-neutral-300 marker:text-neutral-500">
           <li>
             I'm a{" "}
             <span className="instrument-serif-bold underline decoration-1 underline-offset-2">

@@ -79,7 +79,7 @@ export default function Profile() {
             {roles[index]}
           </TextAnimate>
 
-          <p className="text-sm text-neutral-500">21, West Bengal, IND</p>
+          <p className="text-sm text-neutral-500 ">21, West Bengal, IND</p>
         </div>
       </div>
 

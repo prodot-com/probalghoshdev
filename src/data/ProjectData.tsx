@@ -137,7 +137,7 @@ export const achievements: AchievementItem[] = [
     doi: "10.1109/ICRCICN68210.2025.11364968",
     doiLink: "https://doi.org/10.1109/ICRCICN68210.2025.11364968",
     link: "https://ieeexplore.ieee.org/document/11364968",
-    image: "/ieee.png",
+    image: "/achievement1.jpg",
     year: "2025",
     docLink:
       "https://drive.google.com/file/d/1AsBvg-XYgAzTrBrObN3aWeJyJxGQ-LoX/view?usp=sharing",

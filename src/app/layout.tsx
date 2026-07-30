@@ -82,7 +82,7 @@ export default function RootLayout({
               <ScrollToTopOnLoad />
               <Toaster />
               <Navbar />
-              <ScrollProgress className="fixed left-0 w-full h-1.25 transition-all duration-300" />
+              <ScrollProgress className="fixed left-0 w-full h-0.5 transition-all duration-300" />
               <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c] text-black dark:text-white">
                 <div
                   className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block
