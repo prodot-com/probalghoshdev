@@ -22,6 +22,7 @@ import Footer from "@/components/Footer";
 import LenisProvider from "@/components/LenisProvider";
 import ThemeShortcutProvider from "./hooks/useThemeShortcut";
 import Section from "@/components/Section";
+import { tanker } from "./font";
 
 config.autoAddCss = false;
 
@@ -74,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={tanker.variable} suppressHydrationWarning>
       <body className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ThemeShortcutProvider>

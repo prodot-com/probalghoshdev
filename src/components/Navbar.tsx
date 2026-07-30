@@ -53,7 +53,7 @@ const Navbar = () => {
                 router.refresh();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="fraunces-italic-bold cursor-pointer text-[35px] tracking-tight text-indigo-700 hover:underline decoration-indigo-700"
+              className="font-tanker cursor-pointer text-[35px] tracking-tight text-indigo-700 hover:underline decoration-indigo-700"
             >
               Probal
             </h1>

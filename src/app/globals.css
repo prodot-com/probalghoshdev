@@ -7,6 +7,10 @@
   --content-width: 820px; /* max-w-4xl */
 }
 
+.font-tanker {
+  font-family: var(--font-tanker);
+}
+
 .kablammo-font {
   font-family: var(--font-kablammo), system-ui;
   font-optical-sizing: auto;
@@ -263,7 +267,8 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-::view-transition-old(root), ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
