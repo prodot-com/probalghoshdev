@@ -53,7 +53,7 @@ export default function ResumePage() {
                     id="resume-document-heading"
                     className="instrument-serif-bold text-lg"
                   >
-                    Probal Ghosh Resume
+                    Probal Ghosh <span className="">·</span> Resume
                   </h1>
                   <p className="instrument-serif text-sm text-neutral-500 dark:text-neutral-400">
                     PDF document · Updated resume
