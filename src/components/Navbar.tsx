@@ -3,13 +3,15 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ResumeLink } from "@/lib/Links";
+import { Play, Pause } from "lucide-react";
+import { useAudio } from "@/components/AudioProvider";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 
 const Navbar = () => {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const { isPlaying, toggle } = useAudio();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,12 +84,23 @@ const Navbar = () => {
 
               <div className="h-5 w-px bg-neutral-300 dark:bg-neutral-700" />
 
-              <div className="flex justify-center">
+              <div className="flex justify-center gap-2">
                 <AnimatedThemeToggler
                   variant="circle"
                   duration={600}
                   className="cursor-pointer text-black dark:text-white"
                 />
+                <button
+                  onClick={toggle}
+                  className="flex cursor-pointer h-10 w-10 items-center justify-center rounded-full
+                hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+                >
+                  {isPlaying ? (
+                    <Pause className="h-4 w-4" />
+                  ) : (
+                    <Play className="h-4 w-4 ml-0.5" />
+                  )}
+                </button>
               </div>
             </div>
           </div>
