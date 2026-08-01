@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Mail, FileText, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Divider from "./Divider";
 import {
   CalendarIcon,
@@ -62,26 +62,31 @@ const DATA = {
     name: "GitHub",
     url: GithUbLink,
     icon: Icons.github,
+    _blank: true,
   },
   LinkedIn: {
     name: "LinkedIn",
     url: LinkedInLink,
     icon: Icons.linkedin,
+    _blank: true,
   },
   Twitter: {
     name: "Twitter",
     url: XLink,
     icon: Icons.x,
+    _blank: true,
   },
   Mail: {
     name: "Send Email",
     url: MailLink,
     icon: Icons.email,
+    _blank: true,
   },
   Resume: {
     name: "Resume",
-    url: ResumeLink,
+    url: "/resume",
     icon: File,
+    _blank: false,
   },
 };
 
@@ -102,14 +107,15 @@ export default function Socials() {
             <Link
               key={key}
               href={item.url}
-              target="_blank"
+              target={item._blank ? "_blank" : undefined}
+              rel={item._blank ? "noopener noreferrer" : undefined}
               className={`group flex items-center gap-2 px-3 py-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-900
                 border-neutral-300 dark:border-neutral-800
                 ${index !== Object.keys(DATA).length - 1 ? "md:border-r border-dashed" : ""}`}
             >
               <div>
                 <div
-                  className="flex h-12 w-12 items-center justify-center rounded-xl
+                  className="flex h-11 w-11 items-center justify-center rounded-[7px]
                   border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-950"
                 >
                   <Icon className="h-6 w-6" />

@@ -74,8 +74,7 @@ const Navbar = () => {
               </Link>
 
               <Link
-                href={ResumeLink}
-                target="_blank"
+                href="/resume"
                 className="instrument-serif text-[17px] text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
               >
                 Resume
@@ -84,8 +83,10 @@ const Navbar = () => {
               <div className="h-5 w-px bg-neutral-300 dark:bg-neutral-700" />
 
               <div className="flex justify-center">
-                <AnimatedThemeToggler variant="circle" duration={600} 
-                className="cursor-pointer text-black dark:text-white"
+                <AnimatedThemeToggler
+                  variant="circle"
+                  duration={600}
+                  className="cursor-pointer text-black dark:text-white"
                 />
               </div>
             </div>
