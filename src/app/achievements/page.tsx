@@ -5,7 +5,6 @@ import { ArrowUpRight, Award, BookOpen, FileText } from "lucide-react";
 import { achievements } from "@/data/ProjectData";
 import BackButton from "@/components/ui/BackButton";
 import Section from "@/components/Section";
-import BackArrow from "@/components/icons/Arrow";
 import { useRouter } from "next/navigation";
 import Divider from "@/components/Divider";
 
@@ -19,10 +18,7 @@ export default function Achievements() {
 
         <Section showTopBorder={false} className="py-2">
           <div className="flex gap-3 items-center">
-            <BackArrow
-              onClick={() => router.back()}
-              className="h-8 w-8 mb-2 cursor-pointer rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800"
-            />
+            <BackButton />
             <p className="text-[24px] md:text-[28px] instrument-serif-bold">
               Achievements
             </p>
@@ -57,15 +53,15 @@ export default function Achievements() {
 
               <div className="space-y-7">
                 {paper.image && (
-                  <figure className="group overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-200 shadow-[0_24px_70px_-32px_rgba(0,0,0,0.45)] dark:border-white/10 dark:bg-neutral-950">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <figure className="group overflow-hidden rounded-[4px] border border-neutral-200 bg-neutral-200 shadow-[0_24px_70px_-32px_rgba(0,0,0,0.45)] dark:border-white/10 dark:bg-neutral-950">
+                    <div className="relative aspect-5/3 w-full overflow-hidden">
                       <Image
                         src={paper.image}
                         alt={`ICRCICN 2025 certificate presentation for ${paper.subname}`}
                         fill
                         priority={index === 0}
                         sizes="(min-width: 820px) 820px, 100vw"
-                        className="object-cover transition-transform duration-700 ease-out"
+                        className="object-cover transition-transform duration-700 ease-out object-top"
                       />
                       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/55 to-transparent" />
                       <p className="instrument-serif absolute bottom-4 left-5 text-sm text-white/90 sm:bottom-5 sm:left-6 sm:text-base">

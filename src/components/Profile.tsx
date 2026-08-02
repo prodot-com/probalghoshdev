@@ -1,7 +1,7 @@
 "use client";
 
 import { Eye } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TextAnimate } from "@/components/ui/text-animate";
 
 const roles = ["Engineer?", "Full Stack Developer"];
@@ -16,6 +16,17 @@ export default function Profile() {
     }, 2500);
 
     return () => clearInterval(interval);
+  }, []);
+
+  const clickSound = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    clickSound.current = new Audio("/click.wav");
+    clickSound.current.volume = 0.4;
+
+    return () => {
+      clickSound.current = null;
+    };
   }, []);
 
   const [views, setViews] = useState<number | null>(null);
@@ -53,7 +64,14 @@ export default function Profile() {
         <div className="space-y-1">
           <div
             className="relative h-4 w-4 rounded-full border border-neutral-500 cursor-pointer"
-            onClick={() => setShowRealProfile((prev) => !prev)}
+            onClick={() => {
+              if (clickSound.current) {
+                clickSound.current.currentTime = 0; // restart if clicked rapidly
+                clickSound.current.play().catch(() => {});
+              }
+
+              setShowRealProfile((prev) => !prev);
+            }}
           >
             <div
               className={`absolute inset-y-0 w-1/2 bg-neutral-900 dark:bg-white transition-all duration-75 ease-in-out ${
@@ -64,7 +82,7 @@ export default function Profile() {
             />
           </div>
 
-          <h1 className="instrument-serif-bold text-4xl leading-none text-black dark:text-white">
+          <h1 className="instrument-serif-bold text-[32px] md:text-4xl leading-none text-black dark:text-white">
             Probal Ghosh
           </h1>
 
@@ -74,12 +92,12 @@ export default function Profile() {
             delay={0.3}
             animation="blurInDown"
             by="character"
-            className="text-xl md:text-2xl font-semibold text-neutral-500"
+            className="text-[18px] md:text-2xl font-semibold text-neutral-500"
           >
             {roles[index]}
           </TextAnimate>
 
-          <p className="text-sm text-neutral-500 ">21, West Bengal, IND</p>
+          <p className="text-[13px] md:text-sm text-neutral-500 ">21, West Bengal, IND</p>
         </div>
       </div>
 

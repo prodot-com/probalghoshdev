@@ -48,8 +48,8 @@ export function TechStackMarquee() {
           <TechIcon key={tech.name} {...tech} />
         ))}
       </Marquee>
-      <div className="absolute left-3 top-8 md:left-1 md:top-19 w-20 h-45 bg-linear-to-r from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
-      <div className="absolute right-3 md:right-1 md:top-19 top-8 w-20 h-45 bg-linear-to-l from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
+      <div className="absolute left-3 top-19 md:left-1 md:top-19 w-20 h-40 md:h-45 bg-linear-to-r from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
+      <div className="absolute right-3 md:right-1 md:top-19 top-19 w-20 h-40 md:h-45 bg-linear-to-l from-white dark:from-neutral-900 to-transparent pointer-events-none z-10" />
     </div>
   );
 }

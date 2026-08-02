@@ -12,6 +12,7 @@ import { Projectcard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
 import Section from "@/components/Section";
 import SidePattern from "@/components/Sidepattern";
+import Socials from "@/components/Socials";
 import { TechStackMarquee } from "@/components/TechStack";
 import TopArrow from "@/components/TopArrow";
 import Image from "next/image";
@@ -39,6 +40,12 @@ export default function Home() {
       <Section className="mt-5">
         <Reveal delay={0.15}>
           <TechStackMarquee />
+        </Reveal>
+      </Section>
+
+      <Section className="mt-5">
+        <Reveal delay={0.15}>
+          <Socials />
         </Reveal>
       </Section>
 
