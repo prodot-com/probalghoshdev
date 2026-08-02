@@ -14,6 +14,7 @@ import {
   Rocket,
   Bot,
   BarChart3,
+  ArrowUpRight,
 } from "lucide-react";
 import { ShinyButton } from "./ui/shiny-button";
 import Image from "next/image";
@@ -71,14 +72,24 @@ export function Projectcard({
       <div>
         {showHeading && (
           <>
-            <p className="text-[24px] px-3 py-1.5 md:text-[29px] font-bold instrument-serif-bold text-neutral-900 dark:text-white">
-              Featured Projects.
-            </p>
+            <div className="flex items-center justify-between px-3 py-1.5">
+              <h2 className="instrument-serif-bold text-[24px] md:text-[29px] text-neutral-900 dark:text-white">
+                Projects
+              </h2>
+
+              <button
+                onClick={() => router.push("/projects")}
+                className="group cursor-pointer flex items-center gap-1 instrument-serif text-[17px] md:text-[19px] text-neutral-800 transition-colors hover:text-black dark:text-neutral-300 dark:hover:text-white"
+              >
+                View all
+                <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </button>
+            </div>
 
             <Divider dashed />
           </>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start pt-">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start px-3 md:px-0">
           {projects.map((project, index) => {
             const bgGradient = getGradient(project.slug ?? project.name);
 
@@ -88,58 +99,60 @@ export function Projectcard({
             return (
               <div
                 key={`${project.name}-${index}`}
-                className={`relative w-full flex flex-col overflow-hidden bg-white/10 dark:bg-black backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300 h-full border-dashed border-neutral-300 dark:border-neutral-800
+                className={`relative w-full mt-3 md:mt-0 flex flex-col overflow-hidden bg-white/10 dark:bg-black md:shadow-lg hover:shadow-xl transition-all duration-300 h-full md:border-dashed border-neutral-300 dark:border-neutral-800
                         ${
                           index % 2 === 0
-                            ? "border-r border-b"
-                            : "border-l border-b"
+                            ? "md:border-r md:border-b"
+                            : "md:border-l md:border-b"
                         }
-                        ${index !== 1 && 2 ? "border-t" : ""}
+                        md:${index !== 1 && 2 ? "border-t" : ""}
                       `}
               >
                 {project.image && (
-                  <div
-                    className={`group relative w-full h-56 overflow-hidden bg-gradient-to-br ${bgGradient}`}
-                  >
-                    {project.badge && (
-                      <div className="absolute top-0 left-0 z-20 overflow-hidden w-28 h-28 pointer-events-none">
-                        <span
-                          className={`absolute top-5 -left-8 w-40 -rotate-39 bg-gradient-to-r ${project.badge.color} text-white text-[11px] font-bold tracking-wide py-1 shadow-lg border-y border-dashed border-black/20 flex items-center justify-center gap-1`}
-                        >
-                          {BadgeIcon && (
-                            <BadgeIcon
-                              className={`w-3.5 h-3.5 ${project.badge.iconColor}`}
-                            />
-                          )}
+                  <div className="p-1 md:p-0">
+                    <div
+                      className={`group rounded-[5px] md:rounded-none relative w-full h-56 overflow-hidden bg-gradient-to-br ${bgGradient}`}
+                    >
+                      {project.badge && (
+                        <div className="absolute top-0 left-0 z-20 overflow-hidden w-28 h-28 pointer-events-none">
+                          <span
+                            className={`absolute top-5 -left-8 w-40 -rotate-39 bg-gradient-to-r ${project.badge.color} text-white text-[11px] font-bold tracking-wide py-1 shadow-lg border-y border-dashed border-black/20 flex items-center justify-center gap-1`}
+                          >
+                            {BadgeIcon && (
+                              <BadgeIcon
+                                className={`w-3.5 h-3.5 ${project.badge.iconColor}`}
+                              />
+                            )}
 
-                          {project.badge.text}
-                        </span>
-                      </div>
-                    )}
+                            {project.badge.text}
+                          </span>
+                        </div>
+                      )}
 
-                    <div className="absolute -bottom-6 -right-6 w-[90%] h-[90%] z-10 transition-transform duration-200 ease-out translate-x-1 translate-y-1 group-hover:-translate-x-2 group-hover:-translate-y-2">
-                      <div className="relative w-full h-full rounded-tl-[4px] overflow-hidden shadow-2xl border-t border-l border-white/30 dark:border-white/10">
-                        <Image
-                          src={project.image}
-                          alt={project.name}
-                          fill
-                          className="object-cover"
-                        />
+                      <div className="absolute -bottom-6 -right-6 w-[90%] h-[90%] z-10 transition-transform duration-200 ease-out translate-x-1 translate-y-1 group-hover:-translate-x-2 group-hover:-translate-y-2">
+                        <div className="relative w-full h-full rounded-tl-[4px] overflow-hidden shadow-2xl border-t border-l border-white/30 dark:border-white/10">
+                          <Image
+                            src={project.image}
+                            alt={project.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 )}
 
                 {/* <Link href={`/projects/${project.slug}`} className="flex-grow"> */}
-                  <div className="px-4 pt-4 flex flex-col gap-2">
-                    <h3 className="instrument-serif-bold text-[22px] md:text-[24px]">
-                      {project.name}
-                    </h3>
+                <div className="px-4 pt-4 flex flex-col gap-2">
+                  <h3 className="instrument-serif-bold text-[22px] md:text-[24px]">
+                    {project.name}
+                  </h3>
 
-                    <div className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4">
-                      <ReactMarkdown>{project.description}</ReactMarkdown>
-                    </div>
+                  <div className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4">
+                    <ReactMarkdown>{project.description}</ReactMarkdown>
                   </div>
+                </div>
                 {/* </Link> */}
 
                 <div className="px-4 pt-2">
@@ -186,17 +199,6 @@ export function Projectcard({
             );
           })}
         </div>
-
-        {showViewAll && (
-          <div className="mt-4">
-            <ShinyButton
-              className="cursor-pointer bg-black text-white instrument-serif-bold text-[17px] px-4 border-t border-r border-dashed border-neutral-100 dark:border-neutral-800"
-              onClick={() => router.push("/projects")}
-            >
-              View All
-            </ShinyButton>
-          </div>
-        )}
       </div>
     </div>
   );

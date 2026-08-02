@@ -82,7 +82,7 @@ export default function Profile() {
             />
           </div>
 
-          <h1 className="instrument-serif-bold text-4xl leading-none text-black dark:text-white">
+          <h1 className="instrument-serif-bold text-[32px] md:text-4xl leading-none text-black dark:text-white">
             Probal Ghosh
           </h1>
 
@@ -92,12 +92,12 @@ export default function Profile() {
             delay={0.3}
             animation="blurInDown"
             by="character"
-            className="text-xl md:text-2xl font-semibold text-neutral-500"
+            className="text-[18px] md:text-2xl font-semibold text-neutral-500"
           >
             {roles[index]}
           </TextAnimate>
 
-          <p className="text-sm text-neutral-500 ">21, West Bengal, IND</p>
+          <p className="text-[13px] md:text-sm text-neutral-500 ">21, West Bengal, IND</p>
         </div>
       </div>
 

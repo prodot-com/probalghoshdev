@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, LinkIcon } from "lucide-react";
 import Divider from "./Divider";
 import {
   CalendarIcon,
@@ -85,12 +85,13 @@ const DATA = {
   Resume: {
     name: "Resume",
     url: "/resume",
-    icon: File,
+    icon: LinkIcon,
     _blank: false,
   },
 };
 
 export default function Socials() {
+  const items = Object.entries(DATA);
   return (
     <section className="w-full">
       <h2 className="instrument-serif-bold text-[24px] md:text-[27px] px-3 py-1.5">
@@ -99,8 +100,8 @@ export default function Socials() {
 
       <Divider dashed />
 
-      <div className="grid grid-cols-2 md:grid-cols-5">
-        {Object.entries(DATA).map(([key, item], index) => {
+      <div className="grid grid-cols-5 gap-1">
+        {items.map(([key, item], index) => {
           const Icon = item.icon;
 
           return (
@@ -109,23 +110,23 @@ export default function Socials() {
               href={item.url}
               target={item._blank ? "_blank" : undefined}
               rel={item._blank ? "noopener noreferrer" : undefined}
-              className={`group flex items-center gap-2 px-3 py-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-900
-                border-neutral-300 dark:border-neutral-800
-                ${index !== Object.keys(DATA).length - 1 ? "md:border-r border-dashed" : ""}`}
+              className={`group flex items-center justify-center md:justify-start gap-3 px-3 py-3 border-y-0 border
+                          border-dashed border-neutral-300 dark:border-neutral-800 ${index === 0 ? "border-l-0" : ""}
+                          ${index === items.length - 1 ? "border-r-0" : ""} transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-900
+                            `}
             >
               <div>
                 <div
                   className="flex h-11 w-11 items-center justify-center rounded-[7px]
-                  border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-950"
+                      border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-950"
                 >
                   <Icon className="h-6 w-6" />
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="hidden md:flex items-center gap-2">
                 <span className="instrument-serif text-xl">{key}</span>
-
-                <ArrowUpRight className="h-5 w-5 font-boldz opacity-60 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <ArrowUpRight className="h-5 w-5 opacity-60 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </div>
             </Link>
           );
