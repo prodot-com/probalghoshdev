@@ -7,14 +7,14 @@ export function Footer () {
 
     return (
         <div className="min-h-42.5 p-3">
-            <div className="flex justify-between gap-1 w-full max-w-5xl ">
-                <div className="pl-2 flex items-start">
+            <div className="flex flex-col items-center justify-between gap-2 w-full max-w-5xl mb-5">
+                <div className="flex items-start">
                     <p className="flex items-center gap-1">
                         <Copyright className="w-5 sm:w-5"/> 
-                        <span className="instrument-serif text-[18px] sm:text-[19px]">{date.getFullYear()} Designed & Developed by <span className="text-[14px] md:text-[21px] instrument-serif-bold underline ">Probal.</span></span>
+                        <span className="instrument-serif text-[18px] sm:text-[19px]">{date.getFullYear()} Designed & Developed by <span className="text-[18px] md:text-[19px] instrument-serif-bold underline ">Probal.</span></span>
                     </p>
                 </div>
-                <p className="instrument-serif text-[16px] sm:text-[19px] flex items-start pr-10">
+                <p className="instrument-serif text-[16px] sm:text-[19px] flex items-start">
                     Asia/Kolkata
                 </p>
             </div>

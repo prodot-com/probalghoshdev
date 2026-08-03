@@ -27,7 +27,7 @@ export function AudioProvider({
   useEffect(() => {
     const audio = new Audio("/BGM.mp3");
 
-    audio.loop = true;
+    // audio.loop = true;
     audio.volume = 0.25;
 
     audioRef.current = audio;
