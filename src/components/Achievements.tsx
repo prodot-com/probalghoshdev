@@ -27,7 +27,7 @@ export default function AchievementCard() {
               
               <div className="flex items-start gap-4 flex-1 min-w-0">
                 <img
-                  src={item.image}
+                  src={item.favicon}
                   alt={item.title}
                   className="w-12 h-12 rounded-full border border-neutral-300 dark:border-neutral-700 object-cover flex-shrink-0"
                 />

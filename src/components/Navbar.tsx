@@ -64,7 +64,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-white/70 dark:bg-neutral-900/70">
+    <header className="fixed top-0 left-0 z-50 w-full bg-white/70 dark:bg-neutral-900/70 text-black dark:text-white">
       <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 border-b border-dashed border-neutral-400 dark:border-neutral-800" />
       <div className="mx-auto w-full max-w-[var(--content-width)]">
         <div
@@ -91,24 +91,23 @@ const Navbar = () => {
               Probal
             </h1>
 
-            <div className="flex items-center gap-1 md:gap-6">
-              {/* Desktop Links */}
-              <div className="hidden md:flex items-center gap-6">
+            <div className="flex items-center gap-4">
+              <div className="hidden md:flex items-center gap-4">
                 <Link
                   href="/"
-                  className="instrument-serif text-[17px] text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
+                  className="instrument-serif-bold text-[17px] text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-white transition-colors delay-100"
                 >
                   Home
                 </Link>
                 <Link
                   href="/projects"
-                  className="instrument-serif text-[17px] text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
+                  className="instrument-serif-bold text-[17px] text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-white transition-colors delay-100"
                 >
                   Projects
                 </Link>
                 <Link
                   href="/resume"
-                  className="instrument-serif text-[17px] text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
+                  className="instrument-serif-bold text-[17px] text-neutral-600 hover:text-orange-400 dark:text-neutral-400 dark:hover:text-white transition-colors delay-100"
                 >
                   Resume
                 </Link>
@@ -121,7 +120,7 @@ const Navbar = () => {
                 <AnimatedThemeToggler
                   variant="circle"
                   duration={600}
-                  className="cursor-pointer text-black dark:text-white"
+                  className="cursor-pointer"
                 />
                 <button
                   onClick={toggle}

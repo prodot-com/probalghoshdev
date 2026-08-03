@@ -10,15 +10,15 @@ const TechIcon = ({ icon, name }: { icon: string; name: string }) => {
   return (
     <figure
       className={cn(
-        "relative h-full w-35 md:w-40 cursor-pointer overflow-hidden rounded-[7px] py-3 md:p-4",
-        "border-gray-950/10 bg-gray-200 hover:bg-gray-950/5",
-        "dark:border-gray-50/10 dark:bg-gray-50/10 dark:hover:bg-gray-50/15",
+        "relative h-full w-35 md:w-40 cursor-pointer overflow-hidden rounded-[4px] py-3 md:p-4",
+        "border-2 border-dashed border-gray-950/25 bg-neutral-100 hover:bg-gray-950/5",
+        "dark:border-neutral-700 dark:bg-gray-50/10 dark:hover:bg-gray-50/15",
       )}
     >
       <div className="flex flex-row items-center justify-center gap-3">
         <img className="" width="35" height="35" alt="" src={icon} />
         <div className="flex flex-col">
-          <figcaption className="text-[17px] md:text-[15px] instrument-serif dark:text-white">
+          <figcaption className="text-[17px] tracking-wide md:text-[15px] instrument-serif dark:text-white">
             {name}
           </figcaption>
         </div>

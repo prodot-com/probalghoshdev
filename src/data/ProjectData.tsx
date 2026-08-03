@@ -32,6 +32,7 @@ export type AchievementItem = {
   image?: string;
   year: string;
   docLink: string;
+  favicon?: string
 };
 
 export const projects: Project[] = [
@@ -138,6 +139,7 @@ export const achievements: AchievementItem[] = [
     doiLink: "https://doi.org/10.1109/ICRCICN68210.2025.11364968",
     link: "https://ieeexplore.ieee.org/document/11364968",
     image: "/achievement1.jpg",
+    favicon: "/ieee.png",
     year: "2025",
     docLink:
       "https://drive.google.com/file/d/1AsBvg-XYgAzTrBrObN3aWeJyJxGQ-LoX/view?usp=sharing",
