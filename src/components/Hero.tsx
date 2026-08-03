@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <div className="relative w-full max-w-5xl p-1.5">
       <img
-        src="/banner.gif"
+        src="/banner6.gif"
         alt="Hero Background"
         className="w-full object-cover rounded-[2px] h-[170px] md:h-[280px]"
       />

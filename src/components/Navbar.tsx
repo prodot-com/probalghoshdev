@@ -91,7 +91,7 @@ const Navbar = () => {
               Probal
             </h1>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1 md:gap-4">
               <div className="hidden md:flex items-center gap-4">
                 <Link
                   href="/"
@@ -135,7 +135,6 @@ const Navbar = () => {
                 </button>
               </div>
 
-              {/* Mobile Menu Wrapper */}
               <div className="relative md:hidden" ref={menuRef}>
                 <button
                   className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
@@ -157,7 +156,6 @@ const Navbar = () => {
                   </motion.div>
                 </button>
 
-                {/* Floating Glassmorphism Dropdown */}
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div
@@ -166,7 +164,7 @@ const Navbar = () => {
                       animate="visible"
                       exit="exit"
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute -right-1 top-full mt-3 w-36 origin-top-right rounded-[4px] border border-neutral-300 bg-white p-2 shadow-xl dark:border-neutral-700/50 dark:bg-neutral-900"
+                      className="absolute -right-1 top-full mt-3 w-32 origin-top-right rounded-[4px] border border-neutral-300 bg-white p-2 shadow-xl dark:border-neutral-700/50 dark:bg-neutral-900"
                       role="menu"
                     >
                       <nav className="flex flex-col gap-1">
