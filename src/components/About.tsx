@@ -1,12 +1,33 @@
+"use client"
+
+import { useEffect, useState } from "react";
 import Divider from "./Divider";
 import { Tooltip } from "./ui/tooltip-card";
 
 export default function About() {
+  const [greeting, setGreeting] = useState("");
+
+  useEffect(() => {
+    const updateGreeting = () => {
+      const hour = new Date().getHours();
+
+      if (hour >= 5 && hour < 12) setGreeting("Good Morning.");
+      else if (hour >= 12 && hour < 17) setGreeting("Good Afternoon.");
+      else if (hour >= 17 && hour < 21) setGreeting("Good Evening.");
+      else setGreeting("Good Night.");
+    };
+
+    updateGreeting();
+
+    const interval = setInterval(updateGreeting, 60 * 1000); // update every minute
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="w-full p-3">
       <div className="flex">
-        <p className="text-[24px] md:text-[28px] instrument-serif-bold text-black dark:text-white">
-          About.
+        <p className="text-[24px] md:text-[28px] caveat-font text-black dark:text-white">
+          {greeting}
         </p>
       </div>
 

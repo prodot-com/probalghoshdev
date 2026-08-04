@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Fraunces,
-  Instrument_Serif,
-  Kablammo,
-  Jersey_10_Charted,
-} from "next/font/google";
+import { Fraunces, Instrument_Serif, Kablammo, Caveat } from "next/font/google";
 // @ts-ignore
 import "./globals.css";
 import { BottomDock } from "@/components/BottomDock";
@@ -49,6 +44,12 @@ const fraunces = Fraunces({
   style: ["normal", "italic"],
 });
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://probal-ghosh.vercel.app"),
   title: "Probal Ghosh",
@@ -76,9 +77,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={tanker.variable} suppressHydrationWarning>
-      <body
-        className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable}`}
+    <html lang="en" suppressHydrationWarning>
+      <body className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable} ${tanker.variable} ${caveat.variable} `}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ThemeShortcutProvider>
