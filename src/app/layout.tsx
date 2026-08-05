@@ -19,6 +19,10 @@ import ThemeShortcutProvider from "./hooks/useThemeShortcut";
 import Section from "@/components/Section";
 import { tanker } from "./font";
 import { AudioProvider } from "@/components/AudioProvider";
+import {
+  Cursor,
+  CursorProvider,
+} from "@/components/animate-ui/components/animate/cursor";
 
 config.autoAddCss = false;
 
@@ -78,46 +82,51 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable} ${tanker.variable} ${caveat.variable} `}
+      <body
+        className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable} ${tanker.variable} ${caveat.variable} `}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ThemeShortcutProvider>
-            <LenisProvider>
-              <AudioProvider>
-                <ScrollToTopOnLoad />
-                <Toaster />
-                <Navbar />
-                <ScrollProgress className="fixed left-0 w-full h-0.5 transition-all duration-300 z-100" />
-                <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c] text-black dark:text-white">
-                  <div
-                    className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
+            <CursorProvider global>
+              <Cursor />
+              <LenisProvider>
+                <AudioProvider>
+                  <ScrollToTopOnLoad />
+                  <Toaster />
+                  <Navbar />
+                  <ScrollProgress className="fixed left-0 w-full h-0.5 transition-all duration-300 z-100" />
+                  <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c] text-black dark:text-white">
+                    <div
+                      className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
              border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
-                    style={{
-                      transform: "translateX(calc(var(--content-width) / -2))",
-                    }}
-                  />
+                      style={{
+                        transform:
+                          "translateX(calc(var(--content-width) / -2))",
+                      }}
+                    />
 
-                  <div
-                    className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
+                    <div
+                      className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
              border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
-                    style={{
-                      transform: "translateX(calc(var(--content-width) / 2))",
-                    }}
-                  />
+                      style={{
+                        transform: "translateX(calc(var(--content-width) / 2))",
+                      }}
+                    />
 
-                  <div className="relative z-20">
-                    {children}
-                    <Section className="mt-5" showBottomBorder={false}>
-                      <Footer />
-                    </Section>
+                    <div className="relative z-20">
+                      {children}
+                      <Section className="mt-5" showBottomBorder={false}>
+                        <Footer />
+                      </Section>
+                    </div>
                   </div>
-                </div>
-                {/* <OnekoCat /> */}
-                {/* <Analytics />
+                  {/* <OnekoCat /> */}
+                  {/* <Analytics />
               <SpeedInsights /> */}
-                {/* <BottomDock /> */}
-              </AudioProvider>
-            </LenisProvider>
+                  {/* <BottomDock /> */}
+                </AudioProvider>
+              </LenisProvider>
+            </CursorProvider>
           </ThemeShortcutProvider>
         </ThemeProvider>
         {/* <script

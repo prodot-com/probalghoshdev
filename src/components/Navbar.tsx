@@ -7,6 +7,7 @@ import { Play, Pause, Menu, X } from "lucide-react";
 import { useAudio } from "@/components/AudioProvider";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeTogglerButton } from "./animate-ui/components/buttons/theme-toggler";
 
 const Navbar = () => {
   const router = useRouter();
@@ -115,10 +116,14 @@ const Navbar = () => {
 
               {/* Theme & Audio Controls */}
               <div className="flex justify-center gap-2">
-                <AnimatedThemeToggler
+                {/* <AnimatedThemeToggler
                   variant="circle"
                   duration={600}
                   className="cursor-pointer"
+                /> */}
+                <ThemeTogglerButton 
+                  modes={['light', 'dark']}
+                  variant="ghost"
                 />
                 <button
                   onClick={toggle}
