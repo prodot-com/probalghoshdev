@@ -90,7 +90,7 @@ export default function RootLayout({
                 <ScrollProgress className="fixed left-0 w-full h-0.5 transition-all duration-300 z-100" />
                 <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c] text-black dark:text-white">
                   <div
-                    className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block
+                    className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
              border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
                     style={{
                       transform: "translateX(calc(var(--content-width) / -2))",
@@ -98,7 +98,7 @@ export default function RootLayout({
                   />
 
                   <div
-                    className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block
+                    className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
              border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
                     style={{
                       transform: "translateX(calc(var(--content-width) / 2))",
@@ -107,7 +107,7 @@ export default function RootLayout({
 
                   <div className="relative z-20">
                     {children}
-                    <Section className="mt-5">
+                    <Section className="mt-5" showBottomBorder={false}>
                       <Footer />
                     </Section>
                   </div>

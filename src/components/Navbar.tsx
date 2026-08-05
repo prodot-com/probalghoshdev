@@ -56,7 +56,6 @@ const Navbar = () => {
 
   if (!mounted) return null;
 
-  // Framer motion variants for the dropdown
   const dropdownVariants = {
     hidden: { opacity: 0, scale: 0.97, y: -8 },
     visible: { opacity: 1, scale: 1, y: 0 },
@@ -80,7 +79,6 @@ const Navbar = () => {
           `}
         >
           <div className="flex h-full items-center justify-between px-4">
-            {/* Logo */}
             <h1
               onClick={() => {
                 router.refresh();
