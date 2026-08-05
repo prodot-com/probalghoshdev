@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Fraunces,
-  Instrument_Serif,
-  Kablammo,
-  Jersey_10_Charted,
-} from "next/font/google";
+import { Fraunces, Instrument_Serif, Kablammo, Caveat } from "next/font/google";
 // @ts-ignore
 import "./globals.css";
 import { BottomDock } from "@/components/BottomDock";
@@ -24,6 +19,10 @@ import ThemeShortcutProvider from "./hooks/useThemeShortcut";
 import Section from "@/components/Section";
 import { tanker } from "./font";
 import { AudioProvider } from "@/components/AudioProvider";
+import {
+  Cursor,
+  CursorProvider,
+} from "@/components/animate-ui/components/animate/cursor";
 
 config.autoAddCss = false;
 
@@ -47,6 +46,12 @@ const fraunces = Fraunces({
   display: "swap",
   weight: ["500", "600", "700", "900"],
   style: ["normal", "italic"],
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -76,48 +81,52 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={tanker.variable} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable}`}
+        className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable} ${tanker.variable} ${caveat.variable} `}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ThemeShortcutProvider>
-            <LenisProvider>
-              <AudioProvider>
-                <ScrollToTopOnLoad />
-                <Toaster />
-                <Navbar />
-                <ScrollProgress className="fixed left-0 w-full h-0.5 transition-all duration-300 z-100" />
-                <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c] text-black dark:text-white">
-                  <div
-                    className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block
+            <CursorProvider global>
+              <Cursor />
+              <LenisProvider>
+                <AudioProvider>
+                  <ScrollToTopOnLoad />
+                  <Toaster />
+                  <Navbar />
+                  <ScrollProgress className="fixed left-0 w-full h-0.5 transition-all duration-300 z-100" />
+                  <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c] text-black dark:text-white">
+                    <div
+                      className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
              border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
-                    style={{
-                      transform: "translateX(calc(var(--content-width) / -2))",
-                    }}
-                  />
+                      style={{
+                        transform:
+                          "translateX(calc(var(--content-width) / -2))",
+                      }}
+                    />
 
-                  <div
-                    className="pointer-events-none fixed inset-y-0 left-1/2 hidden lg:block
+                    <div
+                      className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
              border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
-                    style={{
-                      transform: "translateX(calc(var(--content-width) / 2))",
-                    }}
-                  />
+                      style={{
+                        transform: "translateX(calc(var(--content-width) / 2))",
+                      }}
+                    />
 
-                  <div className="relative z-20">
-                    {children}
-                    <Section className="mt-5">
-                      <Footer />
-                    </Section>
+                    <div className="relative z-20">
+                      {children}
+                      <Section className="mt-5" showBottomBorder={false}>
+                        <Footer />
+                      </Section>
+                    </div>
                   </div>
-                </div>
-                {/* <OnekoCat /> */}
-                {/* <Analytics />
+                  {/* <OnekoCat /> */}
+                  {/* <Analytics />
               <SpeedInsights /> */}
-                {/* <BottomDock /> */}
-              </AudioProvider>
-            </LenisProvider>
+                  {/* <BottomDock /> */}
+                </AudioProvider>
+              </LenisProvider>
+            </CursorProvider>
           </ThemeShortcutProvider>
         </ThemeProvider>
         {/* <script

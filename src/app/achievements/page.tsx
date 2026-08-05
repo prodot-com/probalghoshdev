@@ -84,8 +84,8 @@ export default function Achievements() {
                     </p>
                   </section>
 
-                  <aside className="h-fit rounded-2xl border border-neutral-200 bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] md:p-7">
-                    <div className="mb-3 border-b border-neutral-200 pb-1 dark:border-white/10">
+                  <aside className="h-fit rounded-[4px] border border-dashed border-neutral-200 bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] md:p-7">
+                    <div className="mb-3 border-b border-dashed border-neutral-200 pb-1 dark:border-white/10">
                       <p className="mb-2 text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase dark:text-neutral-400">
                         Publication
                       </p>
@@ -103,7 +103,7 @@ export default function Achievements() {
                           {paper.subname}
                         </dd>
                       </div>
-                      <div>
+                      {/* <div>
                         <dt className="mb-1 text-xs font-semibold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400">
                           DOI
                         </dt>
@@ -117,7 +117,7 @@ export default function Achievements() {
                             {paper.doi}
                           </a>
                         </dd>
-                      </div>
+                      </div> */}
                     </dl>
 
                     <div className="mt-4 space-y-2">
@@ -125,7 +125,7 @@ export default function Achievements() {
                         href={paper.doiLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 dark:focus-visible:ring-offset-neutral-950"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-[4px] bg-neutral-900 px-4 py-2 text-sm font-semibold text-white transition-transform hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 dark:focus-visible:ring-offset-neutral-950"
                       >
                         <BookOpen className="h-4 w-4" aria-hidden="true" />
                         Read publication
@@ -136,7 +136,7 @@ export default function Achievements() {
                           href={paper.docLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-neutral-300 px-4 py-2 text-sm font-semibold transition-colors hover:border-neutral-900 hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 dark:border-white/20 dark:hover:border-white dark:hover:bg-white/10 dark:focus-visible:ring-offset-neutral-950"
+                          className="inline-flex w-full items-center justify-center gap-2 rounded-[4px] border border-neutral-300 px-4 py-2 text-sm font-semibold transition-colors hover:border-neutral-300 hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 dark:border-white/20 dark:hover:border-white dark:hover:bg-white/10 dark:focus-visible:ring-offset-neutral-950"
                         >
                           <FileText className="h-4 w-4" aria-hidden="true" />
                           View certificate
@@ -144,11 +144,11 @@ export default function Achievements() {
                       )}
                     </div>
 
-                    <div className="mt-3 flex flex-wrap gap-1.5 border-t border-neutral-200 pt-3 dark:border-white/10">
+                    <div className="mt-3 flex flex-wrap gap-1.5 border-t border-dashed border-neutral-200 pt-3 dark:border-white/10">
                       {paper.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="instrument-serif rounded-full border border-neutral-200 bg-neutral-100 px-3 py-1 text-sm text-neutral-700 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300"
+                          className="instrument-serif rounded-[4px] border border-dashed border-neutral-200 bg-neutral-100 px-3 py-1 text-sm text-neutral-700 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300"
                         >
                           {tag}
                         </span>
