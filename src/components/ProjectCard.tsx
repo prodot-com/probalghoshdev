@@ -105,7 +105,7 @@ export function Projectcard({
                             ? "md:border-r md:border-b"
                             : "md:border-l md:border-b"
                         }
-                        md:${index !== 1 && 2 ? "border-t" : ""}
+                        ${index !== 1 && 2 ? "md:border-t" : ""}
                       `}
               >
                 {project.image && (

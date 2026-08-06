@@ -110,7 +110,7 @@ export function Experience() {
                   transition={{ duration: 0.25 }}
                   className="overflow-hidden"
                 >
-                  <ul className="list-disc pl-24 pr-5 pb-5">
+                  <ul className="list-disc pl-8 md:pl-24 pr-2 md:pr-5 pb-5">
                     {exp.description?.map((item, i) => (
                       <li
                         key={i}

@@ -33,7 +33,7 @@ export default function About() {
 
       <Divider dashed />
 
-      <div className="px-3 py-2">
+      <div className="pl-1 md:px-3 py-2">
         <ul className="list-disc space-y-2 pl-5 text-[17px] md:text-[20px] leading-[1.6] instrument-serif text-black dark:text-neutral-300 marker:text-neutral-500">
           <li>
             I'm a{" "}

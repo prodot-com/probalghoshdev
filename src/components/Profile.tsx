@@ -44,18 +44,18 @@ export default function Profile() {
 
   return (
     <section className="flex items-start justify-between px-3 py-5">
-      <div className="flex items-start gap-8">
-        <div className="relative h-28 w-28 md:h-35 md:w-35">
+      <div className="flex items-start gap-4 md:gap-8">
+        <div className="relative h-29 w-29 md:h-35 md:w-35">
           <img
             src="/profile2.jpg"
-            className={`absolute inset-0 h-full w-full rounded-2xl border-4 border-neutral-500 object-cover transition-opacity duration-300 ${
+            className={`absolute inset-0 h-full w-full rounded-[4px] border- border-neutral-500 object-cover transition-opacity duration-300 ${
               showRealProfile ? "opacity-100" : "opacity-0"
             }`}
           />
 
           <img
             src="/profile.jpg"
-            className={`absolute inset-0 h-full w-full rounded-2xl border-4 border-neutral-500 object-cover transition-opacity duration-300 ${
+            className={`absolute inset-0 h-full w-full rounded-[4px] border- border-neutral-500 object-cover transition-opacity duration-300 ${
               showRealProfile ? "opacity-0" : "opacity-100"
             }`}
           />
@@ -82,7 +82,7 @@ export default function Profile() {
             />
           </div>
 
-          <h1 className="instrument-serif-bold text-[32px] md:text-4xl leading-none text-black dark:text-white">
+          <h1 className="instrument-serif-bold text-[30px] md:text-4xl leading-none text-black dark:text-white">
             Probal Ghosh
           </h1>
 
@@ -92,7 +92,7 @@ export default function Profile() {
             delay={0.3}
             animation="blurInDown"
             by="character"
-            className="text-[18px] md:text-2xl font-semibold text-neutral-500"
+            className="text-[16px] md:text-2xl font-semibold text-neutral-500"
           >
             {roles[index]}
           </TextAnimate>
