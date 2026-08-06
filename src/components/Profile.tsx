@@ -66,7 +66,7 @@ export default function Profile() {
             className="relative h-4 w-4 rounded-full border border-neutral-500 cursor-pointer"
             onClick={() => {
               if (clickSound.current) {
-                clickSound.current.currentTime = 0; // restart if clicked rapidly
+                clickSound.current.currentTime = 0;
                 clickSound.current.play().catch(() => {});
               }
 

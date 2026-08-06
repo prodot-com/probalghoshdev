@@ -17,7 +17,7 @@ import Footer from "@/components/Footer";
 import LenisProvider from "@/components/LenisProvider";
 import ThemeShortcutProvider from "./hooks/useThemeShortcut";
 import Section from "@/components/Section";
-import { tanker } from "./font";
+import { tanker, architect } from "./font";
 import { AudioProvider } from "@/components/AudioProvider";
 import {
   Cursor,
@@ -83,7 +83,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable} ${tanker.variable} ${caveat.variable} `}
+        className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable} ${tanker.variable} ${architect.variable} ${caveat.variable} `}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ThemeShortcutProvider>

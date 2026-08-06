@@ -7,8 +7,42 @@
   --content-width: 820px; /* max-w-4xl */
 }
 
+/* Premium Scrollbar */
+html {
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+}
+
+html:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.28);
+}
+
+.dark html::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark html:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
 .font-tanker {
   font-family: var(--font-tanker);
+}
+
+.font-architect {
+  font-family: var(--font-architect);
 }
 
 .caveat-font {
