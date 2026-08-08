@@ -17,11 +17,14 @@ export default function Achievements() {
         {/* <div className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[34rem] w-full -translate-x-1/2 rounded-full bg-orange-200/30 blur-3xl dark:bg-indigo-500/10" /> */}
 
         <Section showTopBorder={false} className="my-2">
-          <div className="flex gap-2 items-center">
-            <BackButton />
-            <p className="text-[24px] md:text-[28px] instrument-serif-bold">
-              Achievements
-            </p>
+          <div className="flex flex-col pb-2">
+            <h1 className="instrument-serif-bold text-[30px] md:text-[24px] leading-none text-neutral-900 dark:text-white">
+              All Projects
+            </h1>
+
+            <span className="instrument-serif text-[15px] leading-5 text-neutral-500 dark:text-neutral-400">
+              Full Project Archive
+            </span>
           </div>
         </Section>
 

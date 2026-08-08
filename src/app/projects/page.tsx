@@ -27,16 +27,16 @@ export default function ProjectsPage() {
     <>
       <Section className="mt-14" showTopBorder={false}>
         <div className="px-3 py-1.5 flex gap-3 items-center">
-          <BackButton />
+          {/* <BackButton /> */}
 
-          <div className="flex flex-col tracking-wide">
-            <h1 className="m-0 instrument-serif-bold text-[30px] md:text-[24px] text-neutral-900 dark:text-white">
+          <div className="flex flex-col">
+            <h1 className="instrument-serif-bold text-[30px] md:text-[24px] leading-none text-neutral-900 dark:text-white">
               All Projects
             </h1>
 
-            <p className="m-0 instrument-serif text-[15px] text-neutral-500 dark:text-neutral-400">
+            <span className="instrument-serif text-[15px] leading-5 text-neutral-500 dark:text-neutral-400">
               Full Project Archive
-            </p>
+            </span>
           </div>
         </div>
 

@@ -24,16 +24,29 @@ export default function ResumePage() {
       <main className="px-3 py-1.5 pb-7">
         <div className="mx-auto w-full max-w-[var(--content-width)]">
           <header className="mt-2 flex items-start justify-between gap-4">
-            <div className="flex items-start gap-2">
-              <BackButton />
-              <div>
-                <p className="instrument-serif-bold text-[30px] md:text-[34px] leading-none tracking-tight">
-                  Resume
-                </p>
-                <p className="instrument-serif text-[15px] text-neutral-500 dark:text-neutral-400">
-                  Probal Ghosh
-                </p>
+            <div className="flex items-center justify-between w-full gap-2">
+              {/* <BackButton /> */}
+              <div className="flex flex-col">
+                <h1 className="instrument-serif-bold text-[19px] md:text-[21px] leading-none text-neutral-900 dark:text-white">
+                  Probal Ghosh <span className="">·</span> Resume
+                </h1>
+
+                <span className="instrument-serif text-[13px] md:text-[15px] leading-5 text-neutral-500 dark:text-neutral-400">
+                  PDF document · Updated resume
+                </span>
               </div>
+              <a
+                  href={ResumeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className="inline-flex items-center gap-2 rounded-[3px] border-2 border-neutral-800 bg-linear-to-b from-neutral-700 to-neutral-900 px-4 py-2 sm:px-5 sm:py-2.5 text-[14px] 
+                  font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_1px_2px_rgba(0,0,0,0.5)] transition-all duration-150 hover:from-neutral-700 
+                  hover:to-neutral-800 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
+                >
+                  <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" aria-hidden="true" />
+                  Open
+                </a>
             </div>
           </header>
 
@@ -41,25 +54,6 @@ export default function ResumePage() {
 
           <section className="" aria-labelledby="resume-document-heading">
             <div className="flex justify-between py-4 flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg border dark:border-neutral-700">
-                  <FileText
-                    className="h-5 w-5 text-neutral-600 dark:text-neutral-300"
-                    aria-hidden="true"
-                  />
-                </span>
-                <div>
-                  <h1
-                    id="resume-document-heading"
-                    className="instrument-serif-bold text-lg"
-                  >
-                    Probal Ghosh <span className="">·</span> Resume
-                  </h1>
-                  <p className="instrument-serif text-sm text-neutral-500 dark:text-neutral-400">
-                    PDF document · Updated resume
-                  </p>
-                </div>
-              </div>
 
               <div className="flex items-center gap-2">
                 {/* <a
@@ -83,18 +77,7 @@ export default function ResumePage() {
                   <Download className="h-4 w-4" aria-hidden="true" />
                   Download
                 </a> */}
-                <a
-                  href={ResumeLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download
-                  className="inline-flex items-center gap-2 rounded-[3px] border-2 border-neutral-800 bg-linear-to-b from-neutral-700 to-neutral-900 px-5 py-2.5 text-sm 
-                  font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_1px_2px_rgba(0,0,0,0.5)] transition-all duration-150 hover:from-neutral-700 
-                  hover:to-neutral-800 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
-                >
-                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                  Open
-                </a>
+                
               </div>
             </div>
 

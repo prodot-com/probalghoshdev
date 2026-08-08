@@ -330,7 +330,7 @@ export default function KeyboardShortcuts() {
                   <button
                     type="button"
                     onClick={() => execute(command)}
-                    className={`flex w-full items-center gap-3 rounded-lg px-3 py-3 text-left transition-colors delay-0 ${index === activeIndex ? "bg-neutral-100 dark:bg-neutral-800" : "hover:bg-neutral-50 dark:hover:bg-neutral-900"}`}
+                    className={`flex w-full items-center gap-3 rounded-[4px] px-3 py-3 text-left transition-colors delay-0 ${index === activeIndex ? "bg-neutral-200/50 dark:bg-neutral-800" : "hover:bg-neutral-50 dark:hover:bg-neutral-900"}`}
                   >
                     <Icon
                       className="h-5 w-5 shrink-0 text-neutral-500 dark:text-neutral-400"

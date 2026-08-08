@@ -1,6 +1,6 @@
 "use client";
 
-import { Eye, Timer } from "lucide-react";
+import { Eye, Fingerprint, MousePointerClick, Timer } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { TextAnimate } from "@/components/ui/text-animate";
 
@@ -65,6 +65,18 @@ export default function Profile() {
     <section className="flex items-start justify-between px-3 py-5">
       <div className="flex items-start gap-4 md:gap-8">
         <div className="relative h-29 w-29 md:h-35 md:w-35">
+          <div
+            className="absolute rounded-[4px] h-29 w-29 md:h-35 md:w-35
+          z-100"
+            onClick={() => {
+              if (clickSound.current) {
+                clickSound.current.currentTime = 0;
+                clickSound.current.play().catch(() => {});
+              }
+
+              setShowRealProfile((prev) => !prev);
+            }}
+          />
           <img
             src="/profile2.jpg"
             className={`absolute inset-0 h-full w-full rounded-[4px] border- border-neutral-500 object-cover transition-opacity duration-300 ${
