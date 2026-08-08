@@ -14,14 +14,17 @@ export default function Achievements() {
   return (
     <Section showTopBorder={false}>
       <main className="px-3 pt-14 min-h-screen bg-white text-neutral-900 selection:bg-orange-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-indigo-500">
-        <div className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-orange-200/30 blur-3xl dark:bg-indigo-500/10" />
+        {/* <div className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[34rem] w-full -translate-x-1/2 rounded-full bg-orange-200/30 blur-3xl dark:bg-indigo-500/10" /> */}
 
-        <Section showTopBorder={false} className="py-2">
-          <div className="flex gap-3 items-center">
-            <BackButton />
-            <p className="text-[24px] md:text-[28px] instrument-serif-bold">
-              Achievements
-            </p>
+        <Section showTopBorder={false} className="my-2">
+          <div className="flex flex-col pb-2">
+            <h1 className="instrument-serif-bold text-[30px] md:text-[24px] leading-none text-neutral-900 dark:text-white">
+              All Projects
+            </h1>
+
+            <span className="instrument-serif text-[15px] leading-5 text-neutral-500 dark:text-neutral-400">
+              Full Project Archive
+            </span>
           </div>
         </Section>
 
@@ -76,10 +79,10 @@ export default function Achievements() {
                     <p className="mb-3 text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase dark:text-neutral-400">
                       Abstract
                     </p>
-                    <h2 id={`abstract-${index}`} className="sr-only">
+                    {/* <h2 id={`abstract-${index}`} className="sr-only">
                       Research abstract
-                    </h2>
-                    <p className="instrument-serif text-justify max-w-3xl text-xl leading-relaxed text-neutral-700 md:text-2xl dark:text-neutral-300">
+                    </h2> */}
+                    <p className="instrument-serif text-justify max-w-3xl text-[17px] leading-relaxed text-neutral-700 md:text-2xl dark:text-neutral-300">
                       {paper.abstract}
                     </p>
                   </section>

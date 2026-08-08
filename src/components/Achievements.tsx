@@ -23,35 +23,35 @@ export default function AchievementCard() {
             onClick={() => router.push("/achievements")}
             className="group cursor-pointer p-3 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40"
           >
-            <div className="flex items-start justify-between gap-6">
+            <div className="flex items-start gap-4">
               
-              <div className="flex items-start gap-4 flex-1 min-w-0">
-                <img
-                  src={item.favicon}
-                  alt={item.title}
-                  className="w-12 h-12 rounded-full border border-neutral-300 dark:border-neutral-700 object-cover flex-shrink-0"
-                />
+              <img
+                src={item.favicon}
+                alt={item.title}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-neutral-300 dark:border-neutral-700 object-cover flex-shrink-0 mt-1 sm:mt-0"
+              />
 
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start flex-1 min-w-0 gap-1.5 sm:gap-6">
+                
                 <div className="min-w-0">
-                  <div className="flex items-center gap-2">
-                    <h3 className="instrument-serif-bold text-[19px] text-neutral-900 dark:text-white">
+                  <div className="flex items-start sm:items-center gap-2">
+                    <h3 className="instrument-serif-bold text-[16px] md:text-[19px] text-neutral-900 dark:text-white leading-snug">
                       {item.title}
                     </h3>
-
-                    <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 flex-shrink-0 mt-0.5 sm:mt-0" />
                   </div>
 
-                  <p className="instrument-serif-italic text-[15px] text-neutral-500 dark:text-neutral-400 mt-1">
+                  <p className="instrument-serif-italic text-[13px] md:text-[15px] text-neutral-500 dark:text-neutral-400 mt-1">
                     {item.subname}
                   </p>
                 </div>
-              </div>
 
-              
-              <div className="flex-shrink-0">
-                <span className="instrument-serif-bold text-[15px] text-neutral-500 dark:text-neutral-400">
-                  {item.year}
-                </span>
+                <div className="flex items-center sm:justify-end flex-shrink-0 mt-1 sm:mt-0">
+                  <span className="instrument-serif-bold text-[13px] md:text-[15px] text-neutral-500 dark:text-neutral-400">
+                    {item.year}
+                  </span>
+                </div>
+                
               </div>
             </div>
           </div>

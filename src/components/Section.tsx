@@ -6,6 +6,7 @@ interface SectionProps {
   contentClassName?: string;
   showTopBorder?: boolean;
   showBottomBorder?: boolean;
+  id?: string;
 }
 
 export default function Section({
@@ -14,9 +15,10 @@ export default function Section({
   contentClassName = "",
   showTopBorder = true,
   showBottomBorder = true,
+  id,
 }: SectionProps) {
   return (
-    <section className={`relative w-full bg-white dark:bg-neutral-900 ${className}`}>
+    <section id={id} className={`relative w-full scroll-mt-20 bg-white dark:bg-neutral-900 ${className}`}>
       {/* Top Divider */}
       {showTopBorder && (
         <>

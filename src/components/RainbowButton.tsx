@@ -27,7 +27,7 @@ export function RainbowButtonCustom() {
       size="lg"
     >
       <Mail className="w-4 h-4 " />
-      <span className="instrument-serif tracking-widest text-[17px]">
+      <span className="instrument-serif tracking-widest text-[16px] md:text-[17px]">
         Mail Me
       </span>
     </RainbowButton>
