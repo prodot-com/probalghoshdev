@@ -72,7 +72,7 @@ export function Experience() {
 
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <h3 className="instrument-serif-bold cursor-pointer text-[19px] text-neutral-900 dark:text-white">
+                      <h3 className="instrument-serif-bold cursor-pointer text-[16px] md:text-[19px] text-neutral-900 dark:text-white">
                         {exp.company}
                       </h3>
 
@@ -83,7 +83,7 @@ export function Experience() {
                       />
                     </div>
 
-                    <p className="instrument-serif-italic text-[15px] text-neutral-500 dark:text-neutral-400">
+                    <p className="instrument-serif-italic text-[13px] md:text-[15px] text-neutral-500 dark:text-neutral-400">
                       {exp.sub}
                     </p>
                   </div>
@@ -110,11 +110,11 @@ export function Experience() {
                   transition={{ duration: 0.25 }}
                   className="overflow-hidden"
                 >
-                  <ul className="list-disc pl-8 md:pl-24 pr-2 md:pr-5 pb-5">
+                  <ul className="list-disc pl-8 md:pl-24 pr-2 md:pr-5 py-3">
                     {exp.description?.map((item, i) => (
                       <li
                         key={i}
-                        className="instrument-serif text-[16px] leading-relaxed text-neutral-700 dark:text-neutral-300"
+                        className="instrument-serif text-[14px] md:text-[16px] leading-relaxed text-neutral-700 dark:text-neutral-300"
                       >
                         {item}
                       </li>

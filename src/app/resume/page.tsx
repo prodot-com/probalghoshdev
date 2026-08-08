@@ -40,7 +40,7 @@ export default function ResumePage() {
           <Divider dashed className="mt-2" />
 
           <section className="" aria-labelledby="resume-document-heading">
-            <div className="flex flex-col py-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex justify-between py-4 flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg border dark:border-neutral-700">
                   <FileText

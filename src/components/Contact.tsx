@@ -22,8 +22,8 @@ export function Contact() {
 
       <Divider dashed />
 
-      <div className="p-3 space-y-6">
-        <div className="instrument-serif text-[17px] md:text-[19px] leading-relaxed text-neutral-600 dark:text-neutral-400">
+      <div className="p-3 space-y-4">
+        <div className="instrument-serif text-[16px] md:text-[19px] leading-relaxed text-neutral-600 dark:text-neutral-400">
           Always open to discussing new projects, creative ideas, or
           opportunities.{" "}
           <Tooltip

@@ -1,6 +1,6 @@
 "use client";
 
-import { Eye } from "lucide-react";
+import { Eye, Timer } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { TextAnimate } from "@/components/ui/text-animate";
 
@@ -9,6 +9,8 @@ const roles = ["Engineer?", "Full Stack Developer"];
 export default function Profile() {
   const [showRealProfile, setShowRealProfile] = useState(false);
   const [index, setIndex] = useState(0);
+  const [views, setViews] = useState<number | null>(null);
+  const [time, setTime] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,7 +31,24 @@ export default function Profile() {
     };
   }, []);
 
-  const [views, setViews] = useState<number | null>(null);
+  useEffect(() => {
+    const updateTime = () => {
+      setTime(
+        new Date().toLocaleTimeString("en-IN", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true,
+        }),
+      );
+    };
+
+    updateTime();
+
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // useEffect(() => {
   //   async function loadViews() {
@@ -97,7 +116,15 @@ export default function Profile() {
             {roles[index]}
           </TextAnimate>
 
-          <p className="text-[13px] md:text-sm text-neutral-500 ">21, West Bengal, IND</p>
+          <p className="text-[12px] md:text-s text-neutral-500">
+            21, West Bengal, IND
+          </p>
+          <p className="flex gap-1 items-center tracking-wider instrument-seri text-[12px] text-neutral-500">
+            <span>
+              <Timer className="w-3 h-3"/>
+            </span>
+            {time}
+          </p>
         </div>
       </div>
 

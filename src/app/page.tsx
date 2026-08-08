@@ -27,13 +27,13 @@ export default function Home() {
         <Hero />
       </Section>
 
-      <Section className="mt-5">
+      <Section id="about" className="mt-5">
         <Reveal delay={0.1}>
           <Profile />
         </Reveal>
       </Section>
 
-      <Section id="about" className="mt-5 bg-white dark:bg-neutral-900">
+      <Section  className="mt-5 bg-white dark:bg-neutral-900">
         <Reveal delay={0.15}>
           <About />
         </Reveal>
