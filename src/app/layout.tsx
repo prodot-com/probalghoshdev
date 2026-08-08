@@ -53,23 +53,32 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://probalghosh.dev/"),
-  title: "Probal Ghosh",
-  description:
-    "Full-stack developer crafting clean and modern web experiences.",
+  metadataBase: new URL("https://probalghosh.dev"),
+  title: "Probal Ghosh | Full-Stack Developer & Engineer",
+  description: "Full-stack developer and engineer building modern web experiences with Next.js, React, TypeScript, Node.js, and scalable backend systems.",
   openGraph: {
-    url: "https://probalghosh.dev/",
-    siteName: "Probal Ghosh Portfolio",
+    title: "Probal Ghosh | Full-Stack Developer & Engineer",
+    description:
+      "Full-stack developer and engineer building modern web experiences with Next.js, React, TypeScript, Node.js, and scalable backend systems.",
+    url: "https://probalghosh.dev",
+    siteName: "Probal Ghosh",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/og.png",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Probal Ghosh - Portfolio",
+        alt: "Probal Ghosh — Full-Stack Developer & Engineer",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Probal Ghosh | Full-Stack Developer & Engineer",
+    description:
+      "Full-stack developer and engineer building modern web experiences.",
+    images: ["/og.jpg"],
   },
 };
 
