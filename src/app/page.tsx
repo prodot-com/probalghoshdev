@@ -22,7 +22,6 @@ export default function Home() {
   return (
     <div className="relative w-full">
       <PortfolioIndex />
-      {/* <div className="relative mx-auto w-full border-x border-neutral-300 dark:border-neutral-800"> */}
       <Section className="mt-14" showTopBorder={false}>
         <Hero />
       </Section>
@@ -33,7 +32,7 @@ export default function Home() {
         </Reveal>
       </Section>
 
-      <Section  className="mt-5 bg-white dark:bg-neutral-900">
+      <Section className="mt-5 bg-white dark:bg-neutral-900">
         <Reveal delay={0.15}>
           <About />
         </Reveal>
@@ -62,7 +61,7 @@ export default function Home() {
           <Projectcard />
         </Reveal>
       </Section>
-      
+
       <Section id="experience" className="mt-5">
         <Reveal delay={0.15}>
           <Experience />
@@ -74,7 +73,6 @@ export default function Home() {
           <Achievements />
         </Reveal>
       </Section>
-
 
       <Section id="education" className="mt-5">
         <Reveal delay={0.15}>
@@ -89,7 +87,6 @@ export default function Home() {
       </Section>
 
       <TopArrow />
-      {/* </div> */}
     </div>
   );
 }
