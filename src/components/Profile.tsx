@@ -50,16 +50,16 @@ export default function Profile() {
     return () => clearInterval(interval);
   }, []);
 
-  // useEffect(() => {
-  //   async function loadViews() {
-  //     const res = await fetch("/api/v1/views");
-  //     const data = await res.json();
+  useEffect(() => {
+    async function loadViews() {
+      const res = await fetch("/api/v1/views");
+      const data = await res.json();
 
-  //     setViews(data.views);
-  //   }
+      setViews(data.views);
+    }
 
-  //   loadViews();
-  // }, []);
+    loadViews();
+  }, []);
 
   return (
     <section className="flex items-start justify-between px-3 py-5">
@@ -85,7 +85,7 @@ export default function Profile() {
           />
 
           <img
-            src="/profile.jpg"
+            src="/profile.png"
             className={`absolute inset-0 h-full w-full rounded-[4px] border- border-neutral-500 object-cover transition-opacity duration-300 ${
               showRealProfile ? "opacity-0" : "opacity-100"
             }`}
