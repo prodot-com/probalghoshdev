@@ -16,7 +16,10 @@ import LenisProvider from "@/components/LenisProvider";
 import Section from "@/components/Section";
 import { tanker, architect } from "./font";
 import { AudioProvider } from "@/components/AudioProvider";
-import {Cursor, CursorProvider } from "@/components/animate-ui/components/animate/cursor";
+import {
+  Cursor,
+  CursorProvider,
+} from "@/components/animate-ui/components/animate/cursor";
 import KeyboardShortcuts from "@/components/KeyboardShortcut";
 
 config.autoAddCss = false;
@@ -50,12 +53,12 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://probal-ghosh.vercel.app"),
+  metadataBase: new URL("https://probalghosh.dev/"),
   title: "Probal Ghosh",
   description:
     "Full-stack developer crafting clean and modern web experiences.",
   openGraph: {
-    url: "https://probal-ghosh.vercel.app",
+    url: "https://probalghosh.dev/",
     siteName: "Probal Ghosh Portfolio",
     locale: "en_US",
     type: "website",
@@ -82,44 +85,43 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <CursorProvider global>
-              <Cursor />
-              <LenisProvider>
-                <AudioProvider>
-                  <KeyboardShortcuts/>
-                  <ScrollToTopOnLoad />
-                  <Toaster />
-                  <Navbar />
-                  <ScrollProgress className="fixed left-0 w-full h-0.5 transition-all duration-300 z-100" />
-                  <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c] text-black dark:text-white">
-                    <div
-                      className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
+            <Cursor />
+            <LenisProvider>
+              <AudioProvider>
+                <KeyboardShortcuts />
+                <ScrollToTopOnLoad />
+                <Toaster />
+                <Navbar />
+                <ScrollProgress className="fixed left-0 w-full h-0.5 transition-all duration-300 z-100" />
+                <div className="relative min-h-screen bg-zinc-100/40 dark:bg-[#1d1c1c] text-black dark:text-white">
+                  <div
+                    className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
                             border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
-                      style={{
-                        transform:
-                          "translateX(calc(var(--content-width) / -2))",
-                      }}
-                    />
+                    style={{
+                      transform: "translateX(calc(var(--content-width) / -2))",
+                    }}
+                  />
 
-                    <div
-                      className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
+                  <div
+                    className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block
                             border-l border-dashed border-neutral-400 dark:border-neutral-800 z-50"
-                      style={{
-                        transform: "translateX(calc(var(--content-width) / 2))",
-                      }}
-                    />
+                    style={{
+                      transform: "translateX(calc(var(--content-width) / 2))",
+                    }}
+                  />
 
-                    <div className="relative z-20">
-                      {children}
-                      <Section className="mt-5" showBottomBorder={false}>
-                        <Footer />
-                      </Section>
-                    </div>
+                  <div className="relative z-20">
+                    {children}
+                    <Section className="mt-5" showBottomBorder={false}>
+                      <Footer />
+                    </Section>
                   </div>
-                  <OnekoCat />
-                  <Analytics />
-              <SpeedInsights />
-                </AudioProvider>
-              </LenisProvider>
+                </div>
+                <OnekoCat />
+                <Analytics />
+                <SpeedInsights />
+              </AudioProvider>
+            </LenisProvider>
           </CursorProvider>
         </ThemeProvider>
         <script
