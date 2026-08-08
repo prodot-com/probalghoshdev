@@ -20,7 +20,7 @@ import PortfolioIndex from "@/components/PortfolioIndex";
 
 export default function Home() {
   return (
-    <div className="relative w-full selection:bg-orange-300 dark:selection:bg-indigo-500">
+    <div className="relative w-full">
       <PortfolioIndex />
       {/* <div className="relative mx-auto w-full border-x border-neutral-300 dark:border-neutral-800"> */}
       <Section className="mt-14" showTopBorder={false}>
@@ -39,7 +39,7 @@ export default function Home() {
         </Reveal>
       </Section>
 
-      <Section className="mt-5">
+      <Section id="skills" className="mt-5">
         <Reveal delay={0.15}>
           <TechStackMarquee />
         </Reveal>

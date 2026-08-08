@@ -121,16 +121,29 @@ export default function Profile() {
           </p>
           <p className="flex gap-1 items-center tracking-wider instrument-seri text-[12px] text-neutral-500">
             <span>
-              <Timer className="w-3 h-3"/>
+              <Timer className="w-3 h-3" />
             </span>
             {time}
           </p>
         </div>
       </div>
 
-      <div className="flex items-center gap-1 text-neutral-500">
-        <Eye className="h-4 w-4" />
-        <span className="text-[12px]">{views?.toLocaleString() ?? "0000"}</span>
+      <div className="flex items-center gap-3 text-neutral-500">
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event("portfolio-shortcuts"))}
+          aria-label="Open keyboard shortcuts"
+          className="hidden h-6 items-center rounded-[4px] border border-neutral-200 px-1.5 font-mono text-[11px] text-neutral-500 transition-colors hover:border-neutral-400 hover:text-neutral-900 sm:flex dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-500 dark:hover:text-white"
+        >
+          ⌘ K
+        </button>
+
+        <div className="flex items-center gap-1">
+          <Eye className="h-4 w-4" />
+          <span className="text-[12px]">
+            {views?.toLocaleString() ?? "0000"}
+          </span>
+        </div>
       </div>
     </section>
   );

@@ -15,7 +15,6 @@ import OnekoCat from "@/components/OnekoCat";
 import SidePattern from "@/components/Sidepattern";
 import Footer from "@/components/Footer";
 import LenisProvider from "@/components/LenisProvider";
-import ThemeShortcutProvider from "./hooks/useThemeShortcut";
 import Section from "@/components/Section";
 import { tanker, architect } from "./font";
 import { AudioProvider } from "@/components/AudioProvider";
@@ -23,6 +22,7 @@ import {
   Cursor,
   CursorProvider,
 } from "@/components/animate-ui/components/animate/cursor";
+import KeyboardShortcuts from "@/components/KeyboardShortcut";
 
 config.autoAddCss = false;
 
@@ -83,14 +83,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable} ${tanker.variable} ${architect.variable} ${caveat.variable} `}
+        className={`selection:bg-orange-300 dark:selection:bg-indigo-500 overflow-x-hidden ${instrumentSerif.variable} ${kablammo.variable} ${fraunces.variable} ${tanker.variable} ${architect.variable} ${caveat.variable} `}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ThemeShortcutProvider>
-            <CursorProvider global>
+          <CursorProvider global>
               <Cursor />
               <LenisProvider>
                 <AudioProvider>
+                  <KeyboardShortcuts/>
                   <ScrollToTopOnLoad />
                   <Toaster />
                   <Navbar />
@@ -126,8 +126,7 @@ export default function RootLayout({
                   {/* <BottomDock /> */}
                 </AudioProvider>
               </LenisProvider>
-            </CursorProvider>
-          </ThemeShortcutProvider>
+          </CursorProvider>
         </ThemeProvider>
         {/* <script
           defer

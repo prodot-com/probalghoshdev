@@ -73,7 +73,6 @@ export function GithubCard() {
 
         <Divider dashed />
 
-        {/* Content */}
         <div className="borde pt-3">
           <GithubCalendar2 isDarkMode={isDarkMode} />
         </div>

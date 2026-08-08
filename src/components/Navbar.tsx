@@ -17,7 +17,6 @@ const Navbar = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const { isPlaying, toggle } = useAudio();
 
-  // Handle scroll state for navbar shadow/border
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 4);
@@ -26,7 +25,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle clicks outside the menu and Escape key
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
