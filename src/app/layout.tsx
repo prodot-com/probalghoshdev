@@ -55,11 +55,10 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://probalghosh.dev"),
   title: "Probal Ghosh | Full-Stack Developer & Engineer",
-  description: "Full-stack developer and engineer building modern web experiences with Next.js, React, TypeScript, Node.js, and scalable backend systems.",
+  description: "Full-stack developer building clean, modern web experiences with Next.js, React, TypeScript, Node.js, and AI.",
   openGraph: {
     title: "Probal Ghosh | Full-Stack Developer & Engineer",
-    description:
-      "Full-stack developer and engineer building modern web experiences with Next.js, React, TypeScript, Node.js, and scalable backend systems.",
+    description: "Full-stack developer building clean, modern web experiences with Next.js, React, TypeScript, Node.js, and AI.",
     url: "https://probalghosh.dev",
     siteName: "Probal Ghosh",
     locale: "en_US",
