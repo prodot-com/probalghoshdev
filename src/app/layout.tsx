@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Instrument_Serif, Kablammo, Caveat } from "next/font/google";
 // @ts-ignore
 import "./globals.css";
+import Script from "next/script";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
@@ -55,10 +56,12 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://probalghosh.dev"),
   title: "Probal Ghosh | Full-Stack Developer & Engineer",
-  description: "Full-stack developer building clean, modern web experiences with Next.js, React, TypeScript, Node.js, and AI.",
+  description:
+    "Full-stack developer building clean, modern web experiences with Next.js, React, TypeScript, Node.js, and AI.",
   openGraph: {
     title: "Probal Ghosh | Full-Stack Developer & Engineer",
-    description: "Full-stack developer building clean, modern web experiences with Next.js, React, TypeScript, Node.js, and AI.",
+    description:
+      "Full-stack developer building clean, modern web experiences with Next.js, React, TypeScript, Node.js, and AI.",
     url: "https://probalghosh.dev",
     siteName: "Probal Ghosh",
     locale: "en_US",
@@ -137,6 +140,19 @@ export default function RootLayout({
           src="https://cloud.umami.is/script.js"
           data-website-id="652051f2-24d5-4acb-b79c-82930a61d307"
         ></script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-KFF26Y45GH"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KFF26Y45GH');
+  `}
+        </Script>
       </body>
     </html>
   );
