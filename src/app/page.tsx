@@ -3,19 +3,15 @@ import Achievements from "@/components/Achievements";
 import { Contact } from "@/components/Contact";
 import { EducationCard } from "@/components/Education";
 import { Experience } from "@/components/Experience";
-import Footer from "@/components/Footer";
 import GithubCalendar from "@/components/GithubCard";
 import Hero from "@/components/Hero";
-import OnekoCat from "@/components/OnekoCat";
 import Profile from "@/components/Profile";
 import { Projectcard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
 import Section from "@/components/Section";
-import SidePattern from "@/components/Sidepattern";
 import Socials from "@/components/Socials";
 import { TechStackMarquee } from "@/components/TechStack";
 import TopArrow from "@/components/TopArrow";
-import Image from "next/image";
 import PortfolioIndex from "@/components/PortfolioIndex";
 
 export default function Home() {
