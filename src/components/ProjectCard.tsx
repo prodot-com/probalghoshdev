@@ -143,7 +143,7 @@ export function Projectcard({
                   </div>
                 )}
 
-                {/* <Link href={`/projects/${project.slug}`} className="flex-grow"> */}
+                <Link href={`/projects/${project.slug}`} className="flex-grow">
                 <div className="px-4 pt-4 flex flex-col gap-2">
                   <h3 className="instrument-serif-bold text-[22px] md:text-[24px]">
                     {project.name}
@@ -153,7 +153,7 @@ export function Projectcard({
                     <ReactMarkdown>{project.description}</ReactMarkdown>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
 
                 <div className="px-4 pt-2">
                   <div className="flex flex-wrap gap-2">
