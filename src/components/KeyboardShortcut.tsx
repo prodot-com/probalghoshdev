@@ -29,6 +29,7 @@ type Command = {
   group: "Navigate" | "Actions";
   icon: typeof Home;
   run: () => void;
+  
 };
 
 export default function KeyboardShortcuts() {
