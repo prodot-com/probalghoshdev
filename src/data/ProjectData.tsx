@@ -37,6 +37,25 @@ export type AchievementItem = {
 
 export const projects: Project[] = [
   {
+    name: "OneProfile",
+    slug: "oneprofile",
+    description:
+      "A modern, open-source link-in-bio platform inspired by Linktree, built for creators, developers, and businesses. Features customizable profile pages, unlimited links, theme personalization, social integrations, analytics, and seamless self-hosting.",
+    tools: ["Next.js", "TypeScript", "PostgreSQL"],
+    image: "/oneprofile.png",
+    link: {
+      gitlink: "https://github.com/prodot-com/OneProfile",
+      livelink: "https://one-profilex.vercel.app/",
+    },
+    status: true,
+    working: true,
+    badge: {
+      text: "Building",
+      color: "from-violet-500 to-indigo-600",
+      icon: "hammer",
+    },
+  },
+  {
     name: "Paperless",
     slug: "paperless",
     description:
