@@ -15,6 +15,7 @@ import {
   Bot,
   BarChart3,
   ArrowUpRight,
+  Hammer,
 } from "lucide-react";
 import { ShinyButton } from "./ui/shiny-button";
 import Image from "next/image";
@@ -49,16 +50,19 @@ const badgeIcons = {
   rocket: Rocket,
   bot: Bot,
   chart: BarChart3,
+  hammer: Hammer
 } as const;
 
 type ProjectcardProps = {
   showHeading?: boolean;
   showViewAll?: boolean;
+  mainProjectSection?: boolean;
 };
 
 export function Projectcard({
   showHeading = true,
   showViewAll = true,
+  mainProjectSection = true,
 }: ProjectcardProps) {
   const router = useRouter();
 
@@ -66,6 +70,10 @@ export function Projectcard({
     const hash = [...key].reduce((acc, char) => acc + char.charCodeAt(0), 0);
     return gradients[hash % gradients.length].join(" ");
   };
+
+  const displayedProjects = mainProjectSection
+    ? projects.slice(0, 4)
+    : projects;
 
   return (
     <div className="font-bold w-full">
@@ -90,7 +98,7 @@ export function Projectcard({
           </>
         )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start px-3 md:px-0">
-          {projects.map((project, index) => {
+          {displayedProjects.map((project, index) => {
             const bgGradient = getGradient(project.slug ?? project.name);
 
             const BadgeIcon =
@@ -144,15 +152,15 @@ export function Projectcard({
                 )}
 
                 <Link href={`/projects/${project.slug}`} className="flex-grow">
-                <div className="px-4 pt-4 flex flex-col gap-2">
-                  <h3 className="instrument-serif-bold text-[22px] md:text-[24px]">
-                    {project.name}
-                  </h3>
+                  <div className="px-4 pt-4 flex flex-col gap-2">
+                    <h3 className="instrument-serif-bold text-[22px] md:text-[24px]">
+                      {project.name}
+                    </h3>
 
-                  <div className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4">
-                    <ReactMarkdown>{project.description}</ReactMarkdown>
+                    <div className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4">
+                      <ReactMarkdown>{project.description}</ReactMarkdown>
+                    </div>
                   </div>
-                </div>
                 </Link>
 
                 <div className="px-4 pt-2">

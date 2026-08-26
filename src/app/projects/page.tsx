@@ -42,7 +42,7 @@ export default function ProjectsPage() {
 
         <Divider dashed />
 
-        <Projectcard showHeading={false} showViewAll={false} />
+        <Projectcard showHeading={false} showViewAll={false} mainProjectSection={false}/>
       </Section>
     </>
   );
