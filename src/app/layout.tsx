@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.jpg",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Probal Ghosh — Full-Stack Developer & Engineer",
@@ -77,10 +77,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Probal Ghosh | Full-Stack Developer & Engineer",
+    title: "Probal Ghosh • Full-Stack Developer & Engineer",
     description:
       "Full-stack developer and engineer building modern web experiences.",
-    images: ["/og.jpg"],
+    images: ["/og.png"],
   },
 };
 
