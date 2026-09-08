@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.png",
+        url: "/og-v2.png",
         width: 1200,
         height: 630,
         alt: "Probal Ghosh — Full-Stack Developer & Engineer",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     title: "Probal Ghosh • Full-Stack Developer & Engineer",
     description:
       "Full-stack developer and engineer building modern web experiences.",
-    images: ["/og.png"],
+    images: ["/og-v2.png"],
   },
 };
 
