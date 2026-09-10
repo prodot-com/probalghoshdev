@@ -53,11 +53,16 @@ const caveat = Caveat({
   weight: ["400", "500", "600", "700"],
 });
 
+const OG_IMAGE = "https://probalghosh.dev/og-v2.png";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://probalghosh.dev"),
+
   title: "Probal Ghosh | Full-Stack Developer & Engineer",
+
   description:
     "Full-stack developer building clean, modern web experiences with Next.js, React, TypeScript, Node.js, and AI.",
+
   openGraph: {
     title: "Probal Ghosh | Full-Stack Developer & Engineer",
     description:
@@ -68,19 +73,20 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-v2.png",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Probal Ghosh — Full-Stack Developer & Engineer",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Probal Ghosh • Full-Stack Developer & Engineer",
     description:
       "Full-stack developer and engineer building modern web experiences.",
-    images: ["/og-v2.png"],
+    images: [OG_IMAGE],
   },
 };
 
