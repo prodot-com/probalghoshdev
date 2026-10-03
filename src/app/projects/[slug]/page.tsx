@@ -145,7 +145,7 @@ export default async function ProjectPage({
                 {project.description}
               </p>
 
-              <div className="mt-8 border-t border-dashed border-neutral-300 pt-6 dark:border-neutral-800">
+              {/* <div className="mt-8 border-t border-dashed border-neutral-300 pt-6 dark:border-neutral-800">
                 <p className="mb-3 text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase dark:text-neutral-400">
                   Project status
                 </p>
@@ -153,7 +153,8 @@ export default async function ProjectPage({
                   <CircleCheck className="h-4 w-4 text-emerald-500" aria-hidden="true" />
                   {project.working ? "Available" : "Project archive"}
                 </p>
-              </div>
+              </div> */}
+              
             </section>
 
             <aside className="rounded-[5px] border border-dashed border-neutral-300 bg-white/70 p-5 dark:border-neutral-800 dark:bg-white/[0.03] md:p-6">
