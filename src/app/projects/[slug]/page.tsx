@@ -159,7 +159,7 @@ export default async function ProjectPage({
 
             <aside className="rounded-[5px] border border-dashed border-neutral-300 bg-white/70 p-5 dark:border-neutral-800 dark:bg-white/[0.03] md:p-6">
               <div className="mb-5 flex items-center gap-2 border-b border-dashed border-neutral-300 pb-4 dark:border-neutral-800">
-                <Layers3 className="h-4 w-4 text-indigo-500" aria-hidden="true" />
+                {/* <Layers3 className="h-4 w-4 text-indigo-500" aria-hidden="true" /> */}
                 <h2 className="instrument-serif-bold text-xl">Inside the build</h2>
               </div>
               <ul className="space-y-2.5">
