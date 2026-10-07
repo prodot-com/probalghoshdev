@@ -3,6 +3,7 @@ type Project = {
   slug: string;
   description: string;
   tools: string[];
+  videoLink?: string;
   image?: string;
   link?: {
     gitlink?: string;
@@ -70,6 +71,7 @@ export const projects: Project[] = [
       "Tailwind",
     ],
     image: "/paperless.png",
+    videoLink: "japan.mp4",
     link: {
       gitlink: "https://github.com/prodot-com/paperless",
       livelink: "https://paperless.probalghosh.dev",

@@ -21,12 +21,15 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find((item) => item.slug.toLowerCase() === slug.toLowerCase());
+  const project = projects.find(
+    (item) => item.slug.toLowerCase() === slug.toLowerCase(),
+  );
 
   if (!project) {
     return {
       title: "Project not found | Probal Ghosh",
-      description: "Full-stack developer crafting clean and modern web experiences.",
+      description:
+        "Full-stack developer crafting clean and modern web experiences.",
     };
   }
 
@@ -36,7 +39,9 @@ export async function generateMetadata({
     openGraph: {
       title: `${project.name} | Probal Ghosh`,
       description: project.description,
-      images: project.image ? [{ url: project.image, alt: `${project.name} project preview` }] : undefined,
+      images: project.image
+        ? [{ url: project.image, alt: `${project.name} project preview` }]
+        : undefined,
     },
   };
 }
@@ -47,11 +52,21 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = projects.find((item) => item.slug.toLowerCase() === slug.toLowerCase());
+  const project = projects.find(
+    (item) => item.slug.toLowerCase() === slug.toLowerCase(),
+  );
+
+  const R2_VIDEO_URL = process.env.R2_VIDEO_URL;
+
+  if (!R2_VIDEO_URL) {
+    throw new Error("R2_VIDEO_URL is not configured");
+  }
 
   if (!project) notFound();
 
-  const projectNumber = String(projects.findIndex((item) => item.slug === project.slug) + 1).padStart(2, "0");
+  const projectNumber = String(
+    projects.findIndex((item) => item.slug === project.slug) + 1,
+  ).padStart(2, "0");
 
   return (
     <Section className="mt-14" showTopBorder={false}>
@@ -114,23 +129,36 @@ export default async function ProjectPage({
             </div>
           </div>
 
-          {project.image && (
-            <figure className="group mb-9 overflow-hidden rounded-[5px] border border-neutral-200 bg-neutral-100 shadow-[0_24px_70px_-32px_rgba(0,0,0,0.45)] dark:border-neutral-800 dark:bg-neutral-950 md:mb-11">
-              <div className="relative aspect-[16/9] w-full overflow-hidden sm:aspect-[5/3]">
-                <Image
-                  src={project.image}
-                  alt={`${project.name} project preview`}
-                  fill
-                  priority
-                  sizes="(min-width: 820px) 820px, 100vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+          {project.videoLink ? (
+            <div className="relative mx-auto mb-9 w-full max-w-6xl overflow-hidden rounded-2xl border border-neutral-200 bg-black dark:border-neutral-800">
+              <div className="aspect-video w-full">
+                <video
+                  src={`${R2_VIDEO_URL}/${project.videoLink}`}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  controls={false}
+                  className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
-                <figcaption className="instrument-serif absolute bottom-4 left-5 text-sm text-white/90 sm:left-6 sm:text-base">
-                  {project.name} · Project preview
-                </figcaption>
               </div>
-            </figure>
+            </div>
+          ) : (
+            project.image && (
+              <figure className="group mb-9 overflow-hidden rounded-[5px] border border-neutral-200 bg-neutral-100 dark:border-neutral-800">
+                <div className="relative aspect-[16/9] w-full overflow-hidden sm:aspect-[5/3]">
+                  <Image
+                    src={project.image}
+                    alt={`${project.name} project preview`}
+                    fill
+                    priority
+                    sizes="(min-width: 820px) 820px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </figure>
+            )
           )}
 
           <div className="grid items-start gap-8 md:grid-cols-[minmax(0,1.25fr)_minmax(15rem,0.75fr)] md:gap-10">
@@ -138,7 +166,10 @@ export default async function ProjectPage({
               <p className="mb-3 text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase dark:text-neutral-400">
                 Overview
               </p>
-              <h2 id="project-overview" className="instrument-serif-bold mb-4 text-2xl text-neutral-900 dark:text-white">
+              <h2
+                id="project-overview"
+                className="instrument-serif-bold mb-4 text-2xl text-neutral-900 dark:text-white"
+              >
                 Built for a better workflow.
               </h2>
               <p className="instrument-serif max-w-2xl text-[17px] leading-relaxed text-neutral-700 md:text-xl dark:text-neutral-300">
@@ -154,18 +185,24 @@ export default async function ProjectPage({
                   {project.working ? "Available" : "Project archive"}
                 </p>
               </div> */}
-              
             </section>
 
             <aside className="rounded-[5px] border border-dashed border-neutral-300 bg-white/70 p-5 dark:border-neutral-800 dark:bg-white/[0.03] md:p-6">
               <div className="mb-5 flex items-center gap-2 border-b border-dashed border-neutral-300 pb-4 dark:border-neutral-800">
                 {/* <Layers3 className="h-4 w-4 text-indigo-500" aria-hidden="true" /> */}
-                <h2 className="instrument-serif-bold text-xl">Inside the build</h2>
+                <h2 className="instrument-serif-bold text-xl">
+                  Inside the build
+                </h2>
               </div>
               <ul className="space-y-2.5">
                 {project.tools.map((tool) => (
-                  <li key={tool} className="instrument-serif flex items-center gap-2 text-[15px] text-neutral-700 dark:text-neutral-300">
-                    <span className="text-orange-500" aria-hidden="true">•</span>
+                  <li
+                    key={tool}
+                    className="instrument-serif flex items-center gap-2 text-[15px] text-neutral-700 dark:text-neutral-300"
+                  >
+                    <span className="text-orange-500" aria-hidden="true">
+                      •
+                    </span>
                     {tool}
                   </li>
                 ))}
