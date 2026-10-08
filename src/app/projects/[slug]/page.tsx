@@ -130,10 +130,10 @@ export default async function ProjectPage({
           </div>
 
           {project.videoLink ? (
-            <div className="relative mx-auto mb-9 w-full max-w-6xl overflow-hidden rounded-2xl border border-neutral-200 bg-black dark:border-neutral-800">
+            <div className="relative mx-auto mb-9 w-full max-w-6xl overflow-hidden rounded-[5px] border border-neutral-200 bg-black dark:border-neutral-800">
               <div className="aspect-video w-full">
                 <video
-                  src={`${R2_VIDEO_URL}/${project.videoLink}`}
+                  src={`${R2_VIDEO_URL}/${project.slug}.mp4`}
                   autoPlay
                   muted
                   loop

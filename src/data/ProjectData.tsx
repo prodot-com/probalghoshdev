@@ -46,7 +46,7 @@ export const projects: Project[] = [
     image: "/oneprofile.png",
     link: {
       gitlink: "https://github.com/prodot-com/OneProfile",
-      livelink: "https://one-profilex.vercel.app/",
+      livelink: "https://oneprofile.probalghosh.dev",
     },
     status: true,
     working: true,
@@ -71,7 +71,7 @@ export const projects: Project[] = [
       "Tailwind",
     ],
     image: "/paperless.png",
-    videoLink: "japan.mp4",
+    videoLink: "japan",
     link: {
       gitlink: "https://github.com/prodot-com/paperless",
       livelink: "https://paperless.probalghosh.dev",
