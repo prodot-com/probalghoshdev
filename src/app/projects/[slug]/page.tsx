@@ -109,7 +109,7 @@ export default async function ProjectPage({
                   href={project.link.livelink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-[4px] border-2 border-neutral-800 bg-linear-to-b from-neutral-700 to-neutral-900 px-4 py-2 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_1px_2px_rgba(0,0,0,0.5)] transition-all hover:from-neutral-700 hover:to-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-white dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+                  className="inline-flex items-center gap-2 rounded-[4px] border-2 border-neutral-800 bg-linear-to-b from-neutral-700 to-neutral-900 px-4 py-2 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_1px_2px_rgba(0,0,0,0.5)] transition-all hover:from-neutral-700 hover:to-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-neutral-900 dark:bg-white dark:text-neutral-200 dark:hover:bg-neutral-200"
                 >
                   <Globe className="h-4 w-4" aria-hidden="true" />
                   Visit live site
