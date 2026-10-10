@@ -3,8 +3,8 @@ type Project = {
   slug: string;
   description: string;
   tools: string[];
-  videoLink?: string;
   image?: string;
+  video: boolean;
   link?: {
     gitlink?: string;
     livelink?: string;
@@ -40,6 +40,7 @@ export const projects: Project[] = [
   {
     name: "OneProfile",
     slug: "oneprofile",
+    video: false,
     description:
       "A modern, open-source link-in-bio platform inspired by Linktree, built for creators, developers, and businesses. Features customizable profile pages, unlimited links, theme personalization, social integrations, analytics, and seamless self-hosting.",
     tools: ["Next.js", "TypeScript", "PostgreSQL"],
@@ -59,6 +60,7 @@ export const projects: Project[] = [
   {
     name: "Paperless",
     slug: "paperless",
+    video: true,
     description:
       "A secure digital workspace for structured note-taking and cloud file management. Features Google authentication, real-time storage tracking, file sharing, and encrypted uploads.",
     tools: [
@@ -71,7 +73,6 @@ export const projects: Project[] = [
       "Tailwind",
     ],
     image: "/paperless.png",
-    videoLink: "japan",
     link: {
       gitlink: "https://github.com/prodot-com/paperless",
       livelink: "https://paperless.probalghosh.dev",
@@ -87,6 +88,7 @@ export const projects: Project[] = [
   {
     name: "GithubWrapX",
     slug: "githubwrapx",
+    video: false,
     description:
       "Visualize coding activity throughout the year with animations, persona, and final shareable card. Get AI quote.",
     tools: ["Next.js", "Tailwind", "GraphQL", "OpenAI"],
@@ -101,6 +103,7 @@ export const projects: Project[] = [
   {
     name: "Cric-Scoreboard",
     slug: "cricscoreboard",
+    video: false,
     description:
       "Provides live ball-by-ball scoring for cricket matches. It includes an admin panel for scoring and a shareable spectator link, with updates powered by Socket.IO.",
     tools: ["React", "Node.js", "MongoDB", "Socket.IO", "Tailwind"],
@@ -120,6 +123,7 @@ export const projects: Project[] = [
   {
     name: "SyncSpace",
     slug: "syncspace",
+    video: false,
     description:
       "Built for streamlined team collaboration. Features secure user authentication, role-based access, comprehensive team and task management, realtime notifications.",
     tools: ["React", "Node.js", "MongoDB", "Zod", "Tailwind", "Socket.IO"],

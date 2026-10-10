@@ -14,6 +14,7 @@ import Divider from "@/components/Divider";
 import Section from "@/components/Section";
 import BackButton from "@/components/ui/BackButton";
 import { projects } from "@/data/ProjectData";
+import ProjectVideo from "@/components/projectVideo";
 
 export async function generateMetadata({
   params,
@@ -129,34 +130,22 @@ export default async function ProjectPage({
             </div>
           </div>
 
-          {project.videoLink ? (
-            <div className="relative mx-auto mb-9 w-full max-w-6xl overflow-hidden rounded-[5px] border border-neutral-200 bg-black dark:border-neutral-800">
-              <div className="aspect-video w-full">
-                <video
-                  src={`${R2_VIDEO_URL}/${project.slug}.mp4`}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  controls={false}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
+          {project.video && project.image && R2_VIDEO_URL ? (
+            <ProjectVideo
+              image={project.image}
+              name={project.name}
+              videoUrl={`${R2_VIDEO_URL}/${project.slug}.mp4`}
+            />
           ) : (
             project.image && (
-              <figure className="group mb-9 overflow-hidden rounded-[5px] border border-neutral-200 bg-neutral-100 dark:border-neutral-800">
-                <div className="relative aspect-[16/9] w-full overflow-hidden sm:aspect-[5/3]">
-                  <Image
-                    src={project.image}
-                    alt={`${project.name} project preview`}
-                    fill
-                    priority
-                    sizes="(min-width: 820px) 820px, 100vw"
-                    className="object-cover"
-                  />
-                </div>
+              <figure className="relative mx-auto mb-9 aspect-video w-full max-w-6xl overflow-hidden rounded-2xl">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 1152px"
+                  className="object-cover"
+                />
               </figure>
             )
           )}
