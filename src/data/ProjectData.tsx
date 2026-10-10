@@ -44,7 +44,7 @@ export const projects: Project[] = [
     description:
       "A modern, open-source link-in-bio platform inspired by Linktree, built for creators, developers, and businesses. Features customizable profile pages, unlimited links, theme personalization, social integrations, analytics, and seamless self-hosting.",
     tools: ["Next.js", "TypeScript", "PostgreSQL"],
-    image: "/oneprofile.png",
+    image: "/oneprofile2.png",
     link: {
       gitlink: "https://github.com/prodot-com/OneProfile",
       livelink: "https://oneprofile.probalghosh.dev",

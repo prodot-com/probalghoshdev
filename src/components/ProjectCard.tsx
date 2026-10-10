@@ -32,7 +32,7 @@ const gradients = [
   ["from-white", "via-amber-300", "to-orange-500"],
   ["from-white", "via-pink-300", "to-purple-500"],
   ["from-white", "via-lime-300", "to-green-500"],
-  ["from-white", "via-sky-300", "to-indigo-500"],
+  ["from-white", "via-black/50", "to-black"],
   ["from-white", "via-red-300", "to-orange-500"],
   ["from-white", "via-yellow-300", "to-amber-500"],
   ["from-white", "via-teal-300", "to-cyan-500"],
@@ -137,7 +137,7 @@ export function Projectcard({
                         </div>
                       )}
 
-                      <div className="absolute -bottom-6 -right-6 w-[90%] h-[90%] z-10 transition-transform duration-200 ease-out translate-x-1 translate-y-1 group-hover:-translate-x-2 group-hover:-translate-y-2">
+                      <div className="absolute -bottom-1 -right-1 w-[90%] h-[90%] z-10 transition-transform duration-200 ease-out translate-x-1 translate-y-1 group-hover:-translate-x-2 group-hover:-translate-y-2">
                         <div className="relative w-full h-full rounded-tl-[4px] overflow-hidden shadow-2xl border-t border-l border-white/30 dark:border-white/10">
                           <Image
                             src={project.image}

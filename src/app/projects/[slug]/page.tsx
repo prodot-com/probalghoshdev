@@ -138,7 +138,7 @@ export default async function ProjectPage({
             />
           ) : (
             project.image && (
-              <figure className="relative mx-auto mb-9 aspect-video w-full max-w-6xl overflow-hidden rounded-2xl">
+              <figure className="relative mx-auto mb-9 aspect-video w-full max-w-6xl overflow-hidden rounded-[5px]">
                 <Image
                   src={project.image}
                   alt={project.name}
