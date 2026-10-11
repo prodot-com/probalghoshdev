@@ -28,7 +28,6 @@ export default function ProjectVideo({
       await video.play();
       setVideoLoaded(true);
     } catch {
-      // Keep showing the project image when playback is unavailable.
       setVideoLoaded(false);
     }
   };
@@ -41,7 +40,6 @@ export default function ProjectVideo({
   return (
     <div className="relative mx-auto mb-9 w-full max-w-6xl overflow-hidden rounded-[5px] border border-neutral-200 bg-black dark:border-neutral-800">
       <div className="relative aspect-video w-full">
-        {/* Poster image displayed while video loads */}
         <Image
           src={image}
           alt={name}
@@ -53,7 +51,6 @@ export default function ProjectVideo({
           }`}
         />
 
-        {/* Video */}
         <video
           ref={videoRef}
           src={videoUrl}

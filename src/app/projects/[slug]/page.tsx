@@ -134,7 +134,7 @@ export default async function ProjectPage({
             <ProjectVideo
               image={project.image}
               name={project.name}
-              videoUrl={`${R2_VIDEO_URL}/${project.slug}.mp4`}
+              videoUrl={`${R2_VIDEO_URL}/${project.slug}.webm`}
             />
           ) : (
             project.image && (
