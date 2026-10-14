@@ -179,15 +179,26 @@ type ExperienceItem = {
   endDate?: string;
   link?: string;
   description?: string[];
+  current?: boolean
+  location: string
 };
 
 export const experiences: ExperienceItem[] = [
   {
     icon: "/erfolgwerke.svg",
     company: "Erfolgwerke",
+    sub: "Software Development Intern",
+    startDate: "October 2026",
+    current: true,
+    location: "Remote",
+  },
+  {
+    icon: "/erfolgwerke.svg",
+    company: "Erfolgwerke",
     sub: "Freelance Full Stack Developer",
     startDate: "April 2026",
     endDate: "June 2026",
+     location: "Remote",
     description: [
       "Engineered a configurable audit form builder supporting reusable components, conditional logic, macros, and draft-based workflows for enterprise audit processes.",
       "Implemented audit lifecycle features including audit history, KYC verification, structured document repositories, and role-based document management.",
@@ -202,6 +213,7 @@ export const experiences: ExperienceItem[] = [
     sub: "Software Engineer",
     startDate: "August 2025",
     endDate: "October 2025",
+     location: "Remote",
     description: [
       "Built and optimized full-stack web applications using the MERN stack. Implemented secure authentication, real-time features, and responsive UIs with smooth frontend–backend integration for high-performance user experiences.",
     ],

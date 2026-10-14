@@ -40,11 +40,13 @@ export function Experience() {
                         {exp.company}
                       </h3>
 
-                      <ChevronRight
-                        className={`w-4 h-4 cursor-pointer transition-transform duration-300 ${
-                          openIndex === index ? "rotate-90" : ""
-                        }`}
-                      />
+                      {exp.description && (
+                        <ChevronRight
+                          className={`w-4 h-4 cursor-pointer transition-transform duration-300 ${
+                            openIndex === index ? "rotate-90" : ""
+                          }`}
+                        />
+                      )}
                     </div>
 
                     <p className="instrument-serif-italic text-[13px] md:text-[15px] text-neutral-500 dark:text-neutral-400">
