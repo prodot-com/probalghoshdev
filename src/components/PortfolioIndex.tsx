@@ -5,8 +5,8 @@ import { motion, LayoutGroup } from "framer-motion";
 
 const indexItems = [
   { label: "About", id: "about" },
-  { label: "Projects", id: "projects" },
   { label: "Experience", id: "experience" },
+  { label: "Projects", id: "projects" },
   { label: "Achievements", id: "achievements" },
 ];
 
