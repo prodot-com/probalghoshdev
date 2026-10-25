@@ -16,6 +16,7 @@ import {
   BarChart3,
   ArrowUpRight,
   Hammer,
+  MousePointerClick,
 } from "lucide-react";
 import { ShinyButton } from "./ui/shiny-button";
 import Image from "next/image";
@@ -50,7 +51,7 @@ const badgeIcons = {
   rocket: Rocket,
   bot: Bot,
   chart: BarChart3,
-  hammer: Hammer
+  hammer: Hammer,
 } as const;
 
 type ProjectcardProps = {
@@ -153,8 +154,11 @@ export function Projectcard({
 
                 <Link href={`/projects/${project.slug}`} className="flex-grow">
                   <div className="px-4 pt-4 flex flex-col gap-2">
-                    <h3 className="instrument-serif-bold text-[22px] md:text-[24px]">
-                      {project.name}
+                    <h3 className="flex justify-start gap-5 items-center instrument-serif-bold text-[22px] md:text-[24px]">
+                      {project.name}{" "}
+                      <span className="text-neutral-500">
+                        <MousePointerClick />
+                      </span>
                     </h3>
 
                     <div className="instrument-serif text-[14px] prose prose-sm dark:prose-invert max-w-none line-clamp-4">

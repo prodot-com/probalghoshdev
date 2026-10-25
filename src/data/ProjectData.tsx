@@ -207,15 +207,15 @@ export const experiences: ExperienceItem[] = [
       "Worked in an agile development environment, collaborating through feature branches, code reviews, and iterative releases to deliver production-ready functionality.",
     ],
   },
-  {
-    icon: "/zaalima.svg",
-    company: "Zaalima Development",
-    sub: "Software Engineer",
-    startDate: "August 2025",
-    endDate: "October 2025",
-     location: "Remote",
-    description: [
-      "Built and optimized full-stack web applications using the MERN stack. Implemented secure authentication, real-time features, and responsive UIs with smooth frontend–backend integration for high-performance user experiences.",
-    ],
-  },
+  // {
+  //   icon: "/zaalima.svg",
+  //   company: "Zaalima Development",
+  //   sub: "Software Engineer",
+  //   startDate: "August 2025",
+  //   endDate: "October 2025",
+  //    location: "Remote",
+  //   description: [
+  //     "Built and optimized full-stack web applications using the MERN stack. Implemented secure authentication, real-time features, and responsive UIs with smooth frontend–backend integration for high-performance user experiences.",
+  //   ],
+  // },
 ];

@@ -34,6 +34,12 @@ export default function Home() {
         </Reveal>
       </Section>
 
+      <Section id="experience" className="mt-5">
+        <Reveal delay={0.15}>
+          <Experience />
+        </Reveal>
+      </Section>
+
       <Section id="skills" className="mt-5">
         <Reveal delay={0.15}>
           <TechStackMarquee />
@@ -55,12 +61,6 @@ export default function Home() {
       <Section id="projects" className="mt-5">
         <Reveal delay={0.15}>
           <Projectcard />
-        </Reveal>
-      </Section>
-
-      <Section id="experience" className="mt-5">
-        <Reveal delay={0.15}>
-          <Experience />
         </Reveal>
       </Section>
 
